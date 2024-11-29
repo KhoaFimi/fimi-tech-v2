@@ -13,7 +13,10 @@ import { QueryProvider } from '@/providers/query.provider'
 import ogImage from '../../public/og.jpg'
 
 export const metadata: Metadata = {
-	title: 'FIMI - Register',
+	title: {
+		default: 'FIMI',
+		template: 'FIMI | %s'
+	},
 	description: 'Công Ty TNHH Công Nghệ FIMI - Giải Pháp Bán Hàng Đa Kênh',
 	openGraph: {
 		title: 'Đăng ký mã giới thiệu',

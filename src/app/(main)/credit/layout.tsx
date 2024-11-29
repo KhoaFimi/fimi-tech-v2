@@ -1,8 +1,13 @@
+import { Metadata } from 'next'
 import { FC, PropsWithChildren } from 'react'
 
 import Header from '@/components/header'
 import MobileFooter from '@/components/mobile-footer'
 import Policies from '@/components/policies'
+
+export const metadata = {
+	title: 'Credit'
+} satisfies Metadata
 
 const CreditLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
