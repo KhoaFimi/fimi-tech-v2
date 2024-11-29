@@ -59,7 +59,7 @@ export const addLead = async ({
 					info.publisherCode,
 					info.campaignCode,
 					body.fullname,
-					body.phone,
+					`'${body.phone}`,
 					body.email,
 					body.city
 				]
