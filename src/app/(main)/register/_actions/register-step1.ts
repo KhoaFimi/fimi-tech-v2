@@ -21,9 +21,13 @@ const genCode = (): string => {
 	return `FIMI${numbers.join('')}`
 }
 
-export const registerStep1 = async (
-	values: RegisterStep1Schema & { referral: string | undefined }
-) => {
+export const registerStep1 = async ({
+	values,
+	referal
+}: {
+	values: RegisterStep1Schema
+	referal: string | undefined
+}) => {
 	const validateData = registerStep1Schema.safeParse(values)
 
 	if (!validateData.success)
@@ -55,13 +59,11 @@ export const registerStep1 = async (
 			error: 'Máy chủ đang gián đoạn, vui lòng thử lại sau'
 		}
 
-	if (values.referral) {
-		const existingManagerIdx = users.findIndex(
-			user => user[3] === values.referral
-		)
+	if (referal) {
+		const existingManagerIdx = users.findIndex(user => user[2] === referal)
 
 		if (existingManagerIdx !== -1) {
-			referalCode = values.referral
+			referalCode = referal
 		}
 	}
 
@@ -91,15 +93,15 @@ export const registerStep1 = async (
 					`'${id}`,
 					code,
 					referalCode,
-					values.fullname,
-					`'${values.phone}`,
-					values.email,
-					`'${values.citizenIdentification}`,
-					parseDate(new Date(values.dateOfIssue)),
-					values.placeOfIssue,
-					parseDate(new Date(values.dateOfBirth)),
-					values.placeOfBirth,
-					values.tnc
+					body.fullname,
+					`'${body.phone}`,
+					body.email,
+					`'${body.citizenIdentification}`,
+					parseDate(new Date(body.dateOfIssue)),
+					body.placeOfIssue,
+					parseDate(new Date(body.dateOfBirth)),
+					body.placeOfBirth,
+					body.tnc
 				]
 			]
 		}

@@ -68,7 +68,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 			control={control}
 			name={name}
 			render={({ field }) => (
-				<FormItem className='flex flex-col'>
+				<FormItem className=''>
 					{label ?? label}
 					<Popover
 						open={open}

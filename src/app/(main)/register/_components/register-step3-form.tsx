@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { Loader2 } from 'lucide-react'
+import { CreditCard, Landmark, Loader2, User2 } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import React, { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -19,11 +19,13 @@ import {
 	FormControl,
 	FormField,
 	FormItem,
+	FormLabel,
 	FormMessage
 } from '@/components/ui/form'
 import FormCombobox from '@/components/ui/form-combobox'
 import { Input } from '@/components/ui/input'
 import { useRegisterSuccess } from '@/hooks/use-register-success'
+import { parseVni } from '@/lib/server/parse-vni'
 
 const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 	const router = useRouter()
@@ -84,7 +86,7 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 			<Form {...form}>
 				<form
 					autoComplete='autocomplete_off_randString'
-					className='flex flex-col gap-5 px-2 pt-4'
+					className='flex flex-col gap-2.5 px-2 pt-4'
 					onSubmit={form.handleSubmit(onSubmit)}
 				>
 					<FormField
@@ -92,6 +94,13 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
+								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+									<User2
+										className='size-4'
+										strokeWidth={3}
+									/>
+									<p>Tên tài khoản ngân hàng</p>
+								</FormLabel>
 								<FormControl>
 									<Input
 										{...field}
@@ -100,7 +109,6 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 											field.onChange(e.currentTarget.value.toUpperCase())
 										}
 										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
-										placeholder='Tên tài khoản ngân hàng'
 									/>
 								</FormControl>
 								<FormMessage />
@@ -113,12 +121,18 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
+								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+									<CreditCard
+										className='size-4'
+										strokeWidth={3}
+									/>
+									<p>Số tài khoản ngân hàng</p>
+								</FormLabel>
 								<FormControl>
 									<Input
 										{...field}
 										disabled={isPending}
 										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
-										placeholder='Số tài khoản ngân hàng'
 									/>
 								</FormControl>
 								<FormMessage />
@@ -130,15 +144,24 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 						name='bankName'
 						control={form.control}
 						className='w-full'
+						label={
+							<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+								<Landmark
+									className='size-4'
+									strokeWidth={3}
+								/>
+								<p>Ngân hàng</p>
+							</FormLabel>
+						}
 						popoverClassName='w-[405px]'
 						form={form}
-						initalData='Ngân hàng'
+						initalData=''
 						items={
 							banksData
 								? banksData.map(bank => ({
 										id: bank.id.toString(),
-										value: `${bank.code}-${bank.name}`,
-										label: `${bank.code}-${bank.name}`
+										value: `${bank.code} - ${parseVni(bank.name)}`,
+										label: `${bank.code} - ${bank.name}`
 									}))
 								: []
 						}

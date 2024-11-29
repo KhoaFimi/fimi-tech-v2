@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { Loader2 } from 'lucide-react'
+import { Building, Loader2, MapPinHouse, User } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -23,6 +23,7 @@ import {
 	FormControl,
 	FormField,
 	FormItem,
+	FormLabel,
 	FormMessage
 } from '@/components/ui/form'
 import FormCombobox from '@/components/ui/form-combobox'
@@ -110,7 +111,7 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 			<Form {...form}>
 				<form
 					autoComplete='autocomplete_off_randString'
-					className='flex flex-col gap-5 px-2 pt-4'
+					className='flex flex-col gap-2.5 px-2 pt-4'
 					onSubmit={form.handleSubmit(onSubmit)}
 				>
 					<FormField
@@ -118,6 +119,13 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
+								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+									<User
+										className='size-4'
+										strokeWidth={3}
+									/>
+									<p className='tracking-tight'>Giới tính</p>
+								</FormLabel>
 								<Select
 									onValueChange={field.onChange}
 									defaultValue={field.value}
@@ -127,10 +135,7 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 											disabled={isPending}
 											className='border border-primary ring-0 focus:ring-0'
 										>
-											<SelectValue
-												placeholder='Giới tính'
-												className='placeholder:text-foreground/50'
-											/>
+											<SelectValue className='placeholder:text-foreground/50' />
 										</SelectTrigger>
 									</FormControl>
 									<SelectContent>
@@ -146,9 +151,19 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 					<FormCombobox
 						name='workAt'
 						control={form.control}
+						popoverClassName='w-[405px]'
 						form={form}
 						className='w-full'
-						initalData='Khu vực làm việc'
+						label={
+							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<Building
+									className='size-4'
+									strokeWidth={3}
+								/>
+								<p className='tracking-tight'>Khu vực làm việc</p>
+							</FormLabel>
+						}
+						initalData=''
 						items={
 							citiesData
 								? citiesData.map(city => ({
@@ -167,12 +182,18 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
+								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+									<MapPinHouse
+										className='size-4'
+										strokeWidth={3}
+									/>
+									<p className='tracking-tight'>Địa chỉ thường trú</p>
+								</FormLabel>
 								<FormControl>
 									<Textarea
 										{...field}
 										disabled={isPending}
 										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
-										placeholder='Địa chỉ thường chú'
 									/>
 								</FormControl>
 								<FormMessage />
@@ -185,8 +206,17 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						className='w-full'
 						form={form}
+						label={
+							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<MapPinHouse
+									className='size-4'
+									strokeWidth={3}
+								/>
+								<p className='tracking-tight'>Tỉnh/Thành</p>
+							</FormLabel>
+						}
 						popoverClassName='w-[405px]'
-						initalData='Tỉnh/Thành'
+						initalData=''
 						onSelect={id => fetchDistricts({ id })}
 						items={
 							citiesData
@@ -206,8 +236,17 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						className='w-full'
 						popoverClassName='w-[405px]'
+						label={
+							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<MapPinHouse
+									className='size-4'
+									strokeWidth={3}
+								/>
+								<p className='tracking-tight'>Quận/Huyện</p>
+							</FormLabel>
+						}
 						form={form}
-						initalData='Quận/Huyện'
+						initalData=''
 						onSelect={id => fetchWards({ id })}
 						items={
 							districtsData
@@ -232,8 +271,17 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						className='w-full'
 						popoverClassName='w-[405px]'
+						label={
+							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<MapPinHouse
+									className='size-4'
+									strokeWidth={3}
+								/>
+								<p className='tracking-tight'>Phường/xã</p>
+							</FormLabel>
+						}
 						form={form}
-						initalData='Phường/xã'
+						initalData=''
 						items={
 							wardsData
 								? wardsData.map(city => ({
