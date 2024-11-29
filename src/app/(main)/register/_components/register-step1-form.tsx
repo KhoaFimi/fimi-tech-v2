@@ -250,7 +250,6 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 										{...field}
 										disabled={isPending}
 										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
-										placeholder='Căn cước công dân'
 									/>
 								</FormControl>
 								<FormMessage />
