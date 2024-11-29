@@ -1,5 +1,6 @@
 import '@/app/globals.css'
 
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
@@ -42,6 +43,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 					<ReactQueryDevtools initialIsOpen={false} />
 				</QueryProvider>
 				<Toaster />
+				<GoogleAnalytics gaId='G-9K0WHTB0EB' />
 			</body>
 		</html>
 	)
