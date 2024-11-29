@@ -48,7 +48,7 @@ export const registerStep3 = async (
 					body.bankAccountName,
 					body.bankAccountName.charAt(0) === '0'
 						? `'${body.bankAccountNumber}`
-						: body.bankAccountName,
+						: body.bankAccountNumber,
 					body.bankName
 				]
 			]
