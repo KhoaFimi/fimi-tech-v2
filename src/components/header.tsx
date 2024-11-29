@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Header = () => {
 	return (
-		<header className='sticky inset-x-0 top-0 flex w-full items-center justify-center bg-gradient-to-r from-primary to-secondary shadow-md'>
+		<header className='sticky inset-x-0 top-0 z-50 flex w-full items-center justify-center bg-gradient-to-r from-primary to-secondary shadow-md'>
 			<div className='container flex items-center justify-between gap-4 px-2 py-2 md:px-28'>
 				<Link
 					href='https://partner.fimi.tech/chien-dich'

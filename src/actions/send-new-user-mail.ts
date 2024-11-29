@@ -28,6 +28,7 @@ export const sendMailToNewUser = async (data: {
 	await sendMail({
 		to: data.email,
 		html: template,
+		subject: 'Thông tin publisher',
 		from: `FIMI ${config.ADMIN_EMAIL_ADDRESS}`
 	})
 }

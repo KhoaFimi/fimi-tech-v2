@@ -27,8 +27,8 @@ export const registerStep3 = async (
 	const {
 		data: { values: data }
 	} = await sheets.spreadsheets.values.get({
-		spreadsheetId: config.SHEET_ID,
-		range: config.SHEET_USER
+		spreadsheetId: config.SHEET_USER_ID,
+		range: config.SHEET_USER_NAME
 	})
 
 	if (!data)
@@ -39,9 +39,9 @@ export const registerStep3 = async (
 	const rangToUpdate = data.findIndex(row => row[1] === id)
 
 	await sheets.spreadsheets.values.update({
-		spreadsheetId: config.SHEET_ID,
+		spreadsheetId: config.SHEET_USER_ID,
 		valueInputOption: 'RAW',
-		range: `${config.SHEET_USER}!T${rangToUpdate + 1}`,
+		range: `${config.SHEET_USER_NAME}!T${rangToUpdate + 1}`,
 		requestBody: {
 			values: [
 				[

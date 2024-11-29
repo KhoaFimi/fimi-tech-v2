@@ -7,9 +7,9 @@ import { useRouter } from 'next/navigation'
 import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { getCities } from '@/app/(main)/register/_actions/get-citites'
-import { getDistricts } from '@/app/(main)/register/_actions/get-districts'
-import { getWards } from '@/app/(main)/register/_actions/get-wards'
+import { getCities } from '@/actions/get-citites'
+import { getDistricts } from '@/actions/get-districts'
+import { getWards } from '@/actions/get-wards'
 import { registerStep2 } from '@/app/(main)/register/_actions/register-step2'
 import { FormWrapper } from '@/app/(main)/register/_components/form-wrapper'
 import {
@@ -185,6 +185,7 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						className='w-full'
 						form={form}
+						popoverClassName='w-[405px]'
 						initalData='Tỉnh/Thành'
 						onSelect={id => fetchDistricts({ id })}
 						items={
@@ -204,6 +205,7 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						name='currentDistrict'
 						control={form.control}
 						className='w-full'
+						popoverClassName='w-[405px]'
 						form={form}
 						initalData='Quận/Huyện'
 						onSelect={id => fetchWards({ id })}
@@ -229,6 +231,7 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						name='currentWard'
 						control={form.control}
 						className='w-full'
+						popoverClassName='w-[405px]'
 						form={form}
 						initalData='Phường/xã'
 						items={

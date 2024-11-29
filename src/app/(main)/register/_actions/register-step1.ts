@@ -35,7 +35,7 @@ export const registerStep1 = async (
 
 	const auth = await getGoogleAuthV2()
 
-	const doc = new GoogleSpreadsheet(config.SHEET_ID, auth)
+	const doc = new GoogleSpreadsheet(config.SHEET_USER_ID, auth)
 
 	await doc.loadInfo()
 
@@ -44,8 +44,8 @@ export const registerStep1 = async (
 	const {
 		data: { values: users }
 	} = await sheets.spreadsheets.values.get({
-		spreadsheetId: config.SHEET_ID,
-		range: config.SHEET_USER
+		spreadsheetId: config.SHEET_USER_ID,
+		range: config.SHEET_USER_NAME
 	})
 
 	let referalCode: string = ''
@@ -81,8 +81,8 @@ export const registerStep1 = async (
 	const code = genCode()
 
 	await sheets.spreadsheets.values.append({
-		spreadsheetId: config.SHEET_ID,
-		range: config.SHEET_USER,
+		spreadsheetId: config.SHEET_USER_ID,
+		range: config.SHEET_USER_NAME,
 		valueInputOption: 'USER_ENTERED',
 		requestBody: {
 			values: [

@@ -6,7 +6,7 @@ import { Loader2 } from 'lucide-react'
 import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { getCities } from '@/app/(main)/register/_actions/get-citites'
+import { getCities } from '@/actions/get-citites'
 import { registerStep1 } from '@/app/(main)/register/_actions/register-step1'
 import { FormWrapper } from '@/app/(main)/register/_components/form-wrapper'
 import {

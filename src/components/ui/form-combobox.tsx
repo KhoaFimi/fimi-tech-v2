@@ -2,7 +2,7 @@
 'use client'
 
 import { ChevronsUpDown } from 'lucide-react'
-import { FC, useState } from 'react'
+import { FC, ReactNode, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -40,6 +40,7 @@ interface FormComboboxProps {
 	placeholder?: string
 	initalData: string
 	className?: string
+	label?: ReactNode
 	popoverClassName?: string
 	form: any
 	control: any
@@ -53,6 +54,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 	isLoading = false,
 	form,
 	onSelect,
+	label,
 	className,
 	popoverClassName,
 	notFoundMessage = 'Not Found',
@@ -67,6 +69,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 			name={name}
 			render={({ field }) => (
 				<FormItem className='flex flex-col'>
+					{label ?? label}
 					<Popover
 						open={open}
 						onOpenChange={setOpen}
@@ -90,7 +93,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 									) : (
 										<p className='font-semibold'>{initalData}</p>
 									)}
-									<div className='absolute right-0 top-1/2 z-50 -translate-y-1/2 border-l bg-background px-1 py-2 text-foreground/50'>
+									<div className='z-400 absolute right-0 top-1/2 -translate-y-1/2 border-l bg-background px-1 py-2 text-foreground/50'>
 										<ChevronsUpDown className='h-4 w-4 shrink-0' />
 									</div>
 								</Button>
