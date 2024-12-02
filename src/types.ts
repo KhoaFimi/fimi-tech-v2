@@ -1,3 +1,9 @@
+export interface ComboboxItem {
+	id: string
+	value: string
+	label: string
+}
+
 export interface AddressApiResponse {
 	error: number
 	error_text: string

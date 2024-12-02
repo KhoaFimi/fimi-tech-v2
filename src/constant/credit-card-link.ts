@@ -50,6 +50,12 @@ export const creditCardLink = ({
 		case 'vibivy':
 			link = `https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-ivycard&utm_source=Public_Website&utm_medium=Affiliate_FIMIVIB-${orderId}&utm_content=Affiliate_FIMIVIB-${orderId}`
 			break
+		case 'muadee':
+			link = `https://muadee.page.link/?link=https://muadee.com.vn&utm_source=BTM_Fimi&utm_medium=${orderId}&utm_campaign=aff_pub&apn=com.muadee.hdbank&amv=3&ibi=com.muadee.hdbank&isi=1633030865&efr=1&ius=muadee://&_imcp=1`
+			break
+		case 'vpbankneo':
+			link = `https://vpbankneo.page.link/FIMI1111`
+			break
 	}
 
 	return link

@@ -1,0 +1,72 @@
+[
+	{
+		"id": "1",
+		"label": "vpbankcc",
+		"value": "vpbankcc"
+	},
+	{
+		"id": "2",
+		"label": "hdb4in1",
+		"value": "hdb4in1"
+	},
+	{
+		"id": "3",
+		"label": "hdbvjp",
+		"value": "hdbvjp"
+	},
+	{
+		"id": "4",
+		"label": "tpbevo",
+		"value": "tpbevo"
+	},
+	{
+		"id": "5",
+		"label": "vibtra",
+		"value": "vibtra"
+	},
+	{
+		"id": "4",
+		"label": "vibpre",
+		"value": "vibpre"
+	},
+	{
+		"id": "5",
+		"label": "vibsup",
+		"value": "vibsup"
+	},
+	{
+		"id": "6",
+		"label": "vibonl",
+		"value": "vibonl"
+	},
+	{
+		"id": "7",
+		"label": "vibcas",
+		"value": "vibcas"
+	},
+	{
+		"id": "8",
+		"label": "vibfam",
+		"value": "vibfam"
+	},
+	{
+		"id": "9",
+		"label": "vibfin",
+		"value": "vibfin"
+	},
+	{
+		"id": "10",
+		"label": "viblaz",
+		"value": "viblaz"
+	},
+	{
+		"id": "11",
+		"label": "vibbrew",
+		"value": "vibbrew"
+	},
+	{
+		"id": "12",
+		"label": "vibivy",
+		"value": "vibivy"
+	}
+]
