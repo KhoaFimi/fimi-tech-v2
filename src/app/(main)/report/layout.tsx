@@ -35,7 +35,7 @@ const ReportLayout: FC<PropsWithChildren> = ({ children }) => {
 			</Header>
 			<main className='flex w-full items-center justify-center pt-8'>
 				<div className='container h-screen px-4 py-2 md:px-28'>
-					<h2 className='my-2 bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-2xl font-bold uppercase tracking-tighter text-transparent'>
+					<h2 className='my-1 bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-2xl font-bold uppercase tracking-tighter text-transparent'>
 						Báo cáo
 					</h2>
 					{children}

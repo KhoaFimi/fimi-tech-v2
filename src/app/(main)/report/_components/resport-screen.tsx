@@ -18,7 +18,7 @@ const ReportScreen: FC<ReportScressProps> = ({ campaignData }) => {
 	const [status, setStatus] = useState<string>('')
 
 	return (
-		<div className='flex flex-col gap-6'>
+		<div className='flex flex-col gap-3'>
 			<ReportFilter
 				campaignData={campaignData}
 				date={date}
