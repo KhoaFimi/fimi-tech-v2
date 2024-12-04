@@ -2,7 +2,7 @@ import { ColumnDef } from '@tanstack/react-table'
 import { formatInTimeZone } from 'date-fns-tz'
 import { ArrowUpDown } from 'lucide-react'
 
-import { PAYMENT_STATUS, REPORT_STATUS } from '@/constant/enum'
+import { REPORT_STATUS } from '@/constant/enum'
 import { cn } from '@/lib/utils'
 import { Report } from '@/types'
 
@@ -13,7 +13,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 		header: () => <div className='truncate text-left'>Mã đơn</div>,
 
 		cell: ({ row }) => (
-			<div className='w-40 text-left'>{row.getValue('id')}</div>
+			<div className='text-left text-xs'>{row.getValue('id')}</div>
 		)
 	},
 	// #endregion
@@ -41,7 +41,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 				'dd/MM/yyyy'
 			)
 
-			return <div className='w-40 truncate text-left'>{nativeDate}</div>
+			return <div className='truncate text-left text-xs'>{nativeDate}</div>
 		}
 	},
 	// #endregion
@@ -64,7 +64,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 			)
 		},
 		cell: ({ row }) => (
-			<div className='w-40 text-left'>{row.getValue('campaignCode')}</div>
+			<div className='text-left text-xs'>{row.getValue('campaignCode')}</div>
 		)
 	},
 	// #endregion
@@ -74,7 +74,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 		accessorKey: 'publisherCode',
 		header: () => <div className='truncate text-left'>Mã publisher</div>,
 		cell: ({ row }) => (
-			<div className='w-40 text-left'>{row.getValue('publisherCode')}</div>
+			<div className='text-left text-xs'>{row.getValue('publisherCode')}</div>
 		)
 	},
 	// #endregion
@@ -84,7 +84,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 		accessorKey: 'customerName',
 		header: () => <div className='truncate text-left'>Tên khách hàng</div>,
 		cell: ({ row }) => (
-			<div className='w-60 truncate text-left'>
+			<div className='truncate text-left text-xs'>
 				{row.getValue('customerName')}
 			</div>
 		)
@@ -98,7 +98,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 			return filterValue.includes(row.getValue(columnId))
 		},
 		header: () => {
-			return <div className='truncate text-center'>Trạng thái</div>
+			return <div className='truncate text-start'>Trạng thái</div>
 		},
 		cell: ({ row }) => {
 			const status = row.getValue('status')
@@ -107,11 +107,14 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 
 			return (
 				<div
-					className={cn('w-44 truncate rounded-full text-center text-white', {
-						'bg-green-500': status === 'APPROVED',
-						'bg-primary': status === 'REJECTED',
-						'bg-blue-500': status === 'PENDING'
-					})}
+					className={cn(
+						'w-fit truncate rounded-full p-1 text-center text-xs text-white',
+						{
+							'bg-green-500': status === 'APPROVED',
+							'bg-primary': status === 'REJECTED',
+							'bg-blue-500': status === 'PENDING'
+						}
+					)}
 				>
 					{nativeStatus}
 				</div>
@@ -124,7 +127,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 	{
 		accessorKey: 'commision',
 		header: () => {
-			return <div className='truncate text-center'>Hoa hồng</div>
+			return <div className='truncate text-start'>Hoa hồng</div>
 		},
 		cell: ({ row }) => {
 			const status = row.getValue('status')
@@ -139,11 +142,14 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 
 			return (
 				<div
-					className={cn('truncate rounded-full px-2 text-center text-white', {
-						'bg-green-500': status === 'APPROVED',
-						'bg-primary': status === 'REJECTED',
-						'bg-blue-500': status === 'PENDING'
-					})}
+					className={cn(
+						'w-fit truncate rounded-full p-1 px-2 text-center text-xs text-white',
+						{
+							'bg-green-500': status === 'APPROVED',
+							'bg-primary': status === 'REJECTED',
+							'bg-blue-500': status === 'PENDING'
+						}
+					)}
 				>
 					{nativeCurrency}
 				</div>
@@ -156,7 +162,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 	{
 		accessorKey: 'managmentCommission',
 		header: () => {
-			return <div className='truncate text-center'>Hoa hồng AM</div>
+			return <div className='truncate text-left'>Hoa hồng AM</div>
 		},
 		cell: ({ row }) => {
 			const status = row.getValue('status')
@@ -170,44 +176,47 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 
 			return (
 				<div
-					className={cn('truncate rounded-full px-2 text-center text-white', {
-						'bg-green-500': status === 'APPROVED',
-						'bg-primary': status === 'REJECTED',
-						'bg-blue-500': status === 'PENDING'
-					})}
+					className={cn(
+						'w-fit truncate rounded-full p-1 px-2 text-center text-xs text-white',
+						{
+							'bg-green-500': status === 'APPROVED',
+							'bg-primary': status === 'REJECTED',
+							'bg-blue-500': status === 'PENDING'
+						}
+					)}
 				>
 					{nativeCurrency}
 				</div>
 			)
 		}
-	},
+	}
 	// #endregion
 
 	// #region: paymentStatus field
-	{
-		accessorKey: 'paymentStatus',
-		header: () => {
-			return <div className='truncate text-center'>Tình trạng thanh toán</div>
-		},
-		filterFn: (row, columnId, filterValue: string[]) => {
-			return filterValue.includes(row.getValue(columnId))
-		},
-		cell: ({ row }) => {
-			const status = row.getValue('paymentStatus')
+	// {
+	// 	accessorKey: 'paymentStatus',
+	// 	header: () => {
+	// 		return <div className='truncate text-center'>Tình trạng thanh toán</div>
+	// 	},
+	// 	filterFn: (row, columnId, filterValue: string[]) => {
+	// 		return filterValue.includes(row.getValue(columnId))
+	// 	},
+	// 	cell: ({ row }) => {
+	// 		const status = row.getValue('paymentStatus')
 
-			const nativeStatus = PAYMENT_STATUS[status as keyof typeof PAYMENT_STATUS]
+	// 		const nativeStatus = PAYMENT_STATUS[status as keyof typeof PAYMENT_STATUS]
 
-			return (
-				<div
-					className={cn('truncate rounded-full text-center text-white', {
-						'bg-green-500': status === 'PAID',
-						'bg-orange-500': status === 'REMAIN'
-					})}
-				>
-					{nativeStatus}
-				</div>
-			)
-		}
-	}
+	// 		return (
+	// 			<div
+	// 				className={cn('truncate rounded-full text-center text-white', {
+	// 					'bg-green-500': status === 'PAID',
+	// 					'bg-orange-500': status === 'REMAIN'
+	// 				})}
+	// 			>
+	// 				{nativeStatus}
+	// 			</div>
+	// 		)
+	// 	}
+	// }
 	// #endregion
 ]

@@ -21,7 +21,6 @@ import {
 	DropdownMenuCheckboxItem,
 	DropdownMenuContent,
 	DropdownMenuLabel,
-	DropdownMenuSeparator,
 	DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
@@ -54,8 +53,6 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 	campaignData,
 	isPending
 }) => {
-	console.log(data)
-
 	// #region: table
 	const [sorting, setSorting] = useState<SortingState>([
 		{
@@ -97,17 +94,9 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 		'PENDING'
 	])
 
-	const [paymentStatusFilterValue, setPaymentStatusFilterValue] = useState<
-		string[]
-	>(['PAID', 'REMAIN'])
-
 	useEffect(() => {
 		table.getColumn('status')?.setFilterValue(statusFilterValue)
 	}, [statusFilterValue, table])
-
-	useEffect(() => {
-		table.getColumn('paymentStatus')?.setFilterValue(paymentStatusFilterValue)
-	}, [paymentStatusFilterValue, table])
 
 	useEffect(() => {
 		table.getColumn('campaignCode')?.setFilterValue(campaignFilterValue)
@@ -186,43 +175,6 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 									}}
 								/>
 								<Label>Từ chối</Label>
-							</div>
-						</div>
-						{/* Filter by payment status */}
-						<DropdownMenuSeparator />
-						<DropdownMenuLabel>Tình trạng thanh toán</DropdownMenuLabel>
-						<div className='flex flex-col gap-2 px-2 pt-2'>
-							<div className='flex items-center gap-2'>
-								<Checkbox
-									defaultChecked={paymentStatusFilterValue.includes('PAID')}
-									onCheckedChange={checked => {
-										if (checked) {
-											setPaymentStatusFilterValue(state => [...state, 'PAID'])
-											return
-										}
-
-										setPaymentStatusFilterValue(state =>
-											state.filter(status => status !== 'PAID')
-										)
-									}}
-								/>
-								<Label>Đã thanh toán</Label>
-							</div>
-							<div className='flex items-center gap-2'>
-								<Checkbox
-									defaultChecked={paymentStatusFilterValue.includes('REMAIN')}
-									onCheckedChange={checked => {
-										if (checked) {
-											setPaymentStatusFilterValue(state => [...state, 'REMAIN'])
-											return
-										}
-
-										setPaymentStatusFilterValue(state =>
-											state.filter(status => status !== 'REMAIN')
-										)
-									}}
-								/>
-								<Label>Chưa thanh toán</Label>
 							</div>
 						</div>
 					</DropdownMenuContent>
