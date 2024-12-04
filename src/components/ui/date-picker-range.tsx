@@ -2,6 +2,7 @@
 
 import { format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
+import { Dispatch, FC, HTMLAttributes, SetStateAction } from 'react'
 import { DateRange } from 'react-day-picker'
 
 import { Button } from '@/components/ui/button'
@@ -12,7 +13,6 @@ import {
 	PopoverTrigger
 } from '@/components/ui/popover'
 import { cn } from '@/lib/utils'
-import { Dispatch, FC, HTMLAttributes, SetStateAction } from 'react'
 
 interface DatePickerRangeProps extends HTMLAttributes<HTMLDivElement> {
 	date: DateRange | undefined
