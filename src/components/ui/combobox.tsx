@@ -19,6 +19,7 @@ import {
 	PopoverTrigger
 } from '@/components/ui/popover'
 import { cn } from '@/lib/utils'
+import { ComboboxItem } from '@/types'
 
 interface ComboboxProps {
 	items: {
@@ -28,7 +29,7 @@ interface ComboboxProps {
 	}[]
 	isLoading?: boolean
 	notFoundMessage?: string
-	onSelect?: (id: string) => void
+	onSelect?: (item: ComboboxItem) => void
 	placeholder?: string
 	initalData: string
 	value: string
@@ -102,7 +103,7 @@ const Combobox: FC<ComboboxProps> = ({
 										setOpen(false)
 
 										if (onSelect) {
-											onSelect(item.id)
+											onSelect(item)
 										}
 									}}
 								>

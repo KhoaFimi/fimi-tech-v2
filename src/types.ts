@@ -41,3 +41,18 @@ export type BankType = {
 	isTransfer: number
 	swift_code: string
 }
+
+export type Report = {
+	id: string
+	createdAt: string
+	publisherCode: string
+	campaignCode: string
+	customerName: string
+	customerPhone: string
+	customerEmail: string
+	customerProvince: string
+	status: 'APPROVED' | 'REJECTED' | 'PENDING'
+	commision: number
+	paymentStatus: 'PAID' | 'REMAIN'
+	managerCode: string
+}

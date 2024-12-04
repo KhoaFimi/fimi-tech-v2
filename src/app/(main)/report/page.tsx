@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 
-import ReportScreen from '@/app/(main)/report/_components/resport-screen'
+import ReportScreen from '@/app/(main)/report/_components/report-screen'
 import { ComboboxItem } from '@/types'
 
 const ReportPage = async () => {
