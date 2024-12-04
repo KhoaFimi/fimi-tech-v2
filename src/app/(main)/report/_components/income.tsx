@@ -14,10 +14,10 @@ export const Income: FC<{
 	return (
 		<div className='flex w-full flex-col items-start justify-start gap-x-8 gap-y-1.5 rounded-md bg-primary px-2 py-2 shadow-md lg:flex-row lg:items-center'>
 			<div className='flex flex-col items-start'>
-				<p className='text-sm font-bold uppercase tracking-tighter text-white lg:text-center lg:text-lg'>
+				<p className='text-sm font-bold uppercase tracking-tighter text-white lg:text-center lg:text-base'>
 					Doanh thu
 				</p>
-				<p className='text-sm font-bold uppercase tracking-tighter text-white lg:text-center lg:text-lg'>
+				<p className='text-sm font-bold uppercase tracking-tighter text-white lg:text-center lg:text-base'>
 					{(personelIncome + managmentIncome).toLocaleString('vi-VN', {
 						style: 'currency',
 						currency: 'VND'
@@ -25,7 +25,7 @@ export const Income: FC<{
 				</p>
 			</div>
 			<div className='flex flex-col items-start gap-y-1 border-l border-white px-2'>
-				<div className='flex items-start gap-x-1 text-sm font-semibold text-white/90'>
+				<div className='flex items-start gap-x-1 text-xs font-semibold text-white/90'>
 					<Calculator
 						strokeWidth={3}
 						className='inline-flex size-4 items-baseline'
@@ -38,7 +38,7 @@ export const Income: FC<{
 						})}
 					</p>
 				</div>
-				<div className='flex items-start gap-x-1 text-sm font-semibold text-white/90'>
+				<div className='flex items-start gap-x-1 text-xs font-semibold text-white/90'>
 					<User2
 						strokeWidth={3}
 						className='inline-flex size-4 items-baseline'
@@ -51,7 +51,7 @@ export const Income: FC<{
 						})}
 					</p>
 				</div>
-				<div className='flex items-start gap-x-1 text-sm font-semibold text-white/90'>
+				<div className='flex items-start gap-x-1 text-xs font-semibold text-white/90'>
 					<Users2
 						strokeWidth={3}
 						className='inline-flex size-4 items-baseline'
@@ -87,8 +87,8 @@ export const IncomeDetail: FC<{
 		<div>
 			<div className='hidden grid-cols-2 gap-2 lg:grid'>
 				<div className='flex flex-col items-center justify-center gap-1.5 rounded-md bg-primary p-1.5 text-white'>
-					<p className='font-semibold'>Đã thanh toán</p>
-					<p className='text-lg font-semibold'>
+					<p className='text-base font-semibold'>Đã thanh toán</p>
+					<p className='text-base font-semibold'>
 						{data.paid.toLocaleString('vi-VN', {
 							style: 'currency',
 							currency: 'VND'
@@ -96,8 +96,8 @@ export const IncomeDetail: FC<{
 					</p>
 				</div>
 				<div className='flex flex-col items-center justify-center gap-1.5 rounded-md bg-primary p-1.5 text-white'>
-					<p className='font-semibold'>Còn lại</p>
-					<p className='text-lg font-semibold'>
+					<p className='text-base font-semibold'>Còn lại</p>
+					<p className='text-base font-semibold'>
 						{data.remain.toLocaleString('vi-VN', {
 							style: 'currency',
 							currency: 'VND'
