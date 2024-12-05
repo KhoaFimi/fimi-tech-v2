@@ -21,6 +21,7 @@ export enum NATIVE_COLUMNS {
 	status = 'Trạng thái',
 	commision = 'Hoa hồng',
 	campaignCode = 'Chiến dịch',
-	managmentCommision = 'Hoa hồng quản lý',
+	publisherCode = 'Mã giới thiệu',
+	managmentCommission = 'Hoa hồng AM',
 	paymentStatus = 'Tình trạng thanh toán'
 }

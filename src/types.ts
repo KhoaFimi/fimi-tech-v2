@@ -56,3 +56,22 @@ export type Report = {
 	paymentStatus: 'PAID' | 'REMAIN'
 	managerCode: string
 }
+
+export type ReportResponse = {
+	data: Report[]
+	commision: {
+		pub: number
+		am: number
+		total: number
+		remain: number
+		paid: number
+	}
+	order: {
+		total: number
+		amOrder: number
+		pubOrder: number
+		approved: number
+		rejected: number
+		pending: number
+	}
+}
