@@ -14,8 +14,8 @@ const RegisterLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<>
 			<Header />
-			<main className='flex w-full items-center justify-center pt-8'>
-				<div className='container px-4'>{children}</div>
+			<main className='justify-center pt-8'>
+				<div className='container mx-auto px-2'>{children}</div>
 			</main>
 			<Policies />
 			<RegisterSuccessDialog />

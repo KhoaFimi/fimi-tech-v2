@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils'
 import { QueryProvider } from '@/providers/query.provider'
 
 import ogImage from '../../public/og.jpg'
+import ThemeProvider from '@/providers/theme.provider'
 
 export const metadata: Metadata = {
 	title: {
@@ -40,14 +41,19 @@ const font = Montserrat({
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<html lang='en'>
+		<html
+			lang='en'
+			suppressHydrationWarning
+		>
 			<body className={cn('antialiased', font.className)}>
-				<QueryProvider>
-					{children}
-					<ReactQueryDevtools initialIsOpen={false} />
-				</QueryProvider>
-				<Toaster />
-				<GoogleAnalytics gaId='G-9K0WHTB0EB' />
+				<ThemeProvider>
+					<QueryProvider>
+						{children}
+						<ReactQueryDevtools initialIsOpen={false} />
+					</QueryProvider>
+					<Toaster />
+					<GoogleAnalytics gaId='G-9K0WHTB0EB' />
+				</ThemeProvider>
 			</body>
 		</html>
 	)
