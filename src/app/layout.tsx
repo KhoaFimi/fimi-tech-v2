@@ -9,9 +9,9 @@ import { FC, PropsWithChildren } from 'react'
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import { QueryProvider } from '@/providers/query.provider'
+import ThemeProvider from '@/providers/theme.provider'
 
 import ogImage from '../../public/og.jpg'
-import ThemeProvider from '@/providers/theme.provider'
 
 export const metadata: Metadata = {
 	title: {
