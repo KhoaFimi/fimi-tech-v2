@@ -13,7 +13,6 @@ import { Columns3, Filter, FilterX, Search } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
 
 import { managmentReportColumns } from '@/app/(main)/report/_components/managment-report/colunms'
-import { personelReportColumns } from '@/app/(main)/report/_components/personel-report/columns'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import {
@@ -21,6 +20,7 @@ import {
 	DropdownMenuCheckboxItem,
 	DropdownMenuContent,
 	DropdownMenuLabel,
+	DropdownMenuSeparator,
 	DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import { Input } from '@/components/ui/input'
@@ -30,6 +30,7 @@ import {
 	PopoverContent,
 	PopoverTrigger
 } from '@/components/ui/popover'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import {
 	Table,
 	TableBody,
@@ -43,6 +44,7 @@ import { cn } from '@/lib/utils'
 import { ComboboxItem, Report } from '@/types'
 
 interface ManagmentReportProps {
+	publisherCode: string
 	data: Report[]
 	campaignData: ComboboxItem[]
 	isPending: boolean
@@ -51,6 +53,7 @@ interface ManagmentReportProps {
 const ManagmentReport: FC<ManagmentReportProps> = ({
 	data,
 	campaignData,
+	publisherCode,
 	isPending
 }) => {
 	// #region: table
@@ -61,7 +64,15 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 		}
 	])
 
-	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([
+		{
+			id: 'managerCode',
+			value: {
+				publisherCode,
+				type: 'all'
+			}
+		}
+	])
 
 	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
 
@@ -118,14 +129,49 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button
+							size='sm'
 							className='justify-start border-primary font-semibold text-foreground/70'
 							variant='outline'
 						>
-							<Filter strokeWidth={3} /> Lọc theo trạng thái
+							<Filter strokeWidth={3} /> Trạng thái / Loại đơn
 						</Button>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent className='w-80'>
 						{/* Filter by order status */}
+						<DropdownMenuLabel>Loại đơn</DropdownMenuLabel>
+						<RadioGroup
+							className='px-2 pt-2'
+							defaultValue='all'
+							onValueChange={value =>
+								table.getColumn('managerCode')?.setFilterValue({
+									publisherCode,
+									type: value
+								})
+							}
+						>
+							<div className='flex items-center space-x-2'>
+								<RadioGroupItem
+									value='all'
+									id='r1'
+								/>
+								<Label htmlFor='r1'>Tất cả</Label>
+							</div>
+							<div className='flex items-center space-x-2'>
+								<RadioGroupItem
+									value='am'
+									id='r2'
+								/>
+								<Label htmlFor='r2'>Đơn AM</Label>
+							</div>
+							<div className='flex items-center space-x-2'>
+								<RadioGroupItem
+									value='pub'
+									id='r3'
+								/>
+								<Label htmlFor='r3'>Đơn cá nhân</Label>
+							</div>
+						</RadioGroup>
+						<DropdownMenuSeparator />
 						<DropdownMenuLabel>Trạng thái đơn</DropdownMenuLabel>
 						<div className='flex flex-col gap-2 px-2 pt-2'>
 							<div className='flex items-center gap-2'>
@@ -180,26 +226,36 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 					</DropdownMenuContent>
 				</DropdownMenu>
 
-				{/* Filter by campaign */}
+				{/* Filter by campaign and order type */}
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button
+							size='sm'
 							className='justify-start border-primary font-semibold text-foreground/70'
 							variant='outline'
 						>
-							<Filter strokeWidth={3} /> Lọc theo chiến dịch
+							<Filter strokeWidth={3} /> Chiến dịch
 						</Button>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent className='w-80'>
 						<DropdownMenuLabel>Chiến dịch</DropdownMenuLabel>
 						<div className='flex flex-col gap-2'>
-							<Button
-								onClick={() =>
-									setCampaignFilterValue(campaignData.map(data => data.value))
-								}
-							>
-								<Filter /> Thêm toàn bộ filter
-							</Button>
+							<div className='flex items-center gap-2'>
+								<Button
+									size='sm'
+									onClick={() =>
+										setCampaignFilterValue(campaignData.map(data => data.value))
+									}
+								>
+									<Filter /> Chọn tất cả
+								</Button>
+								<Button
+									size='sm'
+									onClick={() => setCampaignFilterValue([])}
+								>
+									<FilterX /> Xoá tất cả
+								</Button>
+							</div>
 							<div className='grid max-h-80 grid-cols-3 gap-2 overflow-y-auto px-2 pt-2'>
 								{campaignData.map(campaign => (
 									<div
@@ -232,9 +288,6 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 									</div>
 								))}
 							</div>
-							<Button onClick={() => setCampaignFilterValue([])}>
-								<FilterX /> Xoá filter
-							</Button>
 						</div>
 					</DropdownMenuContent>
 				</DropdownMenu>
@@ -243,6 +296,7 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 				<Popover>
 					<PopoverTrigger asChild>
 						<Button
+							size='sm'
 							className='justify-start border-primary font-semibold text-foreground/70'
 							variant='outline'
 						>
@@ -334,6 +388,7 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
 						<Button
+							size='sm'
 							variant='outline'
 							className='justify-start border-primary font-semibold text-foreground/70'
 						>
@@ -348,6 +403,7 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 						{table
 							.getAllColumns()
 							.filter(column => column.getCanHide())
+							.filter(column => column.id !== 'managerCode')
 							.map(column => {
 								return (
 									<DropdownMenuCheckboxItem
@@ -369,18 +425,20 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 					<TableHeader className='sticky inset-x-0 top-0 z-30 bg-background'>
 						{table.getHeaderGroups().map(headerGroup => (
 							<TableRow key={headerGroup.id}>
-								{headerGroup.headers.map(header => (
-									<TableHead key={header.id}>
-										<div className='flex flex-col gap-1'>
-											{header.isPlaceholder
-												? null
-												: flexRender(
-														header.column.columnDef.header,
-														header.getContext()
-													)}
-										</div>
-									</TableHead>
-								))}
+								{headerGroup.headers
+									.filter(header => header.id !== 'managerCode')
+									.map(header => (
+										<TableHead key={header.id}>
+											<div className='flex flex-col gap-1'>
+												{header.isPlaceholder
+													? null
+													: flexRender(
+															header.column.columnDef.header,
+															header.getContext()
+														)}
+											</div>
+										</TableHead>
+									))}
 							</TableRow>
 						))}
 					</TableHeader>
@@ -391,20 +449,23 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 									key={row.id}
 									data-state={row.getIsSelected() && 'selected'}
 								>
-									{row.getVisibleCells().map(cell => (
-										<TableCell key={cell.id}>
-											{flexRender(
-												cell.column.columnDef.cell,
-												cell.getContext()
-											)}
-										</TableCell>
-									))}
+									{row
+										.getVisibleCells()
+										.filter(cell => cell.column.id !== 'managerCode')
+										.map(cell => (
+											<TableCell key={cell.id}>
+												{flexRender(
+													cell.column.columnDef.cell,
+													cell.getContext()
+												)}
+											</TableCell>
+										))}
 								</TableRow>
 							))
 						) : isPending ? (
 							<TableRow>
 								<TableCell
-									colSpan={personelReportColumns.length}
+									colSpan={managmentReportColumns.length}
 									className='h-24 text-center'
 								>
 									Đang tải báo cáo
@@ -413,7 +474,7 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 						) : data.length === 0 ? (
 							<TableRow>
 								<TableCell
-									colSpan={personelReportColumns.length}
+									colSpan={managmentReportColumns.length}
 									className='h-24 text-center'
 								>
 									Không tìm thấy kết quả khả dụng, vui lòng kiểm tra lại mã giới
@@ -423,7 +484,7 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 						) : (
 							<TableRow>
 								<TableCell
-									colSpan={personelReportColumns.length}
+									colSpan={managmentReportColumns.length}
 									className='h-24 text-center'
 								>
 									Không tìm thấy kết quả khả dụng

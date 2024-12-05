@@ -10,7 +10,9 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 	// #region: id field
 	{
 		accessorKey: 'id',
-		header: () => <div className='truncate text-left'>Mã đơn</div>,
+		header: () => (
+			<div className='truncate text-left text-xs lg:text-sm'>Mã đơn</div>
+		),
 
 		cell: ({ row }) => (
 			<div className='text-left text-xs'>{row.getValue('id')}</div>
@@ -24,11 +26,11 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 		header: ({ column }) => {
 			return (
 				<div
-					className='flex cursor-pointer items-center justify-start gap-2'
+					className='flex w-fit cursor-pointer items-center justify-start gap-2 text-xs lg:text-sm'
 					onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
 				>
 					<p className='truncate'>Ngày lên đơn</p>
-					<ArrowUpDown className='ml-2 h-4 w-4' />
+					<ArrowUpDown className='ml-2 size-3' />
 				</div>
 			)
 		},
@@ -55,11 +57,11 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 		header: ({ column }) => {
 			return (
 				<div
-					className='flex cursor-pointer items-center justify-start gap-2'
+					className='flex w-fit cursor-pointer items-center justify-start gap-2 text-xs lg:text-sm'
 					onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
 				>
 					<p className='truncate'>Chiến dịch</p>
-					<ArrowUpDown className='ml-2 h-4 w-4' />
+					<ArrowUpDown className='ml-2 size-3' />
 				</div>
 			)
 		},
@@ -72,7 +74,9 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 	// #region: publisherCode field
 	{
 		accessorKey: 'publisherCode',
-		header: () => <div className='truncate text-left'>Mã publisher</div>,
+		header: () => (
+			<div className='truncate text-left text-xs lg:text-sm'>Mã publisher</div>
+		),
 		cell: ({ row }) => (
 			<div className='text-left text-xs'>{row.getValue('publisherCode')}</div>
 		)
@@ -82,7 +86,11 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 	// #region: customerName field
 	{
 		accessorKey: 'customerName',
-		header: () => <div className='truncate text-left'>Tên khách hàng</div>,
+		header: () => (
+			<div className='truncate text-left text-xs lg:text-sm'>
+				Tên khách hàng
+			</div>
+		),
 		cell: ({ row }) => (
 			<div className='truncate text-left text-xs'>
 				{row.getValue('customerName')}
@@ -98,7 +106,9 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 			return filterValue.includes(row.getValue(columnId))
 		},
 		header: () => {
-			return <div className='truncate text-start'>Trạng thái</div>
+			return (
+				<div className='truncate text-start text-xs lg:text-sm'>Trạng thái</div>
+			)
 		},
 		cell: ({ row }) => {
 			const status = row.getValue('status')
@@ -108,7 +118,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 			return (
 				<div
 					className={cn(
-						'w-fit truncate rounded-full p-1 text-center text-xs text-white',
+						'w-fit truncate rounded-md p-1 text-center text-xs leading-none text-white',
 						{
 							'bg-green-500': status === 'APPROVED',
 							'bg-primary': status === 'REJECTED',
@@ -127,7 +137,9 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 	{
 		accessorKey: 'commision',
 		header: () => {
-			return <div className='truncate text-start'>Hoa hồng</div>
+			return (
+				<div className='truncate text-start text-xs lg:text-sm'>Hoa hồng</div>
+			)
 		},
 		cell: ({ row }) => {
 			const status = row.getValue('status')
@@ -143,7 +155,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 			return (
 				<div
 					className={cn(
-						'w-fit truncate rounded-full p-1 px-2 text-center text-xs text-white',
+						'w-fit truncate rounded-md p-1 text-center text-xs leading-none text-white',
 						{
 							'bg-green-500': status === 'APPROVED',
 							'bg-primary': status === 'REJECTED',
@@ -162,7 +174,9 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 	{
 		accessorKey: 'managmentCommission',
 		header: () => {
-			return <div className='truncate text-left'>Hoa hồng AM</div>
+			return (
+				<div className='truncate text-left text-xs lg:text-sm'>Hoa hồng AM</div>
+			)
 		},
 		cell: ({ row }) => {
 			const status = row.getValue('status')
@@ -177,7 +191,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 			return (
 				<div
 					className={cn(
-						'w-fit truncate rounded-full p-1 px-2 text-center text-xs text-white',
+						'w-fit truncate rounded-md p-1 text-center text-xs leading-none text-white',
 						{
 							'bg-green-500': status === 'APPROVED',
 							'bg-primary': status === 'REJECTED',
@@ -188,6 +202,30 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 					{nativeCurrency}
 				</div>
 			)
+		}
+	},
+	// #endregion
+
+	// #region: managerCode field
+	{
+		accessorKey: 'managerCode',
+		enableHiding: false,
+		filterFn: (
+			row,
+			colunmId,
+			filterValue: { type: 'all' | 'am' | 'pub'; publisherCode: string }
+		) => {
+			console.log(colunmId)
+
+			if (filterValue.type === 'all') return true
+
+			if (filterValue.type === 'am')
+				return row.getValue<string>(colunmId) === filterValue.publisherCode
+
+			if (filterValue.type === 'pub')
+				return row.getValue<string>(colunmId) !== filterValue.publisherCode
+
+			return true
 		}
 	}
 	// #endregion

@@ -1,14 +1,12 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
-import { getReport } from '@/app/(main)/report/_actions/get-report'
+import { getReportV2 } from '@/app/(main)/report/_actions/get-report'
 import ManagmentReport from '@/app/(main)/report/_components/managment-report'
-import PersonelReport from '@/app/(main)/report/_components/personel-report'
 import ReportController from '@/app/(main)/report/_components/report-controller'
 import ReportPanel from '@/app/(main)/report/_components/report-panel'
-import { Tabs, TabsContent } from '@/components/ui/tabs'
 import { ComboboxItem } from '@/types'
 
 interface ReportScreenProps {
@@ -17,50 +15,53 @@ interface ReportScreenProps {
 
 const ReportScreen: FC<ReportScreenProps> = ({ campaignData }) => {
 	const [publisherCode, setPublisherCode] = useState<string>('')
-	const [tab, setTab] = useState<string>('personel')
 
-	const { data, isFetching } = useQuery({
+	const { data, isFetching, refetch } = useQuery({
 		queryKey: ['report', publisherCode],
-		queryFn: async () => await getReport(publisherCode),
+		queryFn: async () => await getReportV2(publisherCode),
 		enabled: !!publisherCode
 	})
+
+	useEffect(() => {
+		console.log(data)
+	}, [data])
+
+	const defaultOrder = {
+		total: 0,
+		amOrder: 0,
+		pubOrder: 0,
+		approved: 0,
+		rejected: 0,
+		pending: 0
+	}
+
+	const defaultCommision = {
+		pub: 0,
+		am: 0,
+		total: 0,
+		remain: 0,
+		paid: 0
+	}
 
 	return (
 		<div className='flex flex-col gap-2'>
 			<ReportController
-				isPending={!!data}
+				isPending={isFetching}
 				setPublisherCode={setPublisherCode}
-				tab={tab}
-				setTab={setTab}
+				refetch={refetch}
 			/>
 
-			<ReportPanel data={data} />
+			<ReportPanel
+				order={!data ? defaultOrder : data.order}
+				commision={!data ? defaultCommision : data.commision}
+			/>
 
-			<Tabs
-				value={tab}
-				onValueChange={value => setTab(value)}
-			>
-				<TabsContent
-					value='personel'
-					className='mt-0'
-				>
-					<PersonelReport
-						isPending={isFetching}
-						data={!data ? [] : data.personelRes}
-						campaignData={campaignData}
-					/>
-				</TabsContent>
-				<TabsContent
-					value='managment'
-					className='mt-0'
-				>
-					<ManagmentReport
-						isPending={isFetching}
-						data={!data ? [] : data.managmentRes}
-						campaignData={campaignData}
-					/>
-				</TabsContent>
-			</Tabs>
+			<ManagmentReport
+				publisherCode={publisherCode}
+				isPending={isFetching}
+				data={!data ? [] : data.data}
+				campaignData={campaignData}
+			/>
 		</div>
 	)
 }
