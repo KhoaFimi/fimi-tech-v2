@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ children }) => {
 	return (
 		<header className='sticky inset-x-0 top-0 z-50 flex w-full items-center justify-center bg-gradient-to-r from-primary to-secondary shadow-md'>
-			<div className='container flex flex-col items-center justify-between gap-4 px-2 py-2 md:px-28 lg:flex-row'>
+			<div className='container flex flex-col items-center justify-between gap-4 px-2 py-2 lg:flex-row'>
 				<Link
 					href='https://partner.fimi.tech/chien-dich'
 					target='_blank'

@@ -88,4 +88,9 @@
 	input[type='date']::-webkit-input-placeholder {
 		@apply !hidden;
 	}
+
+	input[type='password']::-ms-reveal,
+	input[type='password']::-ms-clear {
+		@apply !hidden;
+	}
 }

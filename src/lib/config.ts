@@ -26,7 +26,9 @@ export const envSchema = z.object({
 	GOOGLE_CLIENT_ID: z.string(),
 	GOOGLE_CLIENT_SECRET: z.string(),
 	GOOGLE_REFRESH_TOKEN: z.string(),
-	ADMIN_EMAIL_ADDRESS: z.string().email()
+	ADMIN_EMAIL_ADDRESS: z.string().email(),
+	ACCESS_TOKEN_SECRET: z.string(),
+	REFRESH_TOKEN_SECRET: z.string()
 })
 
 declare global {

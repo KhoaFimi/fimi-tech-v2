@@ -12,6 +12,9 @@ import { QueryProvider } from '@/providers/query.provider'
 import ThemeProvider from '@/providers/theme.provider'
 
 import ogImage from '../../public/og.jpg'
+import AuthLayout from '@/app/(main)/(auth)/layout'
+import AuthProvider from '@/providers/auth-provider'
+import { cookies } from 'next/headers'
 
 export const metadata: Metadata = {
 	title: {
@@ -39,7 +42,11 @@ const font = Montserrat({
 	subsets: ['vietnamese', 'latin']
 })
 
-const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
+	const cookieStore = await cookies()
+
+	const accessToken = cookieStore.get('access-token')
+
 	return (
 		<html
 			lang='en'
@@ -47,12 +54,14 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
 		>
 			<body className={cn('antialiased', font.className)}>
 				<ThemeProvider>
-					<QueryProvider>
-						{children}
-						<ReactQueryDevtools initialIsOpen={false} />
-					</QueryProvider>
-					<Toaster />
-					<GoogleAnalytics gaId='G-9K0WHTB0EB' />
+					<AuthProvider accessToken={accessToken}>
+						<QueryProvider>
+							{children}
+							<ReactQueryDevtools initialIsOpen={false} />
+						</QueryProvider>
+						<Toaster />
+						<GoogleAnalytics gaId='G-9K0WHTB0EB' />
+					</AuthProvider>
 				</ThemeProvider>
 			</body>
 		</html>
