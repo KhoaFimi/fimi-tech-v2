@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs'
 
 import ReportScreen from '@/app/(main)/(pages)/report/_components/report-screen'
+import { verifySession } from '@/lib/dal'
 import { ComboboxItem } from '@/types'
 
 const ReportPage = async () => {
@@ -11,7 +12,14 @@ const ReportPage = async () => {
 
 	const campaignData: ComboboxItem[] = JSON.parse(file)
 
-	return <ReportScreen campaignData={campaignData} />
+	const { publisherCode } = await verifySession()
+
+	return (
+		<ReportScreen
+			campaignData={campaignData}
+			publisherCode={publisherCode}
+		/>
+	)
 }
 
 export default ReportPage

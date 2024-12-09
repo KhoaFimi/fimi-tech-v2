@@ -1,3 +1,4 @@
+import { QueryObserverResult, RefetchOptions } from '@tanstack/react-query'
 import {
 	ColumnFiltersState,
 	flexRender,
@@ -9,7 +10,7 @@ import {
 	useReactTable,
 	VisibilityState
 } from '@tanstack/react-table'
-import { Columns3, Filter, FilterX, Search } from 'lucide-react'
+import { Columns3, Filter, FilterX, RefreshCcw, Search } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
 
 import { managmentReportColumns } from '@/app/(main)/(pages)/report/_components/managment-report/colunms'
@@ -41,20 +42,24 @@ import {
 } from '@/components/ui/table'
 import { NATIVE_COLUMNS } from '@/constant/enum'
 import { cn } from '@/lib/utils'
-import { ComboboxItem, Report } from '@/types'
+import { ComboboxItem, Report, ReportResponse } from '@/types'
 
 interface ManagmentReportProps {
 	publisherCode: string
 	data: Report[]
 	campaignData: ComboboxItem[]
 	isPending: boolean
+	refetch: (
+		options?: RefetchOptions
+	) => Promise<QueryObserverResult<ReportResponse, Error>>
 }
 
 const ManagmentReport: FC<ManagmentReportProps> = ({
 	data,
 	campaignData,
 	publisherCode,
-	isPending
+	isPending,
+	refetch
 }) => {
 	// #region: table
 	const [sorting, setSorting] = useState<SortingState>([
@@ -439,6 +444,16 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 											</div>
 										</TableHead>
 									))}
+								<TableHead>
+									<Button
+										className='my-auto size-7 border border-primary align-middle text-primary hover:text-primary'
+										variant='outline'
+										disabled={isPending}
+										onClick={() => refetch({})}
+									>
+										<RefreshCcw />
+									</Button>
+								</TableHead>
 							</TableRow>
 						))}
 					</TableHeader>

@@ -24,7 +24,6 @@ import {
 	FormMessage
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { useAuthContext } from '@/contexts/auth-context'
 
 const LoginForm = () => {
 	const form = useForm<LoginSchema>({
@@ -35,8 +34,6 @@ const LoginForm = () => {
 		}
 	})
 
-	const { setIsAuth } = useAuthContext()
-
 	const [error, setError] = useState<string | undefined>(undefined)
 
 	const { mutate, isPending } = useMutation({
@@ -46,8 +43,6 @@ const LoginForm = () => {
 				setError(data.error)
 				return
 			}
-
-			setIsAuth(true)
 		}
 	})
 

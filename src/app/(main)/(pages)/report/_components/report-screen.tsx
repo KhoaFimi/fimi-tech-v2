@@ -1,24 +1,25 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
 import { getReportV2 } from '@/app/(main)/(pages)/report/_actions/get-report'
 import ManagmentReport from '@/app/(main)/(pages)/report/_components/managment-report'
-import ReportController from '@/app/(main)/(pages)/report/_components/report-controller'
 import ReportPanel from '@/app/(main)/(pages)/report/_components/report-panel'
 import { ComboboxItem } from '@/types'
 
 interface ReportScreenProps {
 	campaignData: ComboboxItem[]
+	publisherCode: string
 }
 
-const ReportScreen: FC<ReportScreenProps> = ({ campaignData }) => {
-	const [publisherCode, setPublisherCode] = useState<string>('')
-
+const ReportScreen: FC<ReportScreenProps> = ({
+	campaignData,
+	publisherCode
+}) => {
 	const { data, isFetching, refetch } = useQuery({
 		queryKey: ['report', publisherCode],
-		queryFn: async () => await getReportV2(publisherCode)
+		queryFn: getReportV2
 	})
 
 	const defaultOrder = {
@@ -40,11 +41,11 @@ const ReportScreen: FC<ReportScreenProps> = ({ campaignData }) => {
 
 	return (
 		<div className='flex flex-col gap-2'>
-			<ReportController
+			{/* <ReportController
 				isPending={isFetching}
 				setPublisherCode={setPublisherCode}
 				refetch={refetch}
-			/>
+			/> */}
 
 			<ReportPanel
 				order={!data ? defaultOrder : data.order}
@@ -52,6 +53,7 @@ const ReportScreen: FC<ReportScreenProps> = ({ campaignData }) => {
 			/>
 
 			<ManagmentReport
+				refetch={refetch}
 				publisherCode={publisherCode}
 				isPending={isFetching}
 				data={!data ? [] : data.data}

@@ -1,13 +1,18 @@
 'use server'
 
+import { redirect } from 'next/navigation'
+
 import { config } from '@/lib/config'
+import { verifySession } from '@/lib/dal'
 import { getSheets } from '@/lib/server/google-sheets'
 import { Report, ReportResponse } from '@/types'
 
-export const getReportV2 = async (
-	publisherCode: string
-): Promise<ReportResponse> => {
+export const getReportV2 = async (): Promise<ReportResponse> => {
 	const sheets = await getSheets()
+
+	const { isAuth, publisherCode } = await verifySession()
+
+	if (!isAuth) redirect('/login')
 
 	const {
 		data: { values: reports }
