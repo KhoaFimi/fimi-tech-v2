@@ -2,7 +2,6 @@ import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
 const authRoutes = ['/register', '/login']
-const publicRoutes = ['/credit']
 const protectedRoutes = ['/report', '/campaign']
 
 export default async function middleware(req: NextRequest) {
@@ -30,5 +29,5 @@ export default async function middleware(req: NextRequest) {
 }
 
 export const config = {
-	matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)', ...publicRoutes]
+	matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)', '/credit']
 }
