@@ -4,9 +4,9 @@ import { config } from '@/lib/config'
 import { getSheets } from '@/lib/server/google-sheets'
 import { Report, ReportResponse } from '@/types'
 
-export const getReportV2 = async (): Promise<ReportResponse> => {
-	const publisherCode = 'FIMI00001'
-
+export const getReportV2 = async (
+	publisherCode: string
+): Promise<ReportResponse> => {
 	const sheets = await getSheets()
 
 	const {
