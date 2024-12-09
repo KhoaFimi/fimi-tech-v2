@@ -12,7 +12,7 @@ const Navbar = async () => {
 			<div className='hidden items-center gap-x-2 divide-x-[2px] lg:flex'>
 				<Navmenu />
 
-				<p className='text-base font-bold text-white'>Chào, {fullname}</p>
+				<p className='pl-2 text-base font-bold text-white'>Chào, {fullname}</p>
 				<form action={logout}>
 					<button
 						type='submit'
