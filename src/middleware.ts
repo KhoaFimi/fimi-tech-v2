@@ -1,13 +1,14 @@
 import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 
-const publicRoutes = ['/credit', '/register', '/login']
+const authRoutes = ['/register', '/login']
+const publicRoutes = ['/credit']
 const protectedRoutes = ['/report', '/campaign']
 
 export default async function middleware(req: NextRequest) {
 	const path = req.nextUrl.pathname
 	const isProtectedRoute = protectedRoutes.includes(path)
-	const isPublicRoute = publicRoutes.includes(path)
+	const isAuthRoute = authRoutes.includes(path)
 
 	const cookieStore = await cookies()
 
@@ -18,7 +19,7 @@ export default async function middleware(req: NextRequest) {
 	}
 
 	if (
-		isPublicRoute &&
+		isAuthRoute &&
 		accessToken &&
 		!req.nextUrl.pathname.startsWith('/campaign')
 	) {
@@ -29,5 +30,5 @@ export default async function middleware(req: NextRequest) {
 }
 
 export const config = {
-	matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)']
+	matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)', ...publicRoutes]
 }
