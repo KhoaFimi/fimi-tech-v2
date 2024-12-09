@@ -75,3 +75,10 @@ export type ReportResponse = {
 		pending: number
 	}
 }
+
+export type TokenPayload = {
+	sub: string
+	publisherCode: string
+	managerCode: string
+	fullname: string
+}

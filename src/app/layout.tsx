@@ -39,7 +39,7 @@ const font = Montserrat({
 	subsets: ['vietnamese', 'latin']
 })
 
-const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
 	return (
 		<html
 			lang='en'
