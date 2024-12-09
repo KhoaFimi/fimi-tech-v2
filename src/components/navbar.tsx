@@ -1,16 +1,11 @@
 'use client'
 
 import { logout } from '@/actions/logout'
-import { useAuthContext } from '@/contexts/auth-context'
 
 const Navbar = () => {
-	const { user, isAuth } = useAuthContext()
-
-	if (!isAuth) return null
-
 	return (
 		<div className='flex items-center gap-x-2 divide-x-[2px]'>
-			<p className='text-base font-bold text-white'>Chào, {user.fullname}</p>
+			<p className='text-base font-bold text-white'>Chào,</p>
 			<form action={logout}>
 				<button
 					type='submit'

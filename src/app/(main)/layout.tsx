@@ -1,5 +1,3 @@
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 import { FC, PropsWithChildren } from 'react'
 
 import RegisterSuccessDialog from '@/app/(main)/(auth)/register/_components/success-dialog'
@@ -9,10 +7,6 @@ import Navbar from '@/components/navbar'
 import Policies from '@/components/policies'
 
 const MainLayout: FC<PropsWithChildren> = async ({ children }) => {
-	const cookieStore = await cookies()
-
-	const accessToken = cookieStore.get('access-token')
-
 	return (
 		<>
 			<Header>
