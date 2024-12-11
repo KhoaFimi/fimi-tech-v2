@@ -1,4 +1,4 @@
-import { TriangleAlert } from 'lucide-react'
+import { Loader2, TriangleAlert } from 'lucide-react'
 import { FC } from 'react'
 import { LuBan, LuCheckCircle } from 'react-icons/lu'
 
@@ -34,6 +34,15 @@ export const FormWarning: FC<FormResponseProps> = ({ message }) => {
 	return (
 		<div className='flex items-center gap-x-1.5 rounded-md bg-orange-500/15 p-3 text-sm text-orange-500'>
 			<TriangleAlert className='size-4' />
+			<p className='tracking-tight'>{message}</p>
+		</div>
+	)
+}
+
+export const FormPending: FC<FormResponseProps> = ({ message }) => {
+	return (
+		<div className='flex items-center gap-x-1.5 rounded-md bg-foreground/15 p-3 text-sm text-foreground/50'>
+			<Loader2 className='size-4 animate-spin' />
 			<p className='tracking-tight'>{message}</p>
 		</div>
 	)

@@ -6,7 +6,6 @@ import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import { FC, PropsWithChildren } from 'react'
 
-import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 import { QueryProvider } from '@/providers/query.provider'
 import ThemeProvider from '@/providers/theme.provider'
@@ -51,7 +50,6 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
 						{children}
 						<ReactQueryDevtools initialIsOpen={false} />
 					</QueryProvider>
-					<Toaster />
 					<GoogleAnalytics gaId='G-9K0WHTB0EB' />
 				</ThemeProvider>
 			</body>

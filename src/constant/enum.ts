@@ -25,3 +25,19 @@ export enum NATIVE_COLUMNS {
 	managmentCommission = 'Hoa hồng AM',
 	paymentStatus = 'Tình trạng thanh toán'
 }
+
+export enum PRODUCT_CATEGORY {
+	all = 'ALL',
+	creditCard = 'CREDIT_CARD',
+	paymentAccount = 'PAYMENT_ACCOUNT',
+	recruitment = 'RECRUITMENT',
+	loan = 'LOAN'
+}
+
+export enum PRODUCT_CATEGORY_DESSRIPTION {
+	all = 'Tất cả',
+	creditCard = 'Thẻ tín dụng',
+	paymentAccount = 'Tài khoàn thanh thoán',
+	recruitment = 'Tuyến dụng',
+	loan = 'Vay tín chấp'
+}

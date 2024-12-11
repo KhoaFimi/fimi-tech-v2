@@ -5,20 +5,22 @@ import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import Policies from '@/components/policies'
+import { Toaster } from '@/components/ui/sonner'
 
 const MainLayout: FC<PropsWithChildren> = async ({ children }) => {
 	return (
-		<>
+		<div className='flex h-screen flex-col gap-y-2'>
 			<Header>
 				<Navbar />
 			</Header>
-			<main className='h-screen justify-center pt-8'>
-				<div className='container mx-auto px-2'>{children}</div>
+			<main className='flex-1 justify-center pt-8'>
+				<div className='mx-auto'>{children}</div>
 			</main>
 			<Policies />
+			<Toaster />
 			<RegisterSuccessDialog />
 			<Footer />
-		</>
+		</div>
 	)
 }
 
