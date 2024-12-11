@@ -29,7 +29,8 @@ const CampaignIdPage: FC<CampaignIdPageProps> = async ({ params }) => {
 
 	await queryClient.prefetchQuery({
 		queryKey: ['invite-link', publisherCode, managerCode],
-		queryFn: async () => getInviteLink({ publisherCode, managerCode })
+		queryFn: async () =>
+			getInviteLink({ publisherCode, managerCode, product: campaignId })
 	})
 
 	return (
