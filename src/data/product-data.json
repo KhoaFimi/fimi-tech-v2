@@ -1504,7 +1504,7 @@
 		"link": "https://aff.fimi.tech/register?ref={{code}}",
 		"show": {
 			"income": "10% doanh thu từ publisher đã tuyển dụng",
-			"image": "hdb4in1.svg",
+			"image": "pub.jpg",
 			"condition": "Có mã giới thiệu của FIMI",
 			"keyFeature": "Giới thiệu tạo mã giới thiệu, nhận ngay doanh thu quản lý lên đến 10% trên đơn"
 		},
