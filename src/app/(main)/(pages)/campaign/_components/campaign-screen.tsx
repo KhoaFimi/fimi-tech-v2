@@ -53,7 +53,7 @@ const CampaignScreen = () => {
 		)
 
 	return (
-		<div className='relative flex flex-col items-center gap-y-4'>
+		<div className='relative flex flex-col items-center gap-y-4 pt-12'>
 			<div className='flex items-center justify-center overflow-hidden rounded-lg border shadow-md'>
 				<Image
 					src='/bg-img.svg'
