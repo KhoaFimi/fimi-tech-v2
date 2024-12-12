@@ -1495,5 +1495,60 @@
 			"Mở thẻ cho khách lấy hoa hồng, khách không kích hoạt thẻ và dùng thẻ;",
 			"Mở thẻ chỉ rút tiền mặt, đáo hạn khoản vay hoặc thẻ tín dụng khác."
 		]
+	},
+	{
+		"id": "fimiinvite",
+		"category": "RECRUITMENT",
+		"name": "Tuyển dụng Publisher",
+		"advertiser": "FIMI Tech",
+		"link": "https://aff.fimi.tech/register?ref={{code}}",
+		"show": {
+			"income": "10% doanh thu từ publisher đã tuyển dụng",
+			"image": "hdb4in1.svg",
+			"condition": "Có mã giới thiệu của FIMI",
+			"keyFeature": "Giới thiệu tạo mã giới thiệu, nhận ngay doanh thu quản lý lên đến 10% trên đơn"
+		},
+		"productOffer": [
+			{
+				"summary": "Giới thiệu bạn bè, người thân tham gia trở thành Publisher và bắt đầu hành trình bán hàng tại FIMI.",
+				"offer": [
+					"Chiến dịch Tuyển dụng Publisher” là cơ hội để bạn gia tăng thu nhập bằng cách giới thiệu bạn bè, người thân tham gia trở thành Publisher và bắt đầu hành trình bán hàng tại FIMI. Khi người được giới thiệu đăng ký thành công và phát sinh doanh thu, bạn sẽ nhận ngay khoản thưởng giới thiệu không giới hạn.",
+					"Không giới hạn số lượng Publisher được giới thiệu",
+					"Thu nhập theo mỗi đơn Publisher bạn quản lý"
+				]
+			}
+		],
+		"customerRequirement": "Từ 18 tuổi",
+		"supportArea": "all",
+		"requiredDocuments": "CCCD",
+		"approvalTime": "Ngay khi hoàn tất đăng ký mã giới thiệu",
+		"finalResultTime": "Ngay khi hoàn tất đăng ký mã giới thiệu",
+		"commisionPolicy": {
+			"status": "Ghi nhận hoa hồng",
+			"description": "Trạng thái trên đơn có mã Publisher tương ứng là 'Ghi nhận hoa hồng'",
+			"commision": ["10% doanh thu của Publisher được giới thiệu"]
+		},
+		"recognitionRules": {
+			"summary": "Khoản thưởng giới thiệu được ghi nhận khi:",
+			"rules": [
+				"Publisher được giới thiệu thực hiện đăng ký thành công và ghi nhận mã người giới thiệu (lưu ý người được giới thiệu chưa từng có mã giới thiệu tại FIMI)",
+				" Publisher được giới thiệu phát sinh doanh thu bán hàng (doanh thu của Publisher được giới thiệu không gồm doanh thu từ các chương trình Publisher Referral, chiến dịch thưởng: contest thi đua, game...)"
+			],
+			"note": "Trường hợp FIMI phát hiện người giới thiệu có hành vi gian lận trong việc giới thiệu Publisher hoặc truyền thông lừa đảo ảnh hưởng đến thương hiệu của FIMI, thì FIMI có quyền hủy toàn bộ kết quả doanh thu của Publisher được giới thiệu"
+		},
+		"registrationProcess": [
+			"B1: Khách hàng click vào link được publisher giới thiệu, hoàn tất điền thông tin.",
+			"B2: Hoàn tất thông tin đăng ký.",
+			"B3: Tiến hành lên đơn đầu tiên"
+		],
+		"rejectReason": [
+			"Người được giới thiệu nhập sai thông tin, giả mạo hồ sơ của người khác;",
+			"Người được giới thiệu đã tồn tại trên hệ thống của FIMI"
+		],
+		"unqualifiedRecords": [
+			"CCCD không đúng với số CCCD đã đăng ký trên hệ thống",
+			"Số diện thoại đã tồn tại trên hệ thống",
+			"Email không chính xác hoặc đã tồn tại trên hệ thống"
+		]
 	}
 ]

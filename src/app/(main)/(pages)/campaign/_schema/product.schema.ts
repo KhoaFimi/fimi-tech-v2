@@ -11,6 +11,7 @@ export const productSchema = z.object({
 	show: z.object({
 		image: z.string(),
 		limit: z.string().optional().nullish(),
+		income: z.string().optional().nullish(),
 		paymentLimit: z.string().optional().nullish(),
 		condition: z.string(),
 		keyFeature: z.string(),

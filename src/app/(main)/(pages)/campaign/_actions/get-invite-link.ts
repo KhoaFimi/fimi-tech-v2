@@ -11,6 +11,9 @@ export const getInviteLink = async ({
 	managerCode: string
 	product: string
 }) => {
+	if (product === 'fimiinvite')
+		return `${config.DOMAIN}/register?ref=${publisherCode}`
+
 	const uniqueToken = encodeURIComponent(
 		btoa(
 			JSON.stringify({

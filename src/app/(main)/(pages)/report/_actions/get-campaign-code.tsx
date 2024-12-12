@@ -13,9 +13,11 @@ export const getCampaignCode = async () => {
 
 	const products = productsSchema.parse(JSON.parse(file))
 
-	return products.map<ComboboxItem>((product, i) => ({
-		id: i.toString(),
-		label: product.id,
-		value: product.id
-	}))
+	return products
+		.map<ComboboxItem>((product, i) => ({
+			id: i.toString(),
+			label: product.id,
+			value: product.id
+		}))
+		.filter(campaign => campaign.id !== 'fimiinvite')
 }
