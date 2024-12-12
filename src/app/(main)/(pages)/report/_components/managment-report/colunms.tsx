@@ -215,8 +215,6 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 			colunmId,
 			filterValue: { type: 'all' | 'am' | 'pub'; publisherCode: string }
 		) => {
-			console.log(colunmId)
-
 			if (filterValue.type === 'all') return true
 
 			if (filterValue.type === 'am')

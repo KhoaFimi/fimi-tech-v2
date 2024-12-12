@@ -47,6 +47,7 @@ const RegisterSuccessDialog = () => {
 					<Button
 						className='mx-auto w-fit bg-gradient-to-tr from-primary from-30% to-secondary shadow-md'
 						asChild
+						onClick={() => onClose()}
 					>
 						<Link href='/login'>Đăng nhập để bán hàng ngay</Link>
 					</Button>

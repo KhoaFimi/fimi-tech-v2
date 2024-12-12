@@ -16,6 +16,7 @@ import { FC, useEffect, useState } from 'react'
 import { managmentReportColumns } from '@/app/(main)/(pages)/report/_components/managment-report/colunms'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
+import { DateInput } from '@/components/ui/date-input'
 import {
 	DropdownMenu,
 	DropdownMenuCheckboxItem,
@@ -309,81 +310,70 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 						</Button>
 					</PopoverTrigger>
 					<PopoverContent className='w-96'>
-						<div className='grid gap-4'>
+						<div className='flex w-full flex-col gap-y-4'>
 							<div className='space-y-2'>
-								<h4 className='font-medium leading-none'>Tìm kiếm</h4>
+								<h4 className='text-sm font-bold leading-none'>Tìm kiếm</h4>
 								<p className='text-sm text-muted-foreground'>
 									Nhập dữ liệu tìm kiếm
 								</p>
 							</div>
-							<div className='grid gap-2'>
-								<div className='grid grid-cols-3 items-center gap-4'>
-									<Label htmlFor='orderId'>Mã đơn</Label>
-									<Input
-										id='orderId'
-										value={
-											(table.getColumn('id')?.getFilterValue() as string) ?? ''
-										}
-										onChange={e => {
-											table
-												.getColumn('id')
-												?.setFilterValue(e.currentTarget.value)
-										}}
-										className='col-span-2 h-8 border-primary focus-visible:outline-none focus-visible:ring-0'
-									/>
-								</div>
-								<div className='grid grid-cols-3 items-center gap-4'>
-									<Label htmlFor='publisherCode'>Mã publisher</Label>
-									<Input
-										id='publisherCode'
-										value={
-											(table
-												.getColumn('publisherCode')
-												?.getFilterValue() as string) ?? ''
-										}
-										onChange={e => {
-											table
-												.getColumn('publisherCode')
-												?.setFilterValue(e.currentTarget.value)
-										}}
-										className='col-span-2 h-8 border-primary focus-visible:outline-none focus-visible:ring-0'
-									/>
-								</div>
-								<div className='grid grid-cols-3 items-center gap-4'>
-									<Label htmlFor='customerName'>Tên khách hàng</Label>
-									<Input
-										id='customerName'
-										value={
-											(table
-												.getColumn('customerName')
-												?.getFilterValue() as string) ?? ''
-										}
-										onChange={e => {
-											table
-												.getColumn('customerName')
-												?.setFilterValue(e.currentTarget.value)
-										}}
-										className='col-span-2 h-8 border-primary focus-visible:outline-none focus-visible:ring-0'
-									/>
-								</div>
-								<div className='grid grid-cols-3 items-center gap-4'>
-									<Label htmlFor='createdAt'>Ngày lên đơn</Label>
-									<Input
-										id='createdAt'
-										type='date'
-										value={
-											(table
-												.getColumn('createdAt')
-												?.getFilterValue() as string) ?? ''
-										}
-										onChange={e => {
-											table
-												.getColumn('createdAt')
-												?.setFilterValue(e.currentTarget.value)
-										}}
-										className='col-span-2 h-8 border-primary focus-visible:outline-none focus-visible:ring-0'
-									/>
-								</div>
+
+							<div className='flex w-full flex-col gap-y-3'>
+								<Input
+									placeholder='Mã đơn'
+									value={
+										(table.getColumn('id')?.getFilterValue() as string) ?? ''
+									}
+									onChange={e => {
+										table.getColumn('id')?.setFilterValue(e.currentTarget.value)
+									}}
+									className='col-span-3 h-7 w-full flex-1 rounded-none border-x-0 border-b-2 border-t-0 border-primary p-0.5 text-sm focus-visible:outline-none focus-visible:ring-0'
+								/>
+
+								<Input
+									placeholder='Mã giới thiệu'
+									value={
+										(table
+											.getColumn('publisherCode')
+											?.getFilterValue() as string) ?? ''
+									}
+									onChange={e => {
+										table
+											.getColumn('publisherCode')
+											?.setFilterValue(e.currentTarget.value)
+									}}
+									className='col-span-3 h-7 w-full flex-1 rounded-none border-x-0 border-b-2 border-t-0 border-primary p-0.5 text-sm focus-visible:outline-none focus-visible:ring-0'
+								/>
+
+								<Input
+									placeholder='Tên khách hàng'
+									value={
+										(table
+											.getColumn('customerName')
+											?.getFilterValue() as string) ?? ''
+									}
+									onChange={e => {
+										table
+											.getColumn('customerName')
+											?.setFilterValue(e.currentTarget.value)
+									}}
+									className='col-span-3 h-7 w-full flex-1 rounded-none border-x-0 border-b-2 border-t-0 border-primary p-0.5 text-sm focus-visible:outline-none focus-visible:ring-0'
+								/>
+
+								<DateInput
+									placeholder='Ngày lên đơn'
+									value={
+										(table
+											.getColumn('createdAt')
+											?.getFilterValue() as string) ?? ''
+									}
+									onChange={e => {
+										table
+											.getColumn('createdAt')
+											?.setFilterValue(e.currentTarget.value)
+									}}
+									className='col-span-3 h-7 w-full flex-1 rounded-none border-x-0 border-b-2 border-t-0 border-primary px-0 py-1 text-sm focus-visible:outline-none focus-visible:ring-0'
+								/>
 							</div>
 						</div>
 					</PopoverContent>

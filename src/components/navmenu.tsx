@@ -1,12 +1,7 @@
 'use client'
 
 import { useMutation } from '@tanstack/react-query'
-import {
-	AlignJustify,
-	MessageCircleWarningIcon,
-	SheetIcon,
-	StoreIcon
-} from 'lucide-react'
+import { AlignJustify, SheetIcon, StoreIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useState } from 'react'
@@ -34,13 +29,13 @@ const links = [
 		label: 'Báo cáo',
 		href: '/report',
 		icon: SheetIcon
-	},
-	{
-		id: 3,
-		label: 'Báo lỗi',
-		href: '/error-report',
-		icon: MessageCircleWarningIcon
 	}
+	// {
+	// 	id: 3,
+	// 	label: 'Báo lỗi',
+	// 	href: '/error-report',
+	// 	icon: MessageCircleWarningIcon
+	// }
 ]
 
 interface NavmenuMobileProps {

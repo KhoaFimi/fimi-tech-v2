@@ -370,7 +370,7 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 			<p className='px-2 py-2.5 text-sm'>
 				Bạn đã có mã giới thiệu{' '}
 				<span className='font-semibold text-primary transition hover:underline'>
-					<Link href={'/login'}>Đăng ký</Link>
+					<Link href={'/login'}>Đăng nhập</Link>
 				</span>
 			</p>
 		</FormWrapper>
