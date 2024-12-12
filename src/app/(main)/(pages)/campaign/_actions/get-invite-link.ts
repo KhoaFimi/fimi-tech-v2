@@ -11,11 +11,15 @@ export const getInviteLink = async ({
 	managerCode: string
 	product: string
 }) => {
-	return `${config.DOMAIN}/${btoa(
-		JSON.stringify({
-			publisherCode,
-			managerCode,
-			product
-		})
-	)}`
+	const uniqueToken = encodeURIComponent(
+		btoa(
+			JSON.stringify({
+				publisherCode,
+				managerCode,
+				product
+			})
+		)
+	)
+
+	return `${config.DOMAIN}/${uniqueToken}`
 }

@@ -8,11 +8,12 @@ import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { getCities } from '@/actions/get-citites'
-import { addLead } from '@/app/(public)/credit/_actions/add-lead'
+import { addLead } from '@/app/(public)/[inviteCode]/_actions/add-lead'
 import {
 	LeadSchema,
 	leadSchema
-} from '@/app/(public)/credit/_schemas/lead.schema'
+} from '@/app/(public)/[inviteCode]/_schemas/lead.schema'
+import { ParamsSchema } from '@/app/(public)/[inviteCode]/_schemas/params.schema'
 import { FormError } from '@/components/form-response'
 import PolicyButton from '@/components/policies/policy-button'
 import { Button } from '@/components/ui/button'
@@ -32,12 +33,11 @@ import { useSercurityPolicyStore } from '@/hooks/use-sercurity-policy-store'
 import { useTermPolicyStore } from '@/hooks/use-term-policy-store'
 import { useUserPolicyStore } from '@/hooks/use-user-policy-store'
 
-interface LeadFormProps {
-	publisherCode: string
-	campaignCode: string
-}
-
-const LeadForm: FC<LeadFormProps> = ({ publisherCode, campaignCode }) => {
+const LeadForm: FC<ParamsSchema> = ({
+	publisherCode,
+	managerCode,
+	product
+}) => {
 	const [error, setError] = useState<string | undefined>(undefined)
 
 	const { onOpen: onOpenSercutiryPolicy } = useSercurityPolicyStore()
@@ -66,19 +66,17 @@ const LeadForm: FC<LeadFormProps> = ({ publisherCode, campaignCode }) => {
 			info
 		}: {
 			values: LeadSchema
-			info: { publisherCode: string; campaignCode: string }
+			info: ParamsSchema
 		}) =>
 			await addLead({
 				values,
 				info
 			}),
 		onSuccess: data => {
-			if (data.error) {
-				setError(data.error)
+			if (data?.error) {
+				setError(data?.error)
 				return
 			}
-
-			form.reset()
 		}
 	})
 
@@ -87,7 +85,8 @@ const LeadForm: FC<LeadFormProps> = ({ publisherCode, campaignCode }) => {
 			values,
 			info: {
 				publisherCode,
-				campaignCode
+				managerCode,
+				product
 			}
 		})
 	}

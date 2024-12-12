@@ -97,7 +97,7 @@ const CampaignScreen = () => {
 				</div>
 			</div>
 
-			<div className='fixed inset-x-0 bottom-0 z-50 w-full bg-primary p-2 backdrop-blur-md'>
+			<div className='fixed inset-x-0 bottom-0 z-50 w-full bg-primary p-2 backdrop-blur-md lg:hidden'>
 				<div className='flex items-center justify-evenly space-x-4'>
 					<button
 						onClick={() => setCategory(PRODUCT_CATEGORY.creditCard)}
