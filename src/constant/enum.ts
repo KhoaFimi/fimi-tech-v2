@@ -37,7 +37,7 @@ export enum PRODUCT_CATEGORY {
 export enum PRODUCT_CATEGORY_DESSRIPTION {
 	all = 'Tất cả',
 	creditCard = 'Thẻ tín dụng',
-	paymentAccount = 'Tài khoản thanh toán thanh thoán',
+	paymentAccount = 'Tài khoản thanh toán',
 	recruitment = 'Tuyển dụng',
 	loan = 'Vay tín chấp'
 }
