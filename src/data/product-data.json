@@ -395,7 +395,7 @@
 		"category": "CREDIT_CARD",
 		"name": "TPBank EVO",
 		"advertiser": "Ngân hàng TMCP Tiên Phong",
-		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
+		"link": "https://evocard.tpb.vn/?utm_source=avay_afffimi&utm_campaign=First&utm_medium={{orderId}}",
 		"show": {
 			"limit": "lên đến 50 triệu đồng.",
 			"image": "tpbevo.svg",

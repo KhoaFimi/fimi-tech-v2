@@ -12,13 +12,17 @@ const getProductLink = async (oid: string, productId: string) => {
 
 	const products = productsSchema.parse(JSON.parse(file))
 
-	const product = products.find(product => product.id === productId)
+	const productIdX = products.findIndex(product => product.id === productId)
 
-	if (!product) {
+	if (productIdX === -1) {
 		return {
 			error: 'Link giới thiệu không chính xác'
 		}
 	}
+
+	const product = products[productIdX]
+
+	console.log(product)
 
 	return {
 		data: {

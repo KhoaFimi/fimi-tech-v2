@@ -2,7 +2,7 @@
 
 import { redirect } from 'next/navigation'
 
-import getProductLink from '@/app/(public)/[inviteCode]/_actions/get-product-link'
+import getProductLink from '@/app/(public)/credit/_actions/get-product-link'
 import {
 	LeadSchema,
 	leadSchema
