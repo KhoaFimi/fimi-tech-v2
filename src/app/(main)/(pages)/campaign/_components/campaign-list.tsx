@@ -48,7 +48,7 @@ const CampaignList: FC<{ products: ProductsSchema }> = ({ products }) => {
 					>
 						<div className='flex items-center gap-x-2'>
 							<Icon
-								className='size-9 text-primary'
+								className='size-7 text-primary'
 								strokeWidth={3}
 							/>
 							<h3 className='bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-center text-lg font-bold uppercase text-transparent lg:text-left lg:text-2xl'>

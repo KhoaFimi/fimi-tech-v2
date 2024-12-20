@@ -11,7 +11,7 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 			className='flex w-full cursor-pointer gap-2 rounded-md border p-2 shadow-md transition-all duration-200 ease-out'
 			key={product.id}
 		>
-			<div className='h-fit w-[200px] overflow-hidden rounded-md bg-transparent shadow-sm'>
+			<div className='h-fit w-[200px] overflow-hidden rounded-lg border bg-transparent shadow-sm'>
 				<Image
 					src={`/card/${product.show.image}`}
 					alt={product.show.image}
@@ -50,7 +50,7 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 						<span className='font-bold'>Điều kiện: </span>
 						{product.show.condition}
 					</p>
-					{product.show.anualFee ? (
+					{/* {product.show.anualFee ? (
 						<p className='text-[11px]'>
 							<span className='font-bold'>Phí thường niên: </span>
 							{product.show.anualFee}
@@ -61,7 +61,7 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 							<span className='font-bold'>Phí: </span>
 							{product.show.fee}
 						</p>
-					) : null}
+					) : null} */}
 				</div>
 				<Button asChild>
 					<Link href={`/campaign/${product.id}`}>Giới thiệu ngay</Link>

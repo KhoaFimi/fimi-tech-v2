@@ -53,8 +53,8 @@ const CampaignScreen = () => {
 		)
 
 	return (
-		<div className='relative flex flex-col items-center gap-y-4 pt-12'>
-			<div className='flex items-center justify-center overflow-hidden rounded-lg border shadow-md'>
+		<div className='relative flex flex-col items-center gap-y-4 px-4 pb-4 pt-12 lg:px-0'>
+			<div className='container mx-auto flex items-center justify-center overflow-hidden rounded-lg border shadow-md lg:h-screen'>
 				<Image
 					src='/bg-img.svg'
 					width={1450}
@@ -63,9 +63,9 @@ const CampaignScreen = () => {
 				/>
 			</div>
 
-			<div className='sticky inset-x-0 top-12 z-50 hidden w-full overflow-x-auto bg-gradient-to-r from-primary from-30% to-secondary px-2 py-4 shadow-md lg:block lg:px-8'>
+			<div className='sticky inset-x-0 top-12 z-50 hidden w-full overflow-x-auto bg-gradient-to-r from-primary from-30% to-secondary px-2 py-1.5 shadow-md lg:block lg:px-8'>
 				<div className='container mx-auto flex items-center gap-x-4'>
-					<h4 className='rounded-md bg-white p-2 text-lg font-semibold leading-none text-black'>
+					<h4 className='rounded-md bg-white p-2 text-sm font-semibold leading-none text-black'>
 						Chiến dịch
 					</h4>
 					<div className='flex items-center space-x-4 divide-x-2'>
@@ -78,7 +78,7 @@ const CampaignScreen = () => {
 									)
 								}}
 								className={cn(
-									'truncate pl-2 text-sm font-semibold text-white decoration-[1.5px] underline-offset-4 hover:underline lg:text-lg',
+									'truncate pl-2 text-sm font-semibold text-white decoration-[1.5px] underline-offset-4 hover:underline',
 									{
 										['underline']:
 											PRODUCT_CATEGORY[key as keyof typeof PRODUCT_CATEGORY] ===
@@ -97,7 +97,7 @@ const CampaignScreen = () => {
 				</div>
 			</div>
 
-			<div className='fixed inset-x-0 bottom-0 z-50 w-full bg-primary p-2 backdrop-blur-md lg:hidden'>
+			<div className='fixed inset-x-0 bottom-0 z-50 w-full rounded-t-3xl bg-primary px-2 pb-4 pt-2 backdrop-blur-md lg:hidden'>
 				<div className='flex items-center justify-evenly space-x-4'>
 					<button
 						onClick={() => setCategory(PRODUCT_CATEGORY.creditCard)}

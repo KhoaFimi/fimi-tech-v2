@@ -1,10 +1,19 @@
 import { Clock, Home, Mail, MapPin, Phone } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react'
 
-const Footer = () => {
+import { cn } from '@/lib/utils'
+
+interface FooterProps {
+	className?: string
+}
+
+const Footer: FC<FooterProps> = ({ className }) => {
 	return (
-		<footer className='mt-12 flex w-full flex-col items-center'>
+		<footer
+			className={cn('mt-12 flex w-full flex-col items-center', className)}
+		>
 			<div className='w-full bg-gradient-to-tr from-primary from-30% to-secondary'>
 				<div className='relative flex items-center px-2 py-4 md:px-40'>
 					<div className='flex flex-1 flex-col items-start space-y-4'>

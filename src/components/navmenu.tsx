@@ -109,13 +109,13 @@ export const NavmenuMobile: FC<NavmenuMobileProps> = ({ fullname }) => {
 
 export const Navmenu = () => {
 	return (
-		<div className='hidden items-center gap-4 lg:flex'>
+		<div className='hidden items-center gap-2 lg:flex'>
 			{links.map(link => (
 				<Button
 					asChild
 					key={link.id}
 					variant='link'
-					className='text-[1rem] text-white'
+					className='text-sm text-white'
 				>
 					<Link href={link.href}>{link.label}</Link>
 				</Button>

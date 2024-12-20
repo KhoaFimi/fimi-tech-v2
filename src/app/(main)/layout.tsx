@@ -13,13 +13,13 @@ const MainLayout: FC<PropsWithChildren> = async ({ children }) => {
 			<Header>
 				<Navbar />
 			</Header>
-			<main className='flex-1 justify-center pt-8'>
+			<main className='flex-1 justify-center pb-24 pt-8'>
 				<div className='mx-auto'>{children}</div>
 			</main>
 			<Policies />
 			<Toaster />
 			<RegisterSuccessDialog />
-			<Footer />
+			<Footer className='hidden lg:block' />
 		</div>
 	)
 }
