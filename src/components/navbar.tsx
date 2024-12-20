@@ -6,9 +6,6 @@ import { verifySession } from '@/lib/dal'
 
 const Navbar = async () => {
 	const { isAuth, fullname } = await verifySession()
-	const nameAlias = fullname
-		.split(' ')
-		[fullname.split(' ').length - 1][0].toUpperCase()
 
 	if (!isAuth) return null
 
@@ -19,7 +16,11 @@ const Navbar = async () => {
 
 				<div className='flex items-center space-x-2 px-2'>
 					<Avatar className='size-8 cursor-pointer text-sm font-bold text-primary antialiased'>
-						<AvatarFallback>{nameAlias}</AvatarFallback>
+						<AvatarFallback>
+							{fullname
+								.split(' ')
+								[fullname.split(' ').length - 1][0].toUpperCase()}
+						</AvatarFallback>
 					</Avatar>
 					<form action={logout}>
 						<Button
