@@ -13,11 +13,11 @@ export const FormWrapper: FC<FormWrapper> = ({
 	return (
 		<div>
 			<div className='pb-4'>
-				<h4 className='text-center text-3xl font-bold uppercase tracking-tight text-primary'>
+				<h4 className='text-center font-bold uppercase tracking-tight text-primary ~text-lg/xl'>
 					{title}
 				</h4>
 				{description && (
-					<p className='text-center text-sm font-semibold tracking-tight text-foreground/50'>
+					<p className='text-center text-xs font-medium tracking-tight text-foreground/50'>
 						{description}
 					</p>
 				)}

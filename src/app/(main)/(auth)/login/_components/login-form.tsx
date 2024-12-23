@@ -63,18 +63,18 @@ const LoginForm = () => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<User
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p>Email / Số điện thoại</p>
+									<p className='leading-none'>Email / Số điện thoại</p>
 								</FormLabel>
 								<FormControl>
 									<Input
 										{...field}
 										disabled={isPending}
-										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
+										className='border border-primary text-xs caret-primary focus-visible:outline-none focus-visible:ring-0'
 									/>
 								</FormControl>
 								<FormMessage />
@@ -87,19 +87,19 @@ const LoginForm = () => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<LockKeyhole
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p className='tracking-tight'>Mật khẩu</p>
+									<p className='leading-none tracking-tight'>Mật khẩu</p>
 								</FormLabel>
 								<FormControl>
 									<Input
 										{...field}
 										type='password'
 										disabled={isPending}
-										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
+										className='border border-primary text-xs caret-primary focus-visible:ring-0'
 									/>
 								</FormControl>
 								<FormMessage />
@@ -111,8 +111,9 @@ const LoginForm = () => {
 
 					<Button
 						type='submit'
+						size='sm'
 						disabled={isPending}
-						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary font-bold'
+						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary text-xs font-bold'
 					>
 						{isPending && <Loader2 className='size-5 animate-spin' />}
 						Tiếp tục
@@ -120,7 +121,7 @@ const LoginForm = () => {
 				</form>
 			</Form>
 
-			<p className='px-2 py-2.5 text-sm'>
+			<p className='px-2 py-2.5 text-xs'>
 				Bạn chưa có mã giới thiệu{' '}
 				<span className='font-semibold text-primary transition hover:underline'>
 					<Link href={'/register'}>Đăng ký</Link>

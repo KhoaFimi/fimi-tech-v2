@@ -83,7 +83,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 									variant='outline'
 									role='combobox'
 									className={cn(
-										`relative w-[200px] justify-between overflow-hidden border border-primary bg-background`,
+										`relative h-7 w-[200px] justify-between overflow-hidden border border-primary bg-background text-xs`,
 										!field.value && 'text-muted-foreground',
 										className
 									)}
@@ -108,7 +108,10 @@ const FormCombobox: FC<FormComboboxProps> = ({
 							align='start'
 						>
 							<Command>
-								<CommandInput placeholder={placeholder} />
+								<CommandInput
+									placeholder={placeholder}
+									className='text-xs'
+								/>
 								<CommandList>
 									<CommandEmpty>{notFoundMessage}</CommandEmpty>
 									<CommandGroup className='max-h-[200px] overflow-auto'>
@@ -116,7 +119,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 											<CommandItem
 												value={item.label}
 												key={item.value}
-												className='cursor-pointer'
+												className='cursor-pointer text-xs'
 												onSelect={() => {
 													form.setValue(name, item.value)
 													setOpen(false)

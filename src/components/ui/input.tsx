@@ -16,7 +16,7 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
 				<input
 					type={showPassword ? 'text' : type}
 					className={cn(
-						'flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+						'flex h-7 w-full rounded-md border border-input bg-transparent px-2 py-1 text-xs shadow-sm transition-colors disabled:cursor-not-allowed disabled:opacity-50',
 						className
 					)}
 					ref={ref}
@@ -31,9 +31,9 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<'input'>>(
 						className='absolute right-2 top-1/2 -translate-y-1/2'
 					>
 						{showPassword ? (
-							<Eye className='size-5 text-foreground/50 transition duration-200 ease-out hover:text-foreground/80 active:text-foreground' />
+							<Eye className='size-4 text-foreground/50 transition duration-200 ease-out hover:text-foreground/80 active:text-foreground' />
 						) : (
-							<EyeOff className='size-5 text-foreground/50 transition duration-200 ease-out hover:text-foreground/80 active:text-foreground' />
+							<EyeOff className='size-4 text-foreground/50 transition duration-200 ease-out hover:text-foreground/80 active:text-foreground' />
 						)}
 					</button>
 				)}

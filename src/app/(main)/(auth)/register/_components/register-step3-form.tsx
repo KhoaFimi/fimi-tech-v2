@@ -87,12 +87,12 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<User2
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p>Tên tài khoản ngân hàng</p>
+									<p className='leading-none'>Tên tài khoản ngân hàng</p>
 								</FormLabel>
 								<FormControl>
 									<Input
@@ -114,12 +114,12 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<CreditCard
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p>Số tài khoản ngân hàng</p>
+									<p className='leading-none'>Số tài khoản ngân hàng</p>
 								</FormLabel>
 								<FormControl>
 									<Input
@@ -138,12 +138,12 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 						control={form.control}
 						className='w-full'
 						label={
-							<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+							<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 								<Landmark
-									className='size-4'
+									className='size-3'
 									strokeWidth={3}
 								/>
-								<p>Ngân hàng</p>
+								<p className='leading-none'>Ngân hàng</p>
 							</FormLabel>
 						}
 						popoverClassName='w-[405px]'
@@ -171,7 +171,8 @@ const RegisterStep3Form: FC<{ id: string | undefined }> = ({ id }) => {
 
 					<Button
 						type='submit'
-						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary font-bold'
+						size='sm'
+						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary text-xs font-bold'
 					>
 						{isPending && <Loader2 className='size-5 animate-spin' />}
 						Tiếp tục

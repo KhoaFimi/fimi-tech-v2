@@ -53,8 +53,8 @@ const CampaignScreen = () => {
 		)
 
 	return (
-		<div className='relative flex flex-col items-center gap-y-4 px-4 pb-4 pt-12 lg:px-0'>
-			<div className='container mx-auto flex items-center justify-center overflow-hidden rounded-lg border shadow-md lg:h-screen'>
+		<div className='relative flex flex-col items-center gap-y-4 px-4 pb-4 pt-6 lg:px-0'>
+			<div className='container mx-auto flex items-center justify-center overflow-hidden rounded-lg lg:h-screen'>
 				<Image
 					src='/bg-img.svg'
 					width={1450}

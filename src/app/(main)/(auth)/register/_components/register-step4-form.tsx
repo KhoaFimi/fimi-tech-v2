@@ -88,12 +88,12 @@ const RegisterStep4Form: FC<{ id: string | undefined }> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<LockKeyhole
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p>Mật khẩu</p>
+									<p className='leading-none'>Mật khẩu</p>
 								</FormLabel>
 								<FormControl>
 									<Input
@@ -113,12 +113,12 @@ const RegisterStep4Form: FC<{ id: string | undefined }> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<RectangleEllipsis
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p>Xác nhận mật khẩu</p>
+									<p className='leading-none'>Xác nhận mật khẩu</p>
 								</FormLabel>
 								<FormControl>
 									<Input
@@ -137,7 +137,8 @@ const RegisterStep4Form: FC<{ id: string | undefined }> = ({ id }) => {
 
 					<Button
 						type='submit'
-						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary font-bold'
+						size='sm'
+						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary text-xs font-bold'
 					>
 						{isPending && <Loader2 className='size-5 animate-spin' />}
 						Tiếp tục

@@ -119,12 +119,12 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<User
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p className='tracking-tight'>Giới tính</p>
+									<p className='leading-none tracking-tight'>Giới tính</p>
 								</FormLabel>
 								<Select
 									onValueChange={field.onChange}
@@ -133,14 +133,24 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 									<FormControl>
 										<SelectTrigger
 											disabled={isPending}
-											className='border border-primary ring-0 focus:ring-0'
+											className='h-7 border border-primary ring-0 focus:ring-0'
 										>
 											<SelectValue className='placeholder:text-foreground/50' />
 										</SelectTrigger>
 									</FormControl>
 									<SelectContent>
-										<SelectItem value={GENDER.MALE}>Nam</SelectItem>
-										<SelectItem value={GENDER.FEMALE}>Nữ</SelectItem>
+										<SelectItem
+											className='text-xs'
+											value={GENDER.MALE}
+										>
+											Nam
+										</SelectItem>
+										<SelectItem
+											className='text-xs'
+											value={GENDER.FEMALE}
+										>
+											Nữ
+										</SelectItem>
 									</SelectContent>
 								</Select>
 								<FormMessage />
@@ -155,12 +165,12 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						form={form}
 						className='w-full'
 						label={
-							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+							<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 								<Building
-									className='size-4'
+									className='size-3'
 									strokeWidth={3}
 								/>
-								<p className='tracking-tight'>Khu vực làm việc</p>
+								<p className='leading-none tracking-tight'>Khu vực làm việc</p>
 							</FormLabel>
 						}
 						initalData=''
@@ -182,12 +192,14 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<MapPinHouse
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p className='tracking-tight'>Địa chỉ thường trú</p>
+									<p className='leading-none tracking-tight'>
+										Địa chỉ thường trú
+									</p>
 								</FormLabel>
 								<FormControl>
 									<Textarea
@@ -207,12 +219,12 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						className='w-full'
 						form={form}
 						label={
-							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+							<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 								<MapPinHouse
-									className='size-4'
+									className='size-3'
 									strokeWidth={3}
 								/>
-								<p className='tracking-tight'>Tỉnh/Thành</p>
+								<p className='leading-none tracking-tight'>Tỉnh/Thành</p>
 							</FormLabel>
 						}
 						popoverClassName='w-[405px]'
@@ -237,12 +249,12 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						className='w-full'
 						popoverClassName='w-[405px]'
 						label={
-							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+							<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 								<MapPinHouse
-									className='size-4'
+									className='size-3'
 									strokeWidth={3}
 								/>
-								<p className='tracking-tight'>Quận/Huyện</p>
+								<p className='leading-none tracking-tight'>Quận/Huyện</p>
 							</FormLabel>
 						}
 						form={form}
@@ -272,12 +284,12 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 						className='w-full'
 						popoverClassName='w-[405px]'
 						label={
-							<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+							<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 								<MapPinHouse
-									className='size-4'
+									className='size-3'
 									strokeWidth={3}
 								/>
-								<p className='tracking-tight'>Phường/xã</p>
+								<p className='leading-none tracking-tight'>Phường/xã</p>
 							</FormLabel>
 						}
 						form={form}
@@ -304,7 +316,8 @@ const RegisterStep2Form: FC<RegisterStep2FormProps> = ({ id }) => {
 
 					<Button
 						type='submit'
-						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary font-bold'
+						size='sm'
+						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary text-xs font-bold'
 					>
 						{isPending && <Loader2 className='size-5 animate-spin' />}
 						Tiếp tục

@@ -99,7 +99,7 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 			<Form {...form}>
 				<form
 					autoComplete='autocomplete_off_randString'
-					className='flex flex-col gap-2.5 px-2 pt-4'
+					className='flex flex-col gap-2.5 px-2'
 					onSubmit={form.handleSubmit(onSubmit)}
 				>
 					<FormField
@@ -107,12 +107,12 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<User
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p>Họ và tên</p>
+									<p className='leading-none'>Họ và tên</p>
 								</FormLabel>
 								<FormControl>
 									<Input
@@ -121,55 +121,7 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 										onChange={e =>
 											field.onChange(e.currentTarget.value.toUpperCase())
 										}
-										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-
-					<FormField
-						name='phone'
-						control={form.control}
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
-									<Phone
-										className='size-4'
-										strokeWidth={3}
-									/>
-									<p className='tracking-tight'>Số điện thoại</p>
-								</FormLabel>
-								<FormControl>
-									<Input
-										{...field}
-										disabled={isPending}
-										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
-									/>
-								</FormControl>
-								<FormMessage />
-							</FormItem>
-						)}
-					/>
-
-					<FormField
-						name='email'
-						control={form.control}
-						render={({ field }) => (
-							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
-									<Mail
-										className='size-4'
-										strokeWidth={3}
-									/>
-									<p className='tracking-tight'>Email</p>
-								</FormLabel>
-								<FormControl>
-									<Input
-										{...field}
-										disabled={isPending}
-										className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
+										className='border border-primary text-xs caret-primary focus-visible:outline-none focus-visible:ring-0'
 									/>
 								</FormControl>
 								<FormMessage />
@@ -179,23 +131,73 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 
 					<div className='grid w-full grid-cols-[auto_1fr] gap-2'>
 						<FormField
+							name='phone'
+							control={form.control}
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
+										<Phone
+											className='size-3'
+											strokeWidth={3}
+										/>
+										<p className='leading-none tracking-tight'>Số điện thoại</p>
+									</FormLabel>
+									<FormControl>
+										<Input
+											{...field}
+											disabled={isPending}
+											className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
+										/>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+
+						<FormField
+							name='email'
+							control={form.control}
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
+										<Mail
+											className='size-3'
+											strokeWidth={3}
+										/>
+										<p className='leading-none tracking-tight'>Email</p>
+									</FormLabel>
+									<FormControl>
+										<Input
+											{...field}
+											disabled={isPending}
+											className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
+										/>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+					</div>
+
+					<div className='grid w-full grid-cols-[auto_1fr] gap-2'>
+						<FormField
 							name='dateOfBirth'
 							control={form.control}
 							render={({ field }) => (
 								<FormItem className='w-[150px]'>
-									<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+									<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 										<Cake
-											className='size-4'
+											className='size-3'
 											strokeWidth={3}
 										/>
-										<p className='tracking-tight'>Ngày sinh</p>
+										<p className='leading-none tracking-tight'>Ngày sinh</p>
 									</FormLabel>
 									<FormControl>
 										<Input
 											disabled={isPending}
 											type='date'
 											placeholder='Ngày sinh'
-											className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
+											className='border border-primary caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
 											{...field}
 										/>
 									</FormControl>
@@ -210,12 +212,12 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 							form={form}
 							className='w-full'
 							label={
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<House
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p className='tracking-tight'>Nơi sinh</p>
+									<p className='leading-none tracking-tight'>Nơi sinh</p>
 								</FormLabel>
 							}
 							initalData=''
@@ -239,12 +241,14 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 						control={form.control}
 						render={({ field }) => (
 							<FormItem>
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<IdCard
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p className='tracking-tight'>Số căn cước công dân</p>
+									<p className='leading-none tracking-tight'>
+										Số căn cước công dân
+									</p>
 								</FormLabel>
 								<FormControl>
 									<Input
@@ -264,19 +268,19 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 							control={form.control}
 							render={({ field }) => (
 								<FormItem className='w-[150px]'>
-									<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+									<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 										<CalendarDays
-											className='size-4'
+											className='size-3'
 											strokeWidth={3}
 										/>
-										<p className='tracking-tight'>Ngày cấp cccd</p>
+										<p className='leading-none tracking-tight'>Ngày cấp cccd</p>
 									</FormLabel>
 									<FormControl>
 										<Input
 											{...field}
 											type='date'
 											disabled={isPending}
-											className='border border-primary text-sm caret-primary placeholder:text-sm placeholder:font-semibold focus-visible:outline-none focus-visible:ring-0'
+											className='border border-primary text-xs caret-primary focus-visible:outline-none focus-visible:ring-0'
 										/>
 									</FormControl>
 									<FormMessage />
@@ -289,12 +293,12 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 							control={form.control}
 							form={form}
 							label={
-								<FormLabel className='flex items-end space-x-1 font-semibold text-foreground/80'>
+								<FormLabel className='flex items-start space-x-1 text-xs font-semibold tracking-tight text-foreground/80'>
 									<Building2
-										className='size-4'
+										className='size-3'
 										strokeWidth={3}
 									/>
-									<p className='tracking-tight'>Nơi cấp cccd</p>
+									<p className='leading-none tracking-tight'>Nơi cấp cccd</p>
 								</FormLabel>
 							}
 							popoverClassName='w-[245px]'
@@ -325,7 +329,7 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 						name='tnc'
 						control={form.control}
 						render={({ field }) => (
-							<FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md border border-primary bg-background p-4 shadow'>
+							<FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md border border-primary bg-background p-2 shadow'>
 								<FormControl>
 									<Checkbox
 										checked={field.value}
@@ -334,7 +338,7 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 									/>
 								</FormControl>
 								<div className='select-none space-y-1 leading-3'>
-									<FormDescription className='cursor-pointer text-justify text-xs font-semibold'>
+									<FormDescription className='cursor-pointer text-justify text-xs font-medium'>
 										Bằng việc cung cấp thông tin, bạn đã đồng ý với{' '}
 										<PolicyButton onOpen={onOpenSercutiryPolicy}>
 											Điều khoản sử dụng dịch vụ FIMI
@@ -358,8 +362,9 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 
 					<Button
 						type='submit'
-						disabled={!form.getFieldState('tnc').isDirty || isPending}
-						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary font-bold'
+						size='sm'
+						disabled={isPending}
+						className='items-center gap-4 bg-gradient-to-tr from-primary from-30% to-secondary text-xs font-bold'
 					>
 						{isPending && <Loader2 className='size-5 animate-spin' />}
 						Tiếp tục
@@ -367,7 +372,7 @@ const RegisterStep1Form: FC<{ referal: string | undefined }> = ({
 				</form>
 			</Form>
 
-			<p className='px-2 py-2.5 text-sm'>
+			<p className='px-2 py-2.5 text-xs'>
 				Bạn đã có mã giới thiệu{' '}
 				<span className='font-semibold text-primary transition hover:underline'>
 					<Link href={'/login'}>Đăng nhập</Link>
