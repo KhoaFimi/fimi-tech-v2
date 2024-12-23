@@ -62,7 +62,7 @@ const CampaignScreen = () => {
 					height={600}
 					alt='bg'
 				/>
-				<ChevronDown className='size-10 animate-bounce text-foreground/70' />
+				<ChevronDown className='hidden size-10 animate-bounce text-foreground/70 lg:block' />
 			</div>
 
 			<div className='sticky inset-x-0 top-12 z-50 hidden w-full overflow-x-auto bg-gradient-to-r from-primary from-30% to-secondary px-2 py-1.5 shadow-md lg:block lg:px-8'>
