@@ -51,7 +51,7 @@ const CampaignList: FC<{ products: ProductsSchema }> = ({ products }) => {
 								className='size-5 text-primary'
 								strokeWidth={3}
 							/>
-							<h3 className='bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-center text-base font-bold uppercase text-transparent lg:text-left lg:text-2xl'>
+							<h3 className='bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-center text-base font-bold uppercase text-transparent lg:text-left'>
 								{
 									PRODUCT_CATEGORY_DESSRIPTION[
 										_.camelCase(
