@@ -2,6 +2,7 @@
 
 import { useQuery } from '@tanstack/react-query'
 import {
+	ChevronDown,
 	CircleDollarSign,
 	CreditCard,
 	HandCoins,
@@ -54,13 +55,14 @@ const CampaignScreen = () => {
 
 	return (
 		<div className='relative flex flex-col items-center gap-y-4 px-4 pb-4 pt-6 lg:px-0'>
-			<div className='container mx-auto flex items-center justify-center overflow-hidden rounded-lg lg:h-screen'>
+			<div className='container mx-auto flex flex-col items-center justify-center overflow-hidden rounded-lg lg:h-screen'>
 				<Image
 					src='/bg-img.svg'
 					width={1450}
 					height={600}
 					alt='bg'
 				/>
+				<ChevronDown className='size-10 animate-bounce text-foreground/70' />
 			</div>
 
 			<div className='sticky inset-x-0 top-12 z-50 hidden w-full overflow-x-auto bg-gradient-to-r from-primary from-30% to-secondary px-2 py-1.5 shadow-md lg:block lg:px-8'>
