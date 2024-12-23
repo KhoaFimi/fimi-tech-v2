@@ -18,7 +18,7 @@ const CampaignList: FC<{ products: ProductsSchema }> = ({ products }) => {
 	const productsData = _.groupBy(products, product => product.category)
 
 	return (
-		<div className='container flex w-full flex-col gap-y-12 px-2 lg:px-8 lg:pt-32'>
+		<div className='container flex w-full flex-col gap-y-12 px-2 lg:px-8 lg:pt-10'>
 			{_.keys(productsData).map(category => {
 				const products = productsData[category]
 
@@ -48,10 +48,10 @@ const CampaignList: FC<{ products: ProductsSchema }> = ({ products }) => {
 					>
 						<div className='flex items-center gap-x-2'>
 							<Icon
-								className='size-7 text-primary'
+								className='size-5 text-primary'
 								strokeWidth={3}
 							/>
-							<h3 className='bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-center text-lg font-bold uppercase text-transparent lg:text-left lg:text-2xl'>
+							<h3 className='bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-center text-base font-bold uppercase text-transparent lg:text-left lg:text-2xl'>
 								{
 									PRODUCT_CATEGORY_DESSRIPTION[
 										_.camelCase(
