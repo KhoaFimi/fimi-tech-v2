@@ -92,12 +92,10 @@ const SecurityPolicy = () => {
 	return (
 		<div className='flex flex-col gap-2 text-justify text-xs'>
 			<p>
-				<span className='font-bold'>
-					Công Ty TNHH Tiếp thị và Truyền thông FIMI
-				</span>{' '}
-				và các công ty con, công ty liên kết khác có liên quan (gọi chung là
-				“FIMI” hoặc “chúng tôi”) tôn trọng sự riêng tư và cố gắng bảo vệ dữ liệu
-				cá nhân của Quý khách tuân thủ quy định của pháp luật Việt Nam.
+				<span className='font-bold'>Công Ty TNHH Công Nghệ FIMI</span> và các
+				công ty con, công ty liên kết khác có liên quan (gọi chung là “FIMI”
+				hoặc “chúng tôi”) tôn trọng sự riêng tư và cố gắng bảo vệ dữ liệu cá
+				nhân của Quý khách tuân thủ quy định của pháp luật Việt Nam.
 			</p>
 			<p>
 				Chúng tôi sẽ chỉ thu thập và sử dụng dữ liệu cá nhân của Quý khách phù

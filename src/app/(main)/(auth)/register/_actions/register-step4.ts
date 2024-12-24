@@ -50,7 +50,7 @@ export const registrerStep4 = async (
 		valueInputOption: 'RAW',
 		range: `${config.SHEET_USER_NAME}!W${rangToUpdate + 1}`,
 		requestBody: {
-			values: [[hashedPassword]]
+			values: [[hashedPassword, 'user']]
 		}
 	})
 

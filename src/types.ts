@@ -81,4 +81,5 @@ export type TokenPayload = {
 	publisherCode: string
 	managerCode: string
 	fullname: string
+	role: string
 }

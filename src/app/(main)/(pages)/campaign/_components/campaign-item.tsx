@@ -3,7 +3,6 @@
 import _ from 'lodash'
 import {
 	CircleDollarSign,
-	Clock,
 	CreditCard,
 	DollarSign,
 	HandCoins,
@@ -110,7 +109,7 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 			/>
 			<div className='absolute inset-0 bottom-0 h-full w-full bg-black/45 transition-all' />
 
-			<div className='z-30 mt-auto flex h-[35%] w-full select-none flex-col gap-y-1 bg-white p-1 pt-2'>
+			<div className='z-30 mt-auto flex h-1/4 w-full select-none flex-col gap-y-1 bg-white p-1 pt-2'>
 				<p className='truncate text-[12px] font-semibold leading-none tracking-tight text-primary'>
 					{product.name}
 				</p>
@@ -140,15 +139,6 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 							{product.show.commision ?? (
 								<span className='underline'>Chi tiết</span>
 							)}
-						</p>
-					</div>
-					<div className='flex items-center gap-x-0.5'>
-						<Clock
-							className='size-3 text-primary'
-							strokeWidth={3}
-						/>
-						<p className='text-xs font-semibold text-primary/85'>
-							Phê duyệt: {product.show.approvalTime}
 						</p>
 					</div>
 				</div>

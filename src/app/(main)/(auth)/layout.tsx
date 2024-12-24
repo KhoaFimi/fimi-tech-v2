@@ -3,9 +3,9 @@ import { FC, PropsWithChildren } from 'react'
 
 const AuthLayout: FC<PropsWithChildren> = async ({ children }) => {
 	return (
-		<div className='flex h-full w-full flex-col items-center justify-center pt-12'>
+		<div className='flex h-full w-full flex-col items-center justify-center pt-16 lg:h-svh lg:pt-8'>
 			<div className='flex w-fit items-center'>
-				<div className='hidden h-full w-[360px] flex-col md:flex'>
+				<div className='hidden h-full w-[360px] items-center justify-center md:flex'>
 					<Image
 						src='/register.png'
 						alt='register'

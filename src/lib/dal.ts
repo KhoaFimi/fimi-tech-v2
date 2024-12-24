@@ -16,10 +16,11 @@ export const verifySession = cache(async () => {
 			userId: '',
 			publisherCode: '',
 			managerCode: '',
-			fullname: ''
+			fullname: '',
+			role: 'user'
 		}
 
-	const { sub, publisherCode, managerCode, fullname } =
+	const { sub, publisherCode, managerCode, fullname, role } =
 		decryptToken(accessToken)
 
 	return {
@@ -27,6 +28,7 @@ export const verifySession = cache(async () => {
 		userId: sub,
 		publisherCode,
 		managerCode,
-		fullname
+		fullname,
+		role
 	}
 })

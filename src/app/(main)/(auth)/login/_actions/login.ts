@@ -63,7 +63,8 @@ export const login = async (values: LoginSchema) => {
 			sub: existingUser[1],
 			publisherCode: existingUser[2],
 			managerCode: existingUser[3],
-			fullname: existingUser[4]
+			fullname: existingUser[4],
+			role: existingUser[23]
 		},
 		config.ACCESS_TOKEN_SECRET as Secret
 	)

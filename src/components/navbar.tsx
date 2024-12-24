@@ -5,21 +5,21 @@ import { Button } from '@/components/ui/button'
 import { verifySession } from '@/lib/dal'
 
 const Navbar = async () => {
-	const { isAuth, fullname } = await verifySession()
+	const session = await verifySession()
 
-	if (!isAuth) return null
+	if (!session.isAuth) return null
 
 	return (
 		<>
 			<div className='hidden items-center gap-x-2 divide-x-[2px] lg:flex'>
-				<Navmenu />
+				<Navmenu session={session} />
 
 				<div className='flex items-center space-x-2 px-2'>
 					<Avatar className='size-8 cursor-pointer text-sm font-bold text-primary antialiased'>
 						<AvatarFallback>
-							{fullname
+							{session.fullname
 								.split(' ')
-								[fullname.split(' ').length - 1][0].toUpperCase()}
+								[session.fullname.split(' ').length - 1][0].toUpperCase()}
 						</AvatarFallback>
 					</Avatar>
 					<form action={logout}>
@@ -34,7 +34,7 @@ const Navbar = async () => {
 				</div>
 			</div>
 
-			<NavmenuMobile fullname={fullname} />
+			<NavmenuMobile session={session} />
 		</>
 	)
 }

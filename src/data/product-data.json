@@ -7,7 +7,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbstepup.png",
-			"commision": "300.000 đ",
+			"commision": "450.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -43,7 +43,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"300,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -86,7 +86,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpblady.png",
-			"commision": "300.000 đ",
+			"commision": "450.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -122,7 +122,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"300,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -165,7 +165,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbgenz.png",
-			"commision": "300.000 đ",
+			"commision": "450.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -202,7 +202,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"300,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -245,7 +245,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbmc2.png",
-			"commision": "300.000 đ",
+			"commision": "450.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -273,7 +273,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"300,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -316,7 +316,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbvna.png",
-			"commision": "300.000 đ",
+			"commision": "450.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -345,7 +345,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"300,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -555,7 +555,7 @@
 		"link": "https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPPLX%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D{{orderId}}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank",
 		"show": {
 			"image": "hdb4in1.svg",
-			"commision": "150.000 đ",
+			"commision": "200.000 đ",
 			"approvalTime": "15 phút"
 		},
 		"productOffer": [
@@ -582,7 +582,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": ["150,000 đ/ thẻ phát hành thành công."],
+			"commision": ["200,000 đ/ thẻ phát hành thành công."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -741,10 +741,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": [
-				"800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng.",
-				"100,000 đ/ thẻ phát hành thành công hạn mức 0 đồng."
-			],
+			"commision": ["800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -779,7 +776,7 @@
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-supercard&utm_source=Public_Website&utm_medium=Affiliate_FIMIVIB-{{orderId}}-&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
 			"image": "vibsup.svg",
-			"commision": "800.000 đ",
+			"commision": "500.000 đ",
 			"approvalTime": "15 phút"
 		},
 		"productOffer": [
@@ -846,10 +843,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": [
-				"800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng.",
-				"100,000 đ/ thẻ phát hành thành công hạn mức 0 đồng."
-			],
+			"commision": ["500,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -945,10 +939,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": [
-				"800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng.",
-				"100,000 đ/ thẻ phát hành thành công hạn mức 0 đồng."
-			],
+			"commision": ["800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -983,7 +974,7 @@
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-rewards-unlimited&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
 			"image": "vibrew.svg",
-			"commision": "800.000 đ",
+			"commision": "400.000 đ",
 			"approvalTime": "15 phút"
 		},
 		"productOffer": [
@@ -1043,10 +1034,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": [
-				"800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng.",
-				"100,000 đ/ thẻ phát hành thành công hạn mức 0 đồng."
-			],
+			"commision": ["400,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -1081,7 +1069,7 @@
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-cashback&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
 			"image": "vibcas.svg",
-			"commision": "800.000 đ",
+			"commision": "500.000 đ",
 			"approvalTime": "15 phút"
 		},
 		"productOffer": [
@@ -1157,10 +1145,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": [
-				"800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng.",
-				"100,000 đ/ thẻ phát hành thành công hạn mức 0 đồng."
-			],
+			"commision": ["500,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -1195,7 +1180,7 @@
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-family-link&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
 			"image": "vibfam.svg",
-			"commision": "800.000 đ",
+			"commision": "500.000 đ",
 			"approvalTime": "15 phút"
 		},
 		"productOffer": [
@@ -1284,10 +1269,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": [
-				"800,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng.",
-				"100,000 đ/ thẻ phát hành thành công hạn mức 0 đồng."
-			],
+			"commision": ["500,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -1322,7 +1304,7 @@
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-financial-free&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
 			"image": "vibfin.svg",
-			"commision": "800.000 đ",
+			"commision": "400.000 đ",
 			"approvalTime": "15 phút"
 		},
 		"productOffer": [
@@ -1374,10 +1356,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": [
-				"400,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng.",
-				"100,000 đ/ thẻ phát hành thành công hạn mức 0 đồng."
-			],
+			"commision": ["400,000 đ/ thẻ phát hành thành công hạn mức > 0 đồng."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
@@ -1412,7 +1391,7 @@
 		"link": "https://vpbankneo.page.link/FIMI1111",
 		"show": {
 			"image": "vpbankneo.svg",
-			"commision": "> 50.000 đ",
+			"commision": "120.000 đ",
 			"approvalTime": "> 01 phút"
 		},
 		"productOffer": [
@@ -1469,8 +1448,8 @@
 		"advertiser": "FIMI Tech",
 		"link": "https://aff.fimi.tech/register?ref={{code}}",
 		"show": {
-			"income": "10% doanh thu từ publisher đã tuyển dụng",
 			"image": "pub.jpg",
+			"commision": "10% doanh thu từ publisher đã tuyển dụng",
 			"approvalTime": "> 01 phút"
 		},
 		"productOffer": [

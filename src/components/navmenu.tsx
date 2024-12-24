@@ -1,7 +1,7 @@
 'use client'
 
 import { useMutation } from '@tanstack/react-query'
-import { AlignJustify, SheetIcon, StoreIcon } from 'lucide-react'
+import { AlignJustify, SheetIcon, ShieldHalf, StoreIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC, useState } from 'react'
@@ -39,10 +39,17 @@ const links = [
 ]
 
 interface NavmenuMobileProps {
-	fullname: string
+	session: {
+		isAuth: boolean
+		userId: string
+		publisherCode: string
+		managerCode: string
+		fullname: string
+		role: string
+	}
 }
 
-export const NavmenuMobile: FC<NavmenuMobileProps> = ({ fullname }) => {
+export const NavmenuMobile: FC<NavmenuMobileProps> = ({ session }) => {
 	const { mutate } = useMutation({
 		mutationFn: async () => await logout()
 	})
@@ -71,7 +78,7 @@ export const NavmenuMobile: FC<NavmenuMobileProps> = ({ fullname }) => {
 						alt='logo'
 						className='mx-auto w-32'
 					/>
-					<SheetTitle>Chào, {fullname}</SheetTitle>
+					<SheetTitle>Chào, {session.fullname}</SheetTitle>
 				</SheetHeader>
 				<ul className='space-y-8 pl-4 pt-8'>
 					{links.map(link => (
@@ -92,6 +99,23 @@ export const NavmenuMobile: FC<NavmenuMobileProps> = ({ fullname }) => {
 							</Link>
 						</li>
 					))}
+					{session.role === 'admin' ? (
+						<li
+							className='flex items-start gap-x-1.5 text-foreground/80'
+							onClick={() => setSheetOpen(false)}
+						>
+							<ShieldHalf
+								className='text-foreground/80'
+								strokeWidth={3}
+							/>
+							<Link
+								href='/admin'
+								className='font-semibold hover:underline'
+							>
+								Admin
+							</Link>
+						</li>
+					) : null}
 				</ul>
 				<SheetFooter className='fixed inset-x-0 bottom-0 z-30 w-80 p-2'>
 					<Button
@@ -107,7 +131,7 @@ export const NavmenuMobile: FC<NavmenuMobileProps> = ({ fullname }) => {
 	)
 }
 
-export const Navmenu = () => {
+export const Navmenu: FC<NavmenuMobileProps> = ({ session }) => {
 	return (
 		<div className='hidden items-center gap-2 lg:flex'>
 			{links.map(link => (
@@ -120,6 +144,15 @@ export const Navmenu = () => {
 					<Link href={link.href}>{link.label}</Link>
 				</Button>
 			))}
+			{session.role === 'admin' ? (
+				<Button
+					asChild
+					variant='link'
+					className='text-sm text-white'
+				>
+					<Link href={'/admin'}>Admin</Link>
+				</Button>
+			) : null}
 		</div>
 	)
 }
