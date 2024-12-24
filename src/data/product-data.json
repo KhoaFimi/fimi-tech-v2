@@ -1449,7 +1449,7 @@
 		"link": "https://aff.fimi.tech/register?ref={{code}}",
 		"show": {
 			"image": "pub.jpg",
-			"commision": "10% doanh thu từ publisher đã tuyển dụng",
+			"commision": "10% ",
 			"approvalTime": "> 01 phút"
 		},
 		"productOffer": [
