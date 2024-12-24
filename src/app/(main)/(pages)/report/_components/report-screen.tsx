@@ -44,8 +44,6 @@ const ReportScreen: FC<ReportScreenProps> = ({ publisherCode }) => {
 		initialData
 	})
 
-	console.log(campaignData)
-
 	const defaultOrder = {
 		total: 0,
 		amOrder: 0,
