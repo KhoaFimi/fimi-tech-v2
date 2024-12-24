@@ -187,7 +187,7 @@ const CampaignDetail: FC<CampaignDetailProps> = ({ product }) => {
 				<div className='space-y-2 px-2'>
 					<div className='flex flex-col gap-y-1 tracking-tight'>
 						<Item label={product.recognitionRules.summary} />
-						<ul className='list-none px-8'>
+						<ul className='list-disc px-8'>
 							{product.recognitionRules.rules.map((item, i) => (
 								<li key={i}>
 									<p className='text-justify text-sm'>{item}</p>

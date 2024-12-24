@@ -2,15 +2,13 @@
 	{
 		"id": "vpbstepup",
 		"category": "CREDIT_CARD",
-		"name": "VPBANK CREDIT CARD",
+		"name": "Vpbank - Step Up",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbstepup.png",
-			"limit": "Lên đến 100 triệu đồng.",
-			"condition": "cá nhân từ 18 tuổi trở lên và thu nhập từ 7 triệu đồng/tháng",
-			"keyFeature": "hoàn tiền đến 15% giá trị giao dịch, tối đa 600,000/ tháng.",
-			"anualFee": "499,000 đồng. Miễn phí khi có từ 3 giao dịch chi tiêu trong vòng 30 ngày đầu sau khi mở thẻ (mỗi giao dịch từ 300.000 VNĐ)."
+			"commision": "300.000 đ",
+			"approvalTime": "05 phút"
 		},
 		"productOffer": [
 			{
@@ -83,15 +81,13 @@
 	{
 		"id": "vpblady",
 		"category": "CREDIT_CARD",
-		"name": "VPBANK CREDIT CARD",
+		"name": "Vpbank - Lady",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vpblady.png",
-			"condition": "cá nhân từ 18 tuổi trở lên và thu nhập từ 7 triệu đồng/tháng.",
-			"keyFeature": "hoàn tiền đến 15% giá trị giao dịch, tối đa 300,000/ tháng.",
-			"anualFee": "299,000 đồng. Miễn phí khi có từ 3 giao dịch chi tiêu trong vòng 30 ngày đầu sau khi mở thẻ (mỗi giao dịch từ 300.000 VNĐ)."
+			"commision": "300.000 đ",
+			"approvalTime": "05 phút"
 		},
 		"productOffer": [
 			{
@@ -164,15 +160,13 @@
 	{
 		"id": "vpbgenz",
 		"category": "CREDIT_CARD",
-		"name": "VPBANK CREDIT CARD",
+		"name": "Vpbank - Genz",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vpbgenz.png",
-			"condition": "cá nhân từ 18 tuổi trở lên và thu nhập từ 7 triệu đồng/tháng.",
-			"keyFeature": "hoàn tiền đến 10% giá trị giao dịch, tối đa 200,000/ tháng.",
-			"anualFee": "399,000 đồng. Miễn phí khi có từ 3 giao dịch chi tiêu trong vòng 30 ngày đầu sau khi mở thẻ (mỗi giao dịch từ 200.000 VNĐ)."
+			"commision": "300.000 đ",
+			"approvalTime": "05 phút"
 		},
 		"productOffer": [
 			{
@@ -246,15 +240,13 @@
 	{
 		"id": "vpbmc2",
 		"category": "CREDIT_CARD",
-		"name": "VPBANK CREDIT CARD",
+		"name": "Vpbank - MC2",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vpbmc2.png",
-			"condition": "cá nhân từ 18 tuổi trở lên và thu nhập từ 7 triệu đồng/tháng.",
-			"keyFeature": "tích điểm lên đến 6 điểm khi chi tiêu 1,000 đồng.",
-			"anualFee": "299,000 đồng. Miễn phí thường niên năm tiếp theo nếu tổng chi tiêu của thẻ chính và thẻ phụ từ 50 triệu đồng trở lên."
+			"commision": "300.000 đ",
+			"approvalTime": "05 phút"
 		},
 		"productOffer": [
 			{
@@ -319,15 +311,13 @@
 	{
 		"id": "vpbvna",
 		"category": "CREDIT_CARD",
-		"name": "VPBANK CREDIT CARD",
+		"name": "Vpbank - VNA",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vpbvna.png",
-			"condition": "cá nhân từ 18 tuổi trở lên và thu nhập từ 12 triệu đồng/tháng.",
-			"keyFeature": "26.000VNĐ = 1 dặm Bông Sen Vàng khi chi tiêu bằng VNĐ.",
-			"anualFee": "899,000 đồng. Miễn phí khi có giao dịch chi tiêu trong vòng 30 ngày đầu sau khi mở thẻ (mỗi giao dịch từ 300.000 VNĐ)."
+			"commision": "300.000 đ",
+			"approvalTime": "05 phút"
 		},
 		"productOffer": [
 			{
@@ -397,11 +387,9 @@
 		"advertiser": "Ngân hàng TMCP Tiên Phong",
 		"link": "https://evocard.tpb.vn/?utm_source=avay_afffimi&utm_campaign=First&utm_medium={{orderId}}",
 		"show": {
-			"limit": "lên đến 50 triệu đồng.",
 			"image": "tpbevo.svg",
-			"condition": "cá nhân từ 22 tuổi trở lên và thu nhập từ 7 triệu đồng/tháng.",
-			"keyFeature": " hoàn tiền không giới hạn lên đến 30% khi mua sắm trực tuyến qua ứng dụng TPBank Mobile.",
-			"anualFee": "miễn phí thường niên."
+			"commision": "300.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -491,15 +479,13 @@
 	{
 		"id": "hdbvjp",
 		"category": "CREDIT_CARD",
-		"name": "HDBANK",
+		"name": "HDBANK - VJP",
 		"advertiser": "Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh",
 		"link": "https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPVJ%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D{{orderId}}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "hdbvjp.svg",
-			"condition": "cá nhân từ 18 tuổi trở lên và thu nhập từ 7 triệu đồng/tháng.",
-			"keyFeature": "Tặng 5% khi mua vé máy bay Vietjet Air. Hoàn tiền 0,3% không giới hạn khi chi tiêu.",
-			"anualFee": "Hoàn phí thường niên năm đầu tiên."
+			"commision": "150.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -564,15 +550,13 @@
 	{
 		"id": "hdb4in1",
 		"category": "CREDIT_CARD",
-		"name": "HDBANK",
+		"name": "HDBANK - 4IN1",
 		"advertiser": "Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh",
 		"link": "https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPPLX%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D{{orderId}}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "hdb4in1.svg",
-			"condition": " cá nhân từ 18 tuổi trở lên và thu nhập từ 5 triệu đồng/tháng.",
-			"keyFeature": "Tích điểm đổi quà không giới hạn với mỗi 100.000 đồng giao dịch.",
-			"anualFee": "Hoàn phí thường niên năm đầu tiên."
+			"commision": "150.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -636,11 +620,9 @@
 		"advertiser": "Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh",
 		"link": "https://muadee.page.link/?link=https://muadee.com.vn&utm_source=BTM_Fimi&utm_medium={{orderId}}&utm_campaign=aff_pub&apn=com.muadee.hdbank&amv=3&ibi=com.muadee.hdbank&isi=1633030865&efr=1&ius=muadee://&_imcp=1",
 		"show": {
-			"limit": "lên đến 30 triệu đồng.",
 			"image": "muadee.svg",
-			"condition": "cá nhân từ 18 tuổi trở lên và thu nhập từ 5 triệu đồng/tháng.",
-			"keyFeature": "không lãi suất, Tự động chuyển đổi trả góp 3 kỳ khi thanh toán tại cửa hàng hoặc kênh online có phương thức Visa.",
-			"anualFee": "không phí thường niên trong suốt quá trình sử dụng."
+			"commision": "150.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -700,11 +682,9 @@
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-travel-eilte&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vibtra.svg",
-			"condition": "cá nhân từ 20 - 70 tuổi và thu nhập từ 20 triệu đồng/tháng.",
-			"keyFeature": "Hoàn tiền 10% tổng giá trị chi tiêu hợp lệ hàng tháng, tối đa 500.000 VNĐ/ khách hàng/30 ngày.",
-			"anualFee": " 1,299,000 đồng. Hoàn phí dành cho chủ thẻ mới khi chi tiêu từ 1.000.000 VNĐ."
+			"commision": "800.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -798,11 +778,9 @@
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-supercard&utm_source=Public_Website&utm_medium=Affiliate_FIMIVIB-{{orderId}}-&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vibsup.svg",
-			"condition": "cá nhân từ 20 - 70 tuổi và thu nhập từ 10 triệu đồng/tháng.",
-			"keyFeature": "Hoàn tiền 10% tổng giá trị chi tiêu hợp lệ hàng tháng, tối đa 500.000 VNĐ/ khách hàng/30 ngày.",
-			"anualFee": "999,000 đồng. Hoàn phí dành cho chủ thẻ mới khi chi tiêu từ 1.000.000 VNĐ."
+			"commision": "800.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -905,11 +883,9 @@
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-premier-boundless&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vibpre.svg",
-			"condition": "cá nhân từ 20 - 70 tuổi và thu nhập từ 10 triệu đồng/tháng.",
-			"keyFeature": "Hoàn tiền 10% tổng giá trị chi tiêu hợp lệ hàng tháng, tối đa 500.000 VNĐ/ khách hàng/30 ngày.",
-			"anualFee": "1,299,000 đồng. Hoàn phí dành cho chủ thẻ mới khi chi tiêu từ 1.000.000 VNĐ."
+			"commision": "800.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -1002,15 +978,13 @@
 	{
 		"id": "vibrew",
 		"category": "CREDIT_CARD",
-		"name": "VIB Rewards Unlimited",
+		"name": "VIB - Rewards Unlimited",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-rewards-unlimited&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vibrew.svg",
-			"condition": "cá nhân từ 20 - 70 tuổi và thu nhập từ 10 triệu đồng/tháng.",
-			"keyFeature": "Hoàn tiền 10% tổng giá trị chi tiêu hợp lệ hàng tháng, tối đa 500.000 VNĐ/ khách hàng/30 ngày.",
-			"anualFee": "499,000 đồng. Hoàn phí dành cho chủ thẻ mới khi chi tiêu từ 1.000.000 VNĐ."
+			"commision": "800.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -1102,15 +1076,13 @@
 	{
 		"id": "vibcas",
 		"category": "CREDIT_CARD",
-		"name": "VIB Cash back",
+		"name": "VIB - Cash back",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-cashback&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vibcas.svg",
-			"condition": "cá nhân từ 20 - 70 tuổi và thu nhập từ 10 triệu đồng/tháng.",
-			"keyFeature": "Hoàn tiền 10% tổng giá trị chi tiêu hợp lệ hàng tháng, tối đa 500.000 VNĐ/ khách hàng/30 ngày.",
-			"anualFee": "899,000 đồng. Hoàn phí dành cho chủ thẻ mới khi chi tiêu từ 1.000.000 VNĐ."
+			"commision": "800.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -1218,15 +1190,13 @@
 	{
 		"id": "vibfam",
 		"category": "CREDIT_CARD",
-		"name": "VIB Family Link",
+		"name": "VIB - Family Link",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-family-link&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vibfam.svg",
-			"condition": "cá nhân từ 20 - 70 tuổi và thu nhập từ 10 triệu đồng/tháng.",
-			"keyFeature": "Hoàn tiền 10% tổng giá trị chi tiêu hợp lệ hàng tháng, tối đa 500.000 VNĐ/ khách hàng/30 ngày.",
-			"anualFee": "499,000 đồng. Hoàn phí dành cho chủ thẻ mới khi chi tiêu từ 1.000.000 VNĐ."
+			"commision": "800.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -1347,15 +1317,13 @@
 	{
 		"id": "vibfin",
 		"category": "CREDIT_CARD",
-		"name": "VIB Financial Free",
+		"name": "VIB - Financial Free",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-financial-free&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
 		"show": {
-			"limit": "lên đến 100 triệu đồng.",
 			"image": "vibfin.svg",
-			"condition": "cá nhân từ 20 - 70 tuổi và thu nhập từ 10 triệu đồng/tháng.",
-			"keyFeature": "Ưu đãi lãi suất 0% cho kỳ sao kê 3 tháng đầu tiên trên toàn bộ các giao dịch chi tiêu và rút tiền.",
-			"anualFee": "miễn phí thường niên trọn đời."
+			"commision": "800.000 đ",
+			"approvalTime": "15 phút"
 		},
 		"productOffer": [
 			{
@@ -1443,11 +1411,9 @@
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://vpbankneo.page.link/FIMI1111",
 		"show": {
-			"paymentLimit": "lên đến 2 tỷ đồng/ ngày",
 			"image": "vpbankneo.svg",
-			"condition": "cá nhân từ 15 tuổi trở lên.",
-			"keyFeature": "Mở tài khoản nhanh chóng chỉ vài phút, không cần ra ngân hàng. Chọn số tài khoản đẹp như ý.",
-			"fee": "Chuyển tiền nhanh chóng trong và ngoài mạng. 100% miễn phí."
+			"commision": "> 50.000 đ",
+			"approvalTime": "> 01 phút"
 		},
 		"productOffer": [
 			{
@@ -1505,8 +1471,7 @@
 		"show": {
 			"income": "10% doanh thu từ publisher đã tuyển dụng",
 			"image": "pub.jpg",
-			"condition": "Có mã giới thiệu của FIMI",
-			"keyFeature": "Giới thiệu tạo mã giới thiệu, nhận ngay doanh thu quản lý lên đến 10% trên đơn"
+			"approvalTime": "> 01 phút"
 		},
 		"productOffer": [
 			{

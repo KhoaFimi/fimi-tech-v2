@@ -10,13 +10,9 @@ export const productSchema = z.object({
 	link: z.string(),
 	show: z.object({
 		image: z.string(),
-		limit: z.string().optional().nullish(),
 		income: z.string().optional().nullish(),
-		paymentLimit: z.string().optional().nullish(),
-		condition: z.string(),
-		keyFeature: z.string(),
-		anualFee: z.string().optional().nullish(),
-		fee: z.string().optional().nullish()
+		commision: z.string().optional().nullish(),
+		approvalTime: z.string().optional().nullish()
 	}),
 	productOffer: z.array(
 		z.object({
