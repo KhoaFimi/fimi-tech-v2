@@ -11,7 +11,7 @@ export const FormWrapper: FC<FormWrapper> = ({
 	description
 }) => {
 	return (
-		<div>
+		<div className='w-full rounded-lg border p-4 shadow'>
 			<div className='pb-4'>
 				<h4 className='text-center font-bold uppercase tracking-tight text-primary ~text-lg/xl'>
 					{title}

@@ -21,6 +21,7 @@ export const envSchema = z.object({
 	GCP_UNIVERSE_DOMAIN: z.string(),
 	SHEET_USER_ID: z.string(),
 	SHEET_USER_NAME: z.string(),
+	SHEET_TOKEN_NAME: z.string(),
 	SHEET_LEAD_ID: z.string(),
 	SHEET_LEAD_NAME: z.string(),
 	GOOGLE_CLIENT_ID: z.string(),

@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 
 import RegisterSuccessDialog from '@/app/(main)/(auth)/register/_components/success-dialog'
-import Footer from '@/components/footer'
 import Header from '@/components/header'
 import Navbar from '@/components/navbar'
 import Policies from '@/components/policies'
@@ -19,7 +18,12 @@ const MainLayout: FC<PropsWithChildren> = async ({ children }) => {
 			<Policies />
 			<Toaster />
 			<RegisterSuccessDialog />
-			<Footer className='hidden lg:block' />
+			{/* <Footer className='hidden lg:block' /> */}
+			<div className='w-full bg-background px-2 py-2 text-right'>
+				<p className='bg-gradient-to-r from-primary to-secondary bg-clip-text text-[8px] font-bold text-transparent'>
+					Copyright &#169; FIMI Tech Co., Ltd, all right reserved.
+				</p>
+			</div>
 		</div>
 	)
 }
