@@ -77,8 +77,12 @@ export const addLead = async ({
 			]
 		}
 	})
-
-	const productLink = await getProductLink(oid, info.product)
+	const productLink = await getProductLink(
+		oid,
+		validatedParamsData.data.product,
+		validatedParamsData.data,
+		validatedLeadData.data
+	)
 
 	if (productLink.error) {
 		return {
