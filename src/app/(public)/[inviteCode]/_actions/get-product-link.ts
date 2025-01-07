@@ -32,8 +32,6 @@ const getProductLink = async (
 
 	let link: string
 
-	console.log(productId.startsWith('vpb'))
-
 	if (productId.startsWith('vpb')) {
 		const prefillInfo = enc
 			.encode(
