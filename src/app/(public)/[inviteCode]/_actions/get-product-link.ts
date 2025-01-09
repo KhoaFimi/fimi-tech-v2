@@ -32,7 +32,7 @@ const getProductLink = async (
 
 	let link: string
 
-	if (productId.startsWith('vpb')) {
+	if (productId.startsWith('vpb') && productId !== 'vpbankneo') {
 		const prefillInfo = enc
 			.encode(
 				JSON.stringify({
