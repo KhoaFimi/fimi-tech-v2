@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use server'
 
 import { Base64 } from 'base64-string'
@@ -32,27 +34,27 @@ const getProductLink = async (
 
 	let link: string
 
-	if (productId.startsWith('vpb') && productId !== 'vpbankneo') {
-		const prefillInfo = enc
-			.encode(
-				JSON.stringify({
-					name: values.fullname,
-					email: values.email,
-					phone: values.phone
-				})
-			)
-			.replace(/\+/g, '-')
-			.replace(/\//g, '_')
-			.replace(/\=/g, '.')
+	// if (productId.startsWith('vpb') && productId !== 'vpbankneo') {
+	// 	const prefillInfo = enc
+	// 		.encode(
+	// 			JSON.stringify({
+	// 				name: values.fullname,
+	// 				email: values.email,
+	// 				phone: values.phone
+	// 			})
+	// 		)
+	// 		.replace(/\+/g, '-')
+	// 		.replace(/\//g, '_')
+	// 		.replace(/\=/g, '.')
 
-		link = `https://cards.fimi.tech/?click_id=${oid}&partner=Fimi_affiliate&affiliate_code=${info.publisherCode}&info=${prefillInfo}`
+	// 	link = `https://cards.fimi.tech/?click_id=${oid}&partner=Fimi_affiliate&affiliate_code=${info.publisherCode}&info=${prefillInfo}`
 
-		return {
-			data: {
-				link
-			}
-		}
-	}
+	// 	return {
+	// 		data: {
+	// 			link
+	// 		}
+	// 	}
+	// }
 
 	link = product.link.replace('{{orderId}}', oid)
 
