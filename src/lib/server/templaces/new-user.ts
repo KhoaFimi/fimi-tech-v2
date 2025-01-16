@@ -126,7 +126,7 @@ export const newUserMailTemplate = ({
                     border-radius: 10px;
                     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                 ">
-        <a href="https://pub.ruby-agency.vn/chien-dich" target="_blank" style="
+        <a href="https://aff.fimi.tech" target="_blank" style="
                         color: #ffffff;
                         text-decoration: none;
                         font-weight: bold;
