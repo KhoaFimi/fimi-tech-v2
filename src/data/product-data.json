@@ -7,7 +7,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbstepup.png",
-			"commision": "450.000 đ",
+			"commision": "300.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -43,7 +43,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"300.000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -86,7 +86,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpblady.png",
-			"commision": "450.000 đ",
+			"commision": "300.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -122,7 +122,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"300.000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -165,7 +165,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbgenz.png",
-			"commision": "450.000 đ",
+			"commision": "300.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -202,7 +202,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"300.000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -245,7 +245,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbmc2.png",
-			"commision": "450.000 đ",
+			"commision": "300.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -273,7 +273,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"300.000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -316,7 +316,7 @@
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
 		"show": {
 			"image": "vpbvna.png",
-			"commision": "450.000 đ",
+			"commision": "300.000 đ",
 			"approvalTime": "05 phút"
 		},
 		"productOffer": [
@@ -345,7 +345,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"450,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"300.000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -448,7 +448,7 @@
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
 			"commision": [
-				"300,000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
+				"300.000 đ/ thẻ phát hành có phát sinh giao dịch thành công."
 			],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
@@ -555,7 +555,7 @@
 		"link": "https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPPLX%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D{{orderId}}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank",
 		"show": {
 			"image": "hdb4in1.svg",
-			"commision": "200.000 đ",
+			"commision": "150.000 đ",
 			"approvalTime": "15 phút"
 		},
 		"productOffer": [
@@ -582,7 +582,7 @@
 		"commisionPolicy": {
 			"status": "Tạm duyệt",
 			"description": "Ghi nhận hoa hồng",
-			"commision": ["200,000 đ/ thẻ phát hành thành công."],
+			"commision": ["150,000 đ/ thẻ phát hành thành công."],
 			"note": "Chưa trừ 10% thuế TNCN."
 		},
 		"recognitionRules": {
