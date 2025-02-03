@@ -63,7 +63,7 @@ export const resetPassword = async (
 	await sheets.spreadsheets.values.update({
 		spreadsheetId: config.SHEET_USER_ID,
 		valueInputOption: 'RAW',
-		range: `${config.SHEET_USER_NAME}!W${existingTokenIdx + 1}`,
+		range: `${config.SHEET_USER_NAME}!W${existingUserIdx + 1}`,
 		requestBody: {
 			values: [[hashedPassword]]
 		}
