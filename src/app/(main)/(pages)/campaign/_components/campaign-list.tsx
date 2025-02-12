@@ -35,7 +35,7 @@ const CampaignList: FC<{ products: ProductsSchema }> = ({ products }) => {
 
 					const pickIcon = (category: string) => {
 						switch (category) {
-							case PRODUCT_CATEGORY.creditCard:
+							case PRODUCT_CATEGORY.credit:
 								return CreditCard
 							case PRODUCT_CATEGORY.all:
 								return HandCoins
