@@ -6,8 +6,8 @@ import { Base64 } from 'base64-string'
 import { promises as fs } from 'fs'
 
 import { productsSchema } from '@/app/(main)/(pages)/campaign/_schema/product.schema'
-import { ParamsSchema } from '@/schemas/invite-link-params-schema'
-import { LeadSchema } from '@/schemas/lead-schema'
+import { ParamsSchema } from '@/schemas/invite-link-params.schema'
+import { LeadSchema } from '@/schemas/lead.schema'
 
 const getProductLink = async (
 	oid: string,
