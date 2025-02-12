@@ -19,7 +19,7 @@ import { PRODUCT_CATEGORY, PRODUCT_CATEGORY_DESSRIPTION } from '@/constant/enum'
 const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 	const pickIcon = (category: string) => {
 		switch (category) {
-			case PRODUCT_CATEGORY.creditCard:
+			case PRODUCT_CATEGORY.credit:
 				return CreditCard
 			case PRODUCT_CATEGORY.all:
 				return HandCoins
@@ -107,7 +107,7 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 				height={256}
 				className='absolute z-0 object-contain'
 			/>
-			<div className='absolute inset-0 bottom-0 h-full w-full bg-black/45 transition-all' />
+			<div className='absolute inset-0 bottom-0 h-full w-full bg-black/10 transition-all' />
 
 			<div className='z-30 mt-auto flex h-1/4 w-full select-none flex-col gap-y-1 bg-white p-1 pt-2'>
 				<p className='truncate text-[12px] font-semibold leading-none tracking-tight text-primary'>
@@ -115,13 +115,7 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 				</p>
 				<div className='flex items-center gap-x-0.5'>
 					<small className='text-[9px] font-bold leading-none text-foreground/70'>
-						{
-							PRODUCT_CATEGORY_DESSRIPTION[
-								_.camelCase(
-									product.category.toLowerCase()
-								) as keyof typeof PRODUCT_CATEGORY_DESSRIPTION
-							]
-						}
+						{PRODUCT_CATEGORY_DESSRIPTION[product.category]}
 					</small>
 					<Icon
 						className='size-3 text-foreground/70'

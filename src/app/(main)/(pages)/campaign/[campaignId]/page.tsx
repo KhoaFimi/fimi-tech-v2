@@ -5,7 +5,6 @@ import {
 } from '@tanstack/react-query'
 import { FC } from 'react'
 
-import { getInviteLink } from '@/app/(main)/(pages)/campaign/_actions/get-invite-link'
 import { getProductById } from '@/app/(main)/(pages)/campaign/_actions/get-product-by-id'
 import CampaignDetailScreen from '@/app/(main)/(pages)/campaign/_components/campaign-detail-screen'
 import { verifySession } from '@/lib/dal'
@@ -25,12 +24,6 @@ const CampaignIdPage: FC<CampaignIdPageProps> = async ({ params }) => {
 	await queryClient.prefetchQuery({
 		queryKey: ['product', campaignId],
 		queryFn: async () => getProductById(campaignId)
-	})
-
-	await queryClient.prefetchQuery({
-		queryKey: ['invite-link', publisherCode, managerCode],
-		queryFn: async () =>
-			getInviteLink({ publisherCode, managerCode, product: campaignId })
 	})
 
 	return (

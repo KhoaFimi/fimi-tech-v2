@@ -27,17 +27,17 @@ export enum NATIVE_COLUMNS {
 }
 
 export enum PRODUCT_CATEGORY {
-	all = 'ALL',
-	creditCard = 'CREDIT_CARD',
-	paymentAccount = 'PAYMENT_ACCOUNT',
-	recruitment = 'RECRUITMENT',
-	loan = 'LOAN'
+	all = 'all',
+	credit = 'credit',
+	paymentAccount = 'payment',
+	recruitment = 'recruitment',
+	loan = 'loan'
 }
 
 export enum PRODUCT_CATEGORY_DESSRIPTION {
 	all = 'Tất cả',
-	creditCard = 'Thẻ tín dụng',
-	paymentAccount = 'Tài khoản thanh toán',
+	credit = 'Thẻ tín dụng',
+	payment = 'Tài khoản thanh toán',
 	recruitment = 'Tuyển dụng',
 	loan = 'Vay tín chấp'
 }

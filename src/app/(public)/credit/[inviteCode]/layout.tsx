@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import { FC, PropsWithChildren } from 'react'
 
-import MobileFooter from '@/app/(public)/[inviteCode]/_components/mobile-footer'
-import MobileHeader from '@/app/(public)/[inviteCode]/_components/mobile-header'
+import MobileFooter from '@/app/(public)/credit/[inviteCode]/_components/mobile-footer'
+import MobileHeader from '@/app/(public)/credit/[inviteCode]/_components/mobile-header'
 import Policies from '@/components/policies'
 
 export const metadata = {

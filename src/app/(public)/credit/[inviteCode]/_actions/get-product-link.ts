@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 'use server'
 
@@ -5,13 +6,14 @@ import { Base64 } from 'base64-string'
 import { promises as fs } from 'fs'
 
 import { productsSchema } from '@/app/(main)/(pages)/campaign/_schema/product.schema'
-import { LeadSchema } from '@/app/(public)/credit/_schemas/lead.schema'
+import { ParamsSchema } from '@/schemas/invite-link-params-schema'
+import { LeadSchema } from '@/schemas/lead-schema'
 
 const getProductLink = async (
 	oid: string,
 	productId: string,
-	values: LeadSchema,
-	code: string
+	info: ParamsSchema,
+	values: LeadSchema
 ) => {
 	const file = await fs.readFile(
 		process.cwd() + '/src/data/product-data.json',
@@ -22,15 +24,13 @@ const getProductLink = async (
 
 	const products = productsSchema.parse(JSON.parse(file))
 
-	const productIdX = products.findIndex(product => product.id === productId)
+	const product = products.find(product => product.id === productId)
 
-	if (productIdX === -1) {
+	if (!product) {
 		return {
 			error: 'Link giới thiệu không chính xác'
 		}
 	}
-
-	const product = products[productIdX]
 
 	let link: string
 
@@ -47,7 +47,7 @@ const getProductLink = async (
 	// 		.replace(/\//g, '_')
 	// 		.replace(/\=/g, '.')
 
-	// 	link = `https://cards.fimi.tech/?click_id=${oid}&partner=Fimi_affiliate&affiliate_code=${code}&info=${prefillInfo}`
+	// 	link = `https://cards.fimi.tech/?click_id=${oid}&partner=Fimi_affiliate&affiliate_code=${info.publisherCode}&info=${prefillInfo}`
 
 	// 	return {
 	// 		data: {
@@ -56,9 +56,11 @@ const getProductLink = async (
 	// 	}
 	// }
 
+	link = product.link.replace('{{orderId}}', oid)
+
 	return {
 		data: {
-			link: product.link.replace('{{orderId}}', oid)
+			link
 		}
 	}
 }

@@ -102,12 +102,11 @@ const CampaignScreen = () => {
 			<div className='fixed inset-x-0 bottom-0 z-50 w-full rounded-t-3xl bg-primary px-2 pb-4 pt-2 backdrop-blur-md lg:hidden'>
 				<div className='flex items-center justify-evenly space-x-4'>
 					<button
-						onClick={() => setCategory(PRODUCT_CATEGORY.creditCard)}
+						onClick={() => setCategory(PRODUCT_CATEGORY.credit)}
 						className={cn(
 							'flex size-10 select-none flex-col items-center justify-center rounded-md object-contain p-1 text-white',
 							{
-								'bg-white text-primary':
-									category === PRODUCT_CATEGORY.creditCard
+								'bg-white text-primary': category === PRODUCT_CATEGORY.credit
 							}
 						)}
 					>

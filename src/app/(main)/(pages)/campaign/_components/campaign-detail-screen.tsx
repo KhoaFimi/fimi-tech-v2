@@ -4,7 +4,6 @@ import { useQuery } from '@tanstack/react-query'
 import { Loader2, ShieldAlert } from 'lucide-react'
 import { FC } from 'react'
 
-import { getInviteLink } from '@/app/(main)/(pages)/campaign/_actions/get-invite-link'
 import { getProductById } from '@/app/(main)/(pages)/campaign/_actions/get-product-by-id'
 import CampaignDetail from '@/app/(main)/(pages)/campaign/_components/campaign-detail'
 import InviteLink from '@/app/(main)/(pages)/campaign/_components/invite-link'
@@ -26,16 +25,34 @@ const CampaignDetailScreen: FC<CampaignDetailScreenProps> = ({
 		queryFn: async () => await getProductById(campaignId)
 	})
 
-	const {
-		data: inviteLink,
-		status: fetchInviteLinkStatus,
-		refetch: refetchInviteLink,
-		isFetching: isFetchingInviteLink
-	} = useQuery({
-		queryKey: ['invite-link', publisherCode, managerCode],
-		queryFn: async () =>
-			getInviteLink({ publisherCode, managerCode, product: campaignId })
-	})
+	const getInviteLink = ({
+		publisherCode,
+		managerCode,
+		product,
+		category
+	}: {
+		publisherCode: string
+		managerCode: string
+		product: string
+		category: string
+	}) => {
+		const domain = process.env.NEXT_PUBLIC_DOMAIN ?? 'http://localhost:3000'
+
+		if (product === 'fimiinvite')
+			return `${domain}/register?ref=${publisherCode}`
+
+		const uniqueToken = encodeURIComponent(
+			btoa(
+				JSON.stringify({
+					publisherCode,
+					managerCode,
+					product
+				})
+			)
+		)
+
+		return `${domain}/${category}/${uniqueToken}`
+	}
 
 	if (fetchProductStatus === 'pending')
 		return (
@@ -61,25 +78,44 @@ const CampaignDetailScreen: FC<CampaignDetailScreenProps> = ({
 			</div>
 		)
 
-	return (
-		<div className='container mx-auto flex flex-col gap-x-4 gap-y-4 px-2 py-8'>
-			<InviteLink
-				link={inviteLink}
-				refetch={refetchInviteLink}
-				fetchStatus={fetchInviteLinkStatus}
-				isLoading={isFetchingInviteLink}
-			/>
-			<div className='flex w-full flex-col items-center gap-x-4 gap-y-4 lg:flex-row lg:items-start'>
-				<InviteQr
-					link={inviteLink}
-					fetchStatus={fetchInviteLinkStatus}
-					publisherCode={publisherCode}
-					product={campaignId}
-				/>
-				<CampaignDetail product={product} />
+	// const {
+	// 	data: inviteLink,
+	// 	status: fetchInviteLinkStatus,
+	// 	refetch: refetchInviteLink,
+	// 	isFetching: isFetchingInviteLink
+	// } = useQuery({
+	// 	queryKey: ['invite-link', publisherCode, managerCode],
+	// 	queryFn: async () =>
+	// 		getInviteLink({
+	// 			publisherCode,
+	// 			managerCode,
+	// 			product: campaignId,
+	// 			category: product?.category
+	// 		})
+	// })
+
+	if (fetchProductStatus === 'success' && product) {
+		const inviteLink = getInviteLink({
+			category: product.category,
+			managerCode,
+			product: product.id,
+			publisherCode
+		})
+
+		return (
+			<div className='container mx-auto flex flex-col gap-x-4 gap-y-4 px-2 py-8'>
+				<InviteLink link={inviteLink} />
+				<div className='flex w-full flex-col items-center gap-x-4 gap-y-4 lg:flex-row lg:items-start'>
+					<InviteQr
+						link={inviteLink}
+						publisherCode={publisherCode}
+						product={campaignId}
+					/>
+					<CampaignDetail product={product} />
+				</div>
 			</div>
-		</div>
-	)
+		)
+	}
 }
 
 export default CampaignDetailScreen

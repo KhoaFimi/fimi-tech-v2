@@ -1,7 +1,7 @@
 [
 	{
 		"id": "vpbstepup",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "Vpbank - Step Up",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
@@ -80,7 +80,7 @@
 	},
 	{
 		"id": "vpblady",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "Vpbank - Lady",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
@@ -159,7 +159,7 @@
 	},
 	{
 		"id": "vpbgenz",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "Vpbank - Genz",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
@@ -239,7 +239,7 @@
 	},
 	{
 		"id": "vpbmc2",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "Vpbank - MC2",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
@@ -310,7 +310,7 @@
 	},
 	{
 		"id": "vpbvna",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "Vpbank - VNA",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://cards.vpbank.com.vn/?utm_campaign=JarvisCustCC.Partner&utm_source=FiMi&utm_medium={{orderId}}",
@@ -382,7 +382,7 @@
 	},
 	{
 		"id": "tpbevo",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "TPBank EVO",
 		"advertiser": "Ngân hàng TMCP Tiên Phong",
 		"link": "https://evocard.tpb.vn/?utm_source=avay_afffimi&utm_campaign=First&utm_medium={{orderId}}",
@@ -478,7 +478,7 @@
 	},
 	{
 		"id": "hdbvjp",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "HDBANK - VJP",
 		"advertiser": "Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh",
 		"link": "https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPVJ%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D{{orderId}}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank",
@@ -549,7 +549,7 @@
 	},
 	{
 		"id": "hdb4in1",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "HDBANK - 4IN1",
 		"advertiser": "Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh",
 		"link": "https://hdbank.page.link/?link=https://hdbank.page.link/?channel%3Ddop%26productcode%3DDOPPLX%26utm_source%3DFIMI%26utm_campaign%3Dtest%26utm_channel%3DDOP%26utm_ref%3D{{orderId}}&apn=com.vnpay.hdbank&isi=1461658565&ibi=com.vnpay.HDBank",
@@ -615,7 +615,7 @@
 	},
 	{
 		"id": "muadee",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "Muadee by HDBank",
 		"advertiser": "Ngân hàng TMCP Phát triển Thành phố Hồ Chí Minh",
 		"link": "https://muadee.page.link/?link=https://muadee.com.vn&utm_source=BTM_Fimi&utm_medium={{orderId}}&utm_campaign=aff_pub&apn=com.muadee.hdbank&amv=3&ibi=com.muadee.hdbank&isi=1633030865&efr=1&ius=muadee://&_imcp=1",
@@ -677,7 +677,7 @@
 	},
 	{
 		"id": "vibtra",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "VIB - Travel Elite",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-travel-eilte&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
@@ -770,7 +770,7 @@
 	},
 	{
 		"id": "vibsup",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "VIB - Super card",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-supercard&utm_source=Public_Website&utm_medium=Affiliate_FIMIVIB-{{orderId}}-&utm_content=Affiliate_FIMIVIB-{{orderId}}",
@@ -872,7 +872,7 @@
 	},
 	{
 		"id": "vibpre",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "VIB - Premier Boundless",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-premier-boundless&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
@@ -968,7 +968,7 @@
 	},
 	{
 		"id": "vibrew",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "VIB - Rewards Unlimited",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-rewards-unlimited&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
@@ -1063,7 +1063,7 @@
 	},
 	{
 		"id": "vibcas",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "VIB - Cash back",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-cashback&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
@@ -1174,7 +1174,7 @@
 	},
 	{
 		"id": "vibfam",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "VIB - Family Link",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-family-link&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
@@ -1298,7 +1298,7 @@
 	},
 	{
 		"id": "vibfin",
-		"category": "CREDIT_CARD",
+		"category": "credit",
 		"name": "VIB - Financial Free",
 		"advertiser": "Ngân hàng TMCP Quốc tế Việt Nam",
 		"link": "https://www.vib.com.vn/vn/the-tin-dung/dang-ky/buoc-1?card_type=vib-financial-free&utm_source=REFERCARD&utm_medium=REFER_CARD&utm_content=Affiliate_FIMIVIB-{{orderId}}",
@@ -1385,7 +1385,7 @@
 	},
 	{
 		"id": "vpbankneo",
-		"category": "PAYMENT_ACCOUNT",
+		"category": "payment",
 		"name": "VPBank NEO",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://vpbankneo.page.link/FIMI1111",
@@ -1443,7 +1443,7 @@
 	},
 	{
 		"id": "fimiinvite",
-		"category": "RECRUITMENT",
+		"category": "recruitment",
 		"name": "Tuyển dụng Publisher",
 		"advertiser": "FIMI Tech",
 		"link": "https://aff.fimi.tech/register?ref={{code}}",

@@ -8,12 +8,7 @@ import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { getCities } from '@/actions/get-citites'
-import { addLead } from '@/app/(public)/[inviteCode]/_actions/add-lead'
-import {
-	LeadSchema,
-	leadSchema
-} from '@/app/(public)/[inviteCode]/_schemas/lead.schema'
-import { ParamsSchema } from '@/app/(public)/[inviteCode]/_schemas/params.schema'
+import { addLead } from '@/app/(public)/credit/[inviteCode]/_actions/add-lead'
 import { FormError } from '@/components/form-response'
 import PolicyButton from '@/components/policies/policy-button'
 import { Button } from '@/components/ui/button'
@@ -32,6 +27,8 @@ import { Input } from '@/components/ui/input'
 import { useSercurityPolicyStore } from '@/hooks/use-sercurity-policy-store'
 import { useTermPolicyStore } from '@/hooks/use-term-policy-store'
 import { useUserPolicyStore } from '@/hooks/use-user-policy-store'
+import { ParamsSchema } from '@/schemas/invite-link-params-schema'
+import { LeadSchema, leadSchema } from '@/schemas/lead-schema'
 
 const LeadForm: FC<ParamsSchema> = ({
 	publisherCode,

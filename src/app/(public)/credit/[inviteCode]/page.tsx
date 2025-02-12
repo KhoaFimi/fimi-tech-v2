@@ -6,8 +6,8 @@ import {
 import { FC } from 'react'
 
 import { getCities } from '@/actions/get-citites'
-import LeadForm from '@/app/(public)/[inviteCode]/_components/lead-form'
-import { paramsSchema } from '@/app/(public)/[inviteCode]/_schemas/params.schema'
+import LeadForm from '@/app/(public)/credit/[inviteCode]/_components/lead-form'
+import { paramsSchema } from '@/schemas/invite-link-params-schema'
 
 type Params = Promise<{ inviteCode: string }>
 

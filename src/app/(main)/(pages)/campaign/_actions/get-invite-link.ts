@@ -1,28 +1,30 @@
 'use server'
 
-import { config } from '@/lib/config'
+// import { config } from '@/lib/config'
 
-export const getInviteLink = async ({
-	publisherCode,
-	managerCode,
-	product
-}: {
-	publisherCode: string
-	managerCode: string
-	product: string
-}) => {
-	if (product === 'fimiinvite')
-		return `${config.DOMAIN}/register?ref=${publisherCode}`
+// export const getInviteLink = async ({
+// 	publisherCode,
+// 	managerCode,
+// 	product,
+// 	category
+// }: {
+// 	publisherCode: string
+// 	managerCode: string
+// 	product: string
+// 	category: string
+// }) => {
+// 	if (product === 'fimiinvite')
+// 		return `${config.DOMAIN}/register?ref=${publisherCode}`
 
-	const uniqueToken = encodeURIComponent(
-		btoa(
-			JSON.stringify({
-				publisherCode,
-				managerCode,
-				product
-			})
-		)
-	)
+// 	const uniqueToken = encodeURIComponent(
+// 		btoa(
+// 			JSON.stringify({
+// 				publisherCode,
+// 				managerCode,
+// 				product
+// 			})
+// 		)
+// 	)
 
-	return `${config.DOMAIN}/${uniqueToken}`
-}
+// 	return `${config.DOMAIN}/${category}/${uniqueToken}`
+// }

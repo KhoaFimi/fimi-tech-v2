@@ -2,18 +2,12 @@
 
 import { redirect } from 'next/navigation'
 
-import getProductLink from '@/app/(public)/[inviteCode]/_actions/get-product-link'
-import {
-	LeadSchema,
-	leadSchema
-} from '@/app/(public)/[inviteCode]/_schemas/lead.schema'
-import {
-	ParamsSchema,
-	paramsSchema
-} from '@/app/(public)/[inviteCode]/_schemas/params.schema'
+import getProductLink from '@/app/(public)/credit/[inviteCode]/_actions/get-product-link'
 import { config } from '@/lib/config'
 import { getSheets } from '@/lib/server/google-sheets'
 import { parseDate } from '@/lib/server/parse-date'
+import { ParamsSchema, paramsSchema } from '@/schemas/invite-link-params-schema'
+import { LeadSchema, leadSchema } from '@/schemas/lead-schema'
 
 const genOid = (length: number = 12): string => {
 	const characters = 'abcdefghijklmnopqrstuvwxyz0123456789'

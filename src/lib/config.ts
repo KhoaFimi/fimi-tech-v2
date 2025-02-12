@@ -8,7 +8,7 @@ export const envSchema = z.object({
 			z.literal('production')
 		])
 		.default('development'),
-	DOMAIN: z.string().default('http://localhost:3000'),
+	NEXT_PUBLIC_DOMAIN: z.string().default('http://localhost:3000'),
 	BASE_URL: z.string().url().default('http://localhost:3000'),
 	GCP_TYPE: z.string(),
 	GCP_PROJECT_ID: z.string(),
