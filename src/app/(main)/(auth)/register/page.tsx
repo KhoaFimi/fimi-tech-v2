@@ -19,14 +19,14 @@ interface MainPageProps {
 
 const searchParamsSchema = z.object({
 	step: z.string().regex(/^\d+$/).transform(Number).default('1'),
-	referal: z.string().optional(),
+	ref: z.string().optional(),
 	id: z.string().optional()
 })
 
 type SearchParams = Promise<z.infer<typeof searchParamsSchema>>
 
 const MainPage: FC<MainPageProps> = async ({ searchParams }) => {
-	const { step, id, referal } = searchParamsSchema.parse(await searchParams)
+	const { step, id, ref } = searchParamsSchema.parse(await searchParams)
 
 	const queryClient = new QueryClient()
 
@@ -44,7 +44,7 @@ const MainPage: FC<MainPageProps> = async ({ searchParams }) => {
 		<>
 			{step === 1 && (
 				<HydrationBoundary state={dehydrate(queryClient)}>
-					<RegisterStep1Form referal={referal} />
+					<RegisterStep1Form referal={ref} />
 				</HydrationBoundary>
 			)}
 			{step === 2 && (

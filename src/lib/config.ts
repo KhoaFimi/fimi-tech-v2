@@ -24,6 +24,8 @@ export const envSchema = z.object({
 	SHEET_TOKEN_NAME: z.string(),
 	SHEET_LEAD_ID: z.string(),
 	SHEET_LEAD_NAME: z.string(),
+	SHEET_LOAN_LEAD_ID: z.string(),
+	SHEET_LOAN_LEAD_NAME: z.string(),
 	GOOGLE_CLIENT_ID: z.string(),
 	GOOGLE_CLIENT_SECRET: z.string(),
 	GOOGLE_REFRESH_TOKEN: z.string(),

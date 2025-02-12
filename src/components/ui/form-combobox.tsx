@@ -38,7 +38,7 @@ interface FormComboboxProps {
 	notFoundMessage?: string
 	onSelect?: (id: string) => void
 	placeholder?: string
-	initalData: string
+	initalData?: string
 	className?: string
 	label?: ReactNode
 	popoverClassName?: string
@@ -59,7 +59,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 	popoverClassName,
 	notFoundMessage = 'Not Found',
 	placeholder = 'Tìm kiếm',
-	initalData = 'Data'
+	initalData
 }) => {
 	const [open, setOpen] = useState<boolean>(false)
 

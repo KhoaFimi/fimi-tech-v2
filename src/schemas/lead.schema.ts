@@ -18,3 +18,5 @@ export const loanLeadSchema = leadSchema.extend({
 		.min(1, { message: 'Vui lòng nhập khoản vay mong muốn' }),
 	loanTerm: z.string().min(1, { message: 'Vui lòng chọn thời hạn vay' })
 })
+
+export type LoanLeadSchema = z.infer<typeof loanLeadSchema>

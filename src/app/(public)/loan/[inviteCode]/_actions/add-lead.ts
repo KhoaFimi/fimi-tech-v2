@@ -1,23 +1,20 @@
 'use server'
 
-import { redirect } from 'next/navigation'
-
-import getProductLink from '@/app/(public)/credit/[inviteCode]/_actions/get-product-link'
 import { config } from '@/lib/config'
 import { genOid } from '@/lib/server/gen-oid'
 import { getSheets } from '@/lib/server/google-sheets'
 import { parseDate } from '@/lib/server/parse-date'
 import { ParamsSchema, paramsSchema } from '@/schemas/invite-link-params.schema'
-import { LeadSchema, leadSchema } from '@/schemas/lead.schema'
+import { LoanLeadSchema, loanLeadSchema } from '@/schemas/lead.schema'
 
-export const addLead = async ({
+export const addLoanLead = async ({
 	values,
 	info
 }: {
-	values: LeadSchema
+	values: LoanLeadSchema
 	info: ParamsSchema
 }) => {
-	const validatedLeadData = leadSchema.safeParse(values)
+	const validatedLoanLeadData = loanLeadSchema.safeParse(values)
 	const validatedParamsData = paramsSchema.safeParse(info)
 
 	if (!validatedParamsData.success) {
@@ -26,12 +23,12 @@ export const addLead = async ({
 		}
 	}
 
-	if (!validatedLeadData.success)
+	if (!validatedLoanLeadData.success)
 		return {
 			error: 'Yêu cầu nhập chính xác thông tin để tiếp tục'
 		}
 
-	const leadData = validatedLeadData.data
+	const leadData = validatedLoanLeadData.data
 	const infoData = validatedParamsData.data
 
 	const sheets = await getSheets()
@@ -39,9 +36,9 @@ export const addLead = async ({
 	const oid = genOid()
 
 	await sheets.spreadsheets.values.append({
-		spreadsheetId: config.SHEET_LEAD_ID,
-		range: config.SHEET_LEAD_NAME,
-		valueInputOption: 'USER_ENTERED',
+		spreadsheetId: config.SHEET_LOAN_LEAD_ID,
+		range: config.SHEET_LOAN_LEAD_NAME,
+		valueInputOption: 'USER_ENTERD',
 		requestBody: {
 			values: [
 				[
@@ -53,28 +50,9 @@ export const addLead = async ({
 					`'${leadData.phone}`,
 					leadData.email,
 					leadData.city,
-					'',
-					'',
-					'',
-					infoData.managerCode
+					leadData.loanPackage
 				]
 			]
 		}
 	})
-	const productLink = await getProductLink(
-		oid,
-		validatedParamsData.data.product,
-		validatedParamsData.data,
-		validatedLeadData.data
-	)
-
-	if (productLink.error) {
-		return {
-			error: productLink.error
-		}
-	}
-
-	if (productLink.data) {
-		redirect(productLink.data.link)
-	}
 }

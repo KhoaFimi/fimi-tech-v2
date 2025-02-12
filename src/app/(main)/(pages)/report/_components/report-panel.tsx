@@ -113,7 +113,7 @@ const ReportPanel: FC<ReportPanelProps> = ({ order, commision }) => {
 				{/* commision */}
 				<div className='flex flex-col gap-2 rounded-lg border p-2 shadow-md'>
 					<h5 className='bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-center text-sm font-bold uppercase text-transparent'>
-						Doang thu
+						Doanh thu
 					</h5>
 					<Accordion
 						type='single'
