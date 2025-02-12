@@ -1,9 +1,12 @@
 'use server'
 
+import { Base64 } from 'base64-string'
+import { redirect } from 'next/navigation'
+
 import { config } from '@/lib/config'
 import { genOid } from '@/lib/server/gen-oid'
 import { getSheets } from '@/lib/server/google-sheets'
-import { parseDate } from '@/lib/server/parse-date'
+import { parseDate, parseDateTime } from '@/lib/server/parse-date'
 import { ParamsSchema, paramsSchema } from '@/schemas/invite-link-params.schema'
 import { LoanLeadSchema, loanLeadSchema } from '@/schemas/lead.schema'
 
@@ -35,10 +38,12 @@ export const addLoanLead = async ({
 
 	const oid = genOid()
 
+	const enc = new Base64()
+
 	await sheets.spreadsheets.values.append({
 		spreadsheetId: config.SHEET_LOAN_LEAD_ID,
 		range: config.SHEET_LOAN_LEAD_NAME,
-		valueInputOption: 'USER_ENTERD',
+		valueInputOption: 'USER_ENTERED',
 		requestBody: {
 			values: [
 				[
@@ -50,9 +55,23 @@ export const addLoanLead = async ({
 					`'${leadData.phone}`,
 					leadData.email,
 					leadData.city,
-					leadData.loanPackage
+					leadData.loanPackage,
+					parseDateTime(leadData.contactTime as Date),
+					leadData.loanAmmount,
+					leadData.loanTerm,
+					'',
+					'',
+					'',
+					infoData.managerCode
 				]
 			]
 		}
 	})
+
+	const successData = {
+		fullName: leadData.fullname,
+		contactTime: parseDateTime(leadData.contactTime as Date)
+	}
+
+	redirect(`/loan/success/${enc.encode(JSON.stringify(successData))}`)
 }

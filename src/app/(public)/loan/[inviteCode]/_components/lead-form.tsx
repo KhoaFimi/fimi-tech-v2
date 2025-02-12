@@ -1,7 +1,7 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery } from '@tanstack/react-query'
 import {
 	Building2,
 	Clock2,
@@ -15,6 +15,7 @@ import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { getCities } from '@/actions/get-citites'
+import { addLoanLead } from '@/app/(public)/loan/[inviteCode]/_actions/add-lead'
 import { FormError } from '@/components/form-response'
 import LeadFormWrapper from '@/components/lead-form-wrapper'
 import PolicyButton from '@/components/policies/policy-button'
@@ -36,11 +37,7 @@ import { useSercurityPolicyStore } from '@/hooks/use-sercurity-policy-store'
 import { useTermPolicyStore } from '@/hooks/use-term-policy-store'
 import { useUserPolicyStore } from '@/hooks/use-user-policy-store'
 import { ParamsSchema } from '@/schemas/invite-link-params.schema'
-import {
-	LeadSchema,
-	LoanLeadSchema,
-	loanLeadSchema
-} from '@/schemas/lead.schema'
+import { LoanLeadSchema, loanLeadSchema } from '@/schemas/lead.schema'
 import { ComboboxItem } from '@/types'
 
 const loanPackages: ComboboxItem[] = [
@@ -89,8 +86,12 @@ const loanTerm: ComboboxItem[] = [
 	}
 ]
 
-const Leadform: FC<ParamsSchema> = () => {
-	const [error, _setError] = useState<string | undefined>(undefined)
+const Leadform: FC<ParamsSchema> = ({
+	managerCode,
+	publisherCode,
+	product
+}) => {
+	const [error, setError] = useState<string | undefined>(undefined)
 
 	const { onOpen: onOpenSercutiryPolicy } = useSercurityPolicyStore()
 	const { onOpen: onOpenTermPolicy } = useTermPolicyStore()
@@ -116,10 +117,35 @@ const Leadform: FC<ParamsSchema> = () => {
 		queryFn: getCities
 	})
 
-	const isPending = false
+	const { mutate, isPending } = useMutation({
+		mutationFn: async ({
+			values,
+			info
+		}: {
+			values: LoanLeadSchema
+			info: ParamsSchema
+		}) =>
+			await addLoanLead({
+				values,
+				info
+			}),
+		onSuccess: data => {
+			if (data.error) {
+				setError(data.error)
+				return
+			}
+		}
+	})
 
-	const onSubmit = (values: LeadSchema) => {
-		console.log(values)
+	const onSubmit = (values: LoanLeadSchema) => {
+		mutate({
+			values,
+			info: {
+				publisherCode,
+				managerCode,
+				product
+			}
+		})
 	}
 
 	const formatNumber = (num: number) => {
@@ -332,7 +358,7 @@ const Leadform: FC<ParamsSchema> = () => {
 									<FormControl>
 										<DatetimePicker
 											{...field}
-											className='bg-white'
+											className='h-8 w-full bg-white'
 											format={[
 												['days', 'months', 'years'],
 												['hours', 'minutes', 'am/pm']
