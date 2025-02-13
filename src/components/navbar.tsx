@@ -1,3 +1,5 @@
+import { User } from 'lucide-react'
+
 import { logout } from '@/actions/logout'
 import { Navmenu, NavmenuMobile } from '@/components/navmenu'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
@@ -17,9 +19,7 @@ const Navbar = async () => {
 				<div className='flex items-center space-x-2 px-2'>
 					<Avatar className='size-8 cursor-pointer text-sm font-bold text-primary antialiased'>
 						<AvatarFallback>
-							{session.fullname
-								.split(' ')
-								[session.fullname.split(' ').length - 1][0].toUpperCase()}
+							<User />
 						</AvatarFallback>
 					</Avatar>
 					<form action={logout}>
