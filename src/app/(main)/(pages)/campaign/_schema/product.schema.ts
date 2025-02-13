@@ -21,14 +21,25 @@ export const productSchema = z.object({
 		})
 	),
 	customerRequirement: z.string(),
+	loanCustomerRequirement: z.array(z.string()).optional().nullish(),
 	supportArea: z.union([z.string(), z.array(z.string())]),
 	creditBackground: z.string().optional().nullish(),
+	interest: z.string().optional().nullish(),
+	loanDuration: z.string().optional().nullish(),
 	workBackground: z.string().optional().nullish(),
 	income: z.string().optional().nullish(),
 	cardLimit: z.string().optional().nullish(),
 	dailyCashLimit: z.string().optional().nullish(),
+	loanLimit: z.string().optional().nullish(),
 	cardValidTime: z.string().optional().nullish(),
 	paymentTerm: z.string().optional().nullish(),
+	loanPaymentTerm: z
+		.object({
+			summary: z.string(),
+			term: z.array(z.string())
+		})
+		.optional()
+		.nullish(),
 	requiredDocuments: z.string(),
 	approvalTime: z.string(),
 	finalResultTime: z.string(),

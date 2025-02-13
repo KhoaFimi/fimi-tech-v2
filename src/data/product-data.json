@@ -1494,5 +1494,87 @@
 			"Số diện thoại đã tồn tại trên hệ thống",
 			"Email không chính xác hoặc đã tồn tại trên hệ thống"
 		]
+	},
+	{
+		"id": "shbf",
+		"category": "loan",
+		"name": "SHB Finance, vay tiêu dùng",
+		"advertiser": "Công ty TNHH MTV Ngân hàng TMCP Sài Gòn - Hà Nội",
+		"link": "",
+		"show": {
+			"image": "shbfinance.svg",
+			"commision": "",
+			"approvalTime": "2-3 ngày"
+		},
+		"productOffer": [
+			{
+				"summary": "Đăng ký khoản vay nhanh chóng chỉ vài phút, không cần ra ngân hàng. Gói vay đa dạng.",
+				"offer": [
+					"Vay tiêu dùng theo lương (SC)",
+					"Vay tiêu dùng bằng BHNT (LIC)",
+					"Vay tiêu dùng bằng Tài khoản ngân hàng (BKAC)",
+					"Vay tiêu dùng bằng lịch sử tín dụng (CI)"
+				]
+			}
+		],
+		"customerRequirement": "Từ đủ 18 tuổi, tùy theo gói vay.",
+		"loanCustomerRequirement": [
+			"SC HI: từ đủ 25 tuổi đến không quá 59 tuổi tại thời điểm nộp hồ sơ vay",
+			"SC A, SC B: Từ đủ 18 tuổi đến không quá 59 tuổi tại thời điểm nộp hồ sơ vay",
+			"LIC: Từ đủ 20 tuổi đến không quá 59 tuổi tại thời điểm nộp hồ sơ vay",
+			"BKAC: Từ đủ 20 tuổi đến không quá 59 tuổi tại thời điểm nộp hồ sơ vay",
+			"CI: Từ đủ 20 tuổi đến không quá 59 tuổi tại thời điểm nộp hồ sơ vay"
+		],
+		"supportArea": "Toàn quốc (trừ các tỉnh miền tây)",
+		"loanLimit": "Tối đa 35,000,000 VNĐ",
+		"creditBackground": "Không có nợ xấu, nợ chú ý trong vòng 12 tháng gần nhất",
+		"workBackground": "Tối thiểu 3 tháng tại đơn vị hiện tại",
+		"income": "Từ 3,000,000 VNĐ/tháng",
+		"interest": "35% - 60% / năm",
+		"loanDuration": "06 - 36 tháng",
+		"loanPaymentTerm": {
+			"summary": "Lãi và gốc trả đều định kỳ từng tháng bằng cách hình thức:",
+			"term": [
+				"Thanh toán qua SHB (Phí thu hộ 12,000 VNĐ)",
+				"Thanh toán qua hệ thống ngân hàng khác (Phí theo ngân hàng quy định)",
+				"Thanh toán qua bưu điện (Phí thu hộ 12,000 VNĐ)",
+				"Thanh toán qua đối tác thu hộ (Phí thu hộ 12,000 VNĐ)"
+			]
+		},
+		"requiredDocuments": "Căn cước công dân, Bảo hiểm y tê, Sao kê lương, Bảo hiểm nhân thọ, Lịch sự thông tin tín dụng",
+		"approvalTime": "2-3 ngày kể từ khi tiếp nhận hồ sơ",
+		"finalResultTime": "3-5 ngày từ khi gửi hồ sơ đăng ký vay tại SHB Finance",
+		"commisionPolicy": {
+			"status": "Tạm duyệt",
+			"description": "Ghi nhận hoa hồng",
+			"commision": ["2.5% số tiền giải ngân"],
+			"note": "Chưa trừ 10% thuế TNCN."
+		},
+		"recognitionRules": {
+			"summary": "Chỉ áp dụng với khách hàng có hợp đồng vay lần đầu tiên tại SHBF và thỏa mãn đồng thời 2 điều kiện sau:",
+			"rules": [
+				"Khoản vay được giải ngân thành công trong vòng 30 ngày kể từ ngày khách hàng điền đơn vay thành công.",
+				"Khách hàng không hủy khoản vay trong vòng 7 ngày đầu tiên sau giải ngân."
+			],
+			"note": "Các giao dịch được tính là hợp lệ: nạp tiền điện thoại, mua mã thẻ cào, thanh toán hóa đơn, thanh toán trả góp, thanh toán vé máy bay, thanh toán học phí, thanh toán bảo hiểm, thanh toán phí giao thông, nạp tiền chứng khoán."
+		},
+		"registrationProcess": [
+			"B1: Khách hàng click vào link, đăng ký thông tin ",
+			"B2: Nhận cuộc gọi tư vấn từ SHB Finance",
+			"B3: Bổ sung hồ sơ theo yêu cầu sản phẩm",
+			"B4: Đợi thẩm định và kết quả phê duyệt",
+			"B5: Khách hàng được phê duyệt và giải ngân thành công -> Ghi nhận hoa hồng"
+		],
+		"rejectReason": [
+			"Khách hàng hủy khoản vay trước kỳ đối soát.",
+			"Khách hàng nhập sai thông tin, giả mạo hồ sơ của người khác.",
+			"Khách hàng nợ xấu.",
+			"Khách hàng đang vay nóng tại các app, website online…",
+			"Khách hàng chưa thỏa mãn các điều kiện theo chính sách phê duyệt tín dụng của SHB Finance tại từng thời kỳ."
+		],
+		"unqualifiedRecords": [
+			"Mở thẻ cho khách lấy hoa hồng, khách không kích hoạt thẻ và dùng thẻ;",
+			"Mở thẻ chỉ rút tiền mặt, đáo hạn khoản vay hoặc thẻ tín dụng khác."
+		]
 	}
 ]

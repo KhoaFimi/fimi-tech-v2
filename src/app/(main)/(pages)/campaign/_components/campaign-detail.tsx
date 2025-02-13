@@ -2,6 +2,7 @@ import { Loader2 } from 'lucide-react'
 import { FC } from 'react'
 
 import { ProductSchema } from '@/app/(main)/(pages)/campaign/_schema/product.schema'
+import { PRODUCT_CATEGORY } from '@/constant/enum'
 
 interface CampaignDetailProps {
 	product: ProductSchema | undefined
@@ -44,7 +45,13 @@ const CampaignDetail: FC<CampaignDetailProps> = ({ product }) => {
 			</section>
 
 			<section className='mt-2 flex flex-col gap-y-1.5 space-x-2.5'>
-				<Title title='Ưu đãi sản phẩm' />
+				<Title
+					title={
+						product.category === PRODUCT_CATEGORY.loan
+							? 'Gói vay'
+							: 'Ưu đãi sản phẩm'
+					}
+				/>
 				<div className='space-y-2 px-2'>
 					{product.productOffer.map((data, i) => (
 						<div
@@ -74,6 +81,19 @@ const CampaignDetail: FC<CampaignDetailProps> = ({ product }) => {
 						label='Điểu kiện: '
 						content={product.customerRequirement}
 					/>
+
+					{product.loanCustomerRequirement && (
+						<div className='flex flex-col gap-y-1 tracking-tight'>
+							<Item label={'Điểu kiện chi tiết cho từng gói vay'} />
+							<ul className='list-disc px-8'>
+								{product.loanCustomerRequirement.map((item, i) => (
+									<li key={i}>
+										<p className='text-justify text-sm'>{item}</p>
+									</li>
+								))}
+							</ul>
+						</div>
+					)}
 
 					<Item
 						label='Khu vực hỗ trợ: '
@@ -110,6 +130,40 @@ const CampaignDetail: FC<CampaignDetailProps> = ({ product }) => {
 							label='Hạn mức: '
 							content={product.cardLimit}
 						/>
+					)}
+
+					{product.loanLimit && (
+						<Item
+							label='Hạn mức khoản vay: '
+							content={product.loanLimit}
+						/>
+					)}
+
+					{product.interest && (
+						<Item
+							label='Lãi suất'
+							content={product.interest}
+						/>
+					)}
+
+					{product.loanDuration && (
+						<Item
+							label='Thời hạn khoản vay'
+							content={product.loanDuration}
+						/>
+					)}
+
+					{product.loanPaymentTerm && (
+						<div className='flex flex-col gap-y-1 tracking-tight'>
+							<Item label={product.loanPaymentTerm.summary} />
+							<ul className='list-disc px-8'>
+								{product.loanPaymentTerm.term.map((item, i) => (
+									<li key={i}>
+										<p className='text-justify text-sm'>{item}</p>
+									</li>
+								))}
+							</ul>
+						</div>
 					)}
 
 					{product.dailyCashLimit && (
@@ -266,7 +320,7 @@ const Title: FC<{ title: string }> = ({ title }) => {
 	)
 }
 
-const Item: FC<{ label: string; content?: string | null }> = ({
+const Item: FC<{ label: string; content?: string | null | string[] }> = ({
 	label,
 	content
 }) => {
