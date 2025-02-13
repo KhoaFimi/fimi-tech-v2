@@ -29,7 +29,7 @@ export enum NATIVE_COLUMNS {
 export enum PRODUCT_CATEGORY {
 	all = 'all',
 	credit = 'credit',
-	paymentAccount = 'payment',
+	paymentAccount = 'paymentAccount',
 	recruitment = 'recruitment',
 	loan = 'loan'
 }

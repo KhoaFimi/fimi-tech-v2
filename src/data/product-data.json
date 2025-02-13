@@ -1385,7 +1385,7 @@
 	},
 	{
 		"id": "vpbankneo",
-		"category": "payment",
+		"category": "paymentAccount",
 		"name": "VPBank NEO",
 		"advertiser": "Ngân hàng TMCP Việt Nam Thịnh Vượng",
 		"link": "https://vpbankneo.page.link/FIMI1111",
