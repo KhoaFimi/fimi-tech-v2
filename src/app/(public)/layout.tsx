@@ -15,7 +15,7 @@ const PublicLayout: FC<PropsWithChildren> = ({ children }) => {
 			<main className='flex h-screen items-center justify-center'>
 				<div className='h-full w-full overflow-y-auto sm:w-[400px] sm:rounded-xl sm:border sm:border-foreground/20 sm:shadow-md'>
 					<MobileHeader />
-					<div className='h-screen p-2'>{children}</div>
+					<div className='p-2'>{children}</div>
 					<MobileFooter />
 				</div>
 			</main>
