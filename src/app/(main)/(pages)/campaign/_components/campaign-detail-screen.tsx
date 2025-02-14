@@ -51,7 +51,7 @@ const CampaignDetailScreen: FC<CampaignDetailScreenProps> = ({
 			)
 		)
 
-		return `${domain}/${category}/${uniqueToken}`
+		return `${domain}/${category === 'paymentAccount' ? 'credit' : category}/${uniqueToken}`
 	}
 
 	if (fetchProductStatus === 'pending')

@@ -63,9 +63,7 @@ const CampaignList: FC<{ products: ProductsSchema }> = ({ products }) => {
 								<h3 className='bg-gradient-to-tr from-primary from-30% to-secondary bg-clip-text text-center text-base font-bold uppercase text-transparent lg:text-left'>
 									{
 										PRODUCT_CATEGORY_DESSRIPTION[
-											_.camelCase(
-												category.toLowerCase()
-											) as keyof typeof PRODUCT_CATEGORY_DESSRIPTION
+											category as keyof typeof PRODUCT_CATEGORY
 										]
 									}
 								</h3>
