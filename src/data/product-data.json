@@ -1541,7 +1541,7 @@
 				"Thanh toán qua đối tác thu hộ (Phí thu hộ 12,000 VNĐ)"
 			]
 		},
-		"requiredDocuments": "Căn cước công dân, Bảo hiểm y tê, Sao kê lương, Bảo hiểm nhân thọ, Lịch sự thông tin tín dụng",
+		"requiredDocuments": "Căn cước công dân, Bảo hiểm y tế, Sao kê lương, Bảo hiểm nhân thọ, Lịch sử thông tin tín dụng",
 		"approvalTime": "2-3 ngày kể từ khi tiếp nhận hồ sơ",
 		"finalResultTime": "3-5 ngày từ khi gửi hồ sơ đăng ký vay tại SHB Finance",
 		"commisionPolicy": {
