@@ -38,28 +38,31 @@ export const addLead = async ({
 
 	const oid = genOid()
 
-	await sheets.spreadsheets.values.append({
-		spreadsheetId: config.SHEET_LEAD_ID,
-		range: config.SHEET_LEAD_NAME,
-		valueInputOption: 'USER_ENTERED',
-		requestBody: {
-			values: [
-				[
-					parseDate(new Date()),
-					oid,
-					infoData.publisherCode,
-					infoData.product,
-					leadData.fullname,
-					`'${leadData.phone}`,
-					leadData.email,
-					leadData.city,
-					'',
-					'',
-					infoData.managerCode
+	await sheets.spreadsheets.values
+		.append({
+			spreadsheetId: config.SHEET_LEAD_ID,
+			range: config.SHEET_LEAD_NAME,
+			valueInputOption: 'USER_ENTERED',
+			requestBody: {
+				values: [
+					[
+						parseDate(new Date()),
+						oid,
+						infoData.publisherCode,
+						infoData.product,
+						leadData.fullname,
+						`'${leadData.phone}`,
+						leadData.email,
+						leadData.city,
+						'',
+						'',
+						infoData.managerCode
+					]
 				]
-			]
-		}
-	})
+			}
+		})
+		.catch(error => console.log(error))
+
 	const productLink = await getProductLink(
 		oid,
 		validatedParamsData.data.product,
