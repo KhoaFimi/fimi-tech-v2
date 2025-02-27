@@ -55,7 +55,6 @@ export const addLead = async ({
 					leadData.city,
 					'',
 					'',
-					'',
 					infoData.managerCode
 				]
 			]
