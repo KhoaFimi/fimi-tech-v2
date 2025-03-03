@@ -97,12 +97,22 @@
 					"15% Giao dịch chi tiêu giáo dục tối đa 200.000đ/tháng",
 					"10% Giao dịch chi tiêu chăm sóc sắc đẹp/ Y tế tối đa 300.000đ/tháng",
 					"5% Giao dịch chi tiêu siêu thị tối đa 200.000đ/tháng",
-					"0.1% Giao dịch chi tiêu còn lại Khách hàng có tổng doanh số giao dịch dưới 15 triệu / kỳ sao kê",
+					"0.1% Giao dịch chi tiêu còn lại Khách hàng có tổng doanh số giao dịch dưới 15 triệu / kỳ sao kê"
+				]
+			},
+			{
+				"summary": "Khách hàng có tổng doanh số giao dịch dưới 15 triệu / kỳ sao kê",
+				"offer": [
 					"7.5% Giao dịch chi tiêu bảo hiểm trực tuyến tối đa 150.000đ/tháng",
 					"7.5% Giao dịch chi tiêu giáo dục tối đa 100.000đ/tháng",
 					"5% Giao dịch chi tiêu chăm sóc sắc đẹp/ Y tế tối đa 150.000đ/tháng",
 					"2.5% Giao dịch chi tiêu siêu thị tối đa 100.000đ/tháng",
-					"0.1% Giao dịch chi tiêu còn lại",
+					"0.1% Giao dịch chi tiêu còn lại"
+				]
+			},
+			{
+				"summary": "Áp dụng chung cho tất cả Khách hàng",
+				"offer": [
 					"Quà tặng chào mừng Lady trị giá 200.000VNĐ. Hoàn tiền 200.000 VNĐ cho chủ thẻ chính nếu tổng doanh số giao dịch chi tiêu tại nhóm ngành siêu thị đạt từ 2 triệu đồng trở lên trong vòng 30 ngày kể từ ngày phát hành thẻ."
 				]
 			}
@@ -1222,7 +1232,7 @@
 				]
 			},
 			{
-				"summary": "ức hoàn tối đa: 1.000.000 Điểm thưởng/kỳ sao kê",
+				"summary": "Mức hoàn tối đa: 1.000.000 Điểm thưởng/kỳ sao kê",
 				"offer": []
 			}
 		],
