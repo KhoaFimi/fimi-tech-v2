@@ -22,6 +22,7 @@ const Navbar = async () => {
 							<User />
 						</AvatarFallback>
 					</Avatar>
+					<p className='font-bold'>{session.publisherCode}</p>
 					<form action={logout}>
 						<Button
 							type='submit'
