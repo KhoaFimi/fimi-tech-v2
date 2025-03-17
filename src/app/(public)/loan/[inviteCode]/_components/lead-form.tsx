@@ -106,9 +106,9 @@ const Leadform: FC<ParamsSchema> = ({
 			phone: '',
 			tnc: false,
 			contactTime: new Date(),
-			loanPackage: '',
-			loanAmmount: '',
-			loanTerm: ''
+			loanPackage: null,
+			loanAmmount: null,
+			loanTerm: null
 		}
 	})
 
@@ -267,107 +267,112 @@ const Leadform: FC<ParamsSchema> = ({
 							isMessage
 						/>
 
-						<FormCombobox
-							name='loanPackage'
-							control={form.control}
-							className='w-full'
-							popoverClassName='w-[365px]'
-							form={form}
-							label={
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
-									<Package2
-										className='size-5'
-										strokeWidth={3}
-									/>
-									<p>Gói vay</p>
-								</FormLabel>
-							}
-							items={loanPackages}
-							isLoading={isPending || getCitiesPending}
-							isMessage
-						/>
+						{product === 'shbf' ? (
+							<>
+								<FormCombobox
+									name='loanPackage'
+									control={form.control}
+									className='w-full'
+									popoverClassName='w-[365px]'
+									form={form}
+									label={
+										<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
+											<Package2
+												className='size-5'
+												strokeWidth={3}
+											/>
+											<p>Gói vay</p>
+										</FormLabel>
+									}
+									items={loanPackages}
+									isLoading={isPending || getCitiesPending}
+									isMessage
+								/>
+								<FormField
+									name='loanAmmount'
+									control={form.control}
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
+												<User
+													className='size-5'
+													strokeWidth={3}
+												/>
+												<p>Khoản vay mong muốn</p>
+											</FormLabel>
+											<FormControl>
+												<Input
+													{...field}
+													disabled={isPending}
+													value={
+														field.value
+															? formatNumber(parseInt(field.value))
+															: ''
+													}
+													onChange={e => {
+														const inputValue = e.currentTarget.value.replace(
+															/\D/g,
+															''
+														)
 
-						<FormField
-							name='loanAmmount'
-							control={form.control}
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
-										<User
-											className='size-5'
-											strokeWidth={3}
-										/>
-										<p>Khoản vay mong muốn</p>
-									</FormLabel>
-									<FormControl>
-										<Input
-											{...field}
-											disabled={isPending}
-											value={
-												field.value ? formatNumber(parseInt(field.value)) : ''
-											}
-											onChange={e => {
-												const inputValue = e.currentTarget.value.replace(
-													/\D/g,
-													''
-												)
+														field.onChange(inputValue)
+													}}
+													className='border border-primary bg-background caret-primary focus-visible:outline-none focus-visible:ring-0'
+													placeholder='100.000.000'
+												/>
+											</FormControl>
+											<FormMessage className='text-white/40' />
+										</FormItem>
+									)}
+								/>
 
-												field.onChange(inputValue)
-											}}
-											className='border border-primary bg-background caret-primary focus-visible:outline-none focus-visible:ring-0'
-											placeholder='100.000.000'
-										/>
-									</FormControl>
-									<FormMessage className='text-white/40' />
-								</FormItem>
-							)}
-						/>
+								<FormCombobox
+									name='loanTerm'
+									control={form.control}
+									className='w-full'
+									popoverClassName='w-[365px]'
+									form={form}
+									label={
+										<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
+											<Clock2
+												className='size-5'
+												strokeWidth={3}
+											/>
+											<p>Thời hạn vay</p>
+										</FormLabel>
+									}
+									items={loanTerm}
+									isLoading={isPending || getCitiesPending}
+									isMessage
+								/>
 
-						<FormCombobox
-							name='loanTerm'
-							control={form.control}
-							className='w-full'
-							popoverClassName='w-[365px]'
-							form={form}
-							label={
-								<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
-									<Clock2
-										className='size-5'
-										strokeWidth={3}
-									/>
-									<p>Thời hạn vay</p>
-								</FormLabel>
-							}
-							items={loanTerm}
-							isLoading={isPending || getCitiesPending}
-							isMessage
-						/>
-
-						<FormField
-							name='contactTime'
-							control={form.control}
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
-										<Phone
-											className='size-5'
-											strokeWidth={3}
-										/>
-										<p>Hẹn liên lạc</p>
-									</FormLabel>
-									<FormControl>
-										<DatetimePicker
-											{...field}
-											className='h-8 w-full bg-white'
-											format={[
-												['days', 'months', 'years'],
-												['hours', 'minutes', 'am/pm']
-											]}
-										/>
-									</FormControl>
-								</FormItem>
-							)}
-						/>
+								<FormField
+									name='contactTime'
+									control={form.control}
+									render={({ field }) => (
+										<FormItem>
+											<FormLabel className='flex items-end space-x-1 font-semibold tracking-tight text-white'>
+												<Phone
+													className='size-5'
+													strokeWidth={3}
+												/>
+												<p>Hẹn liên lạc</p>
+											</FormLabel>
+											<FormControl>
+												<DatetimePicker
+													{...field}
+													className='h-8 w-full bg-white'
+													format={[
+														['days', 'months', 'years'],
+														['hours', 'minutes', 'am/pm']
+													]}
+												/>
+											</FormControl>
+										</FormItem>
+									)}
+								/>
+							</>
+						) : null}
 
 						<div className='w-full pt-2'>
 							<FormField

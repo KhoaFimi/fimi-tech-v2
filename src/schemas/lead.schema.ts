@@ -11,12 +11,19 @@ export const leadSchema = z.object({
 export type LeadSchema = z.infer<typeof leadSchema>
 
 export const loanLeadSchema = leadSchema.extend({
-	loanPackage: z.string().min(1, { message: 'Vui lòng chọn Gói vay' }),
+	loanPackage: z
+		.string()
+		.min(1, { message: 'Vui lòng chọn Gói vay' })
+		.nullish(),
 	contactTime: z.date().optional(),
 	loanAmmount: z
 		.string()
-		.min(1, { message: 'Vui lòng nhập khoản vay mong muốn' }),
-	loanTerm: z.string().min(1, { message: 'Vui lòng chọn thời hạn vay' })
+		.min(1, { message: 'Vui lòng nhập khoản vay mong muốn' })
+		.nullish(),
+	loanTerm: z
+		.string()
+		.min(1, { message: 'Vui lòng chọn thời hạn vay' })
+		.nullish()
 })
 
 export type LoanLeadSchema = z.infer<typeof loanLeadSchema>

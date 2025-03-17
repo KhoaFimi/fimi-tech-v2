@@ -1586,5 +1586,67 @@
 			"Mở thẻ cho khách lấy hoa hồng, khách không kích hoạt thẻ và dùng thẻ;",
 			"Mở thẻ chỉ rút tiền mặt, đáo hạn khoản vay hoặc thẻ tín dụng khác."
 		]
+	},
+	{
+		"id": "cub_cash",
+		"category": "loan",
+		"name": "Cathay Bank, vay tiêu dùng",
+		"advertiser": "Ngân Hàng Cathay United Bank",
+		"link": "https://cubvietnampartnership.onelink.me/F0Xh/rrs84apz",
+		"show": {
+			"image": "cub.png",
+			"commision": "300,000 đ",
+			"approvalTime": "2-3 ngày"
+		},
+		"productOffer": [
+			{
+				"summary": "Đăng ký khoản vay nhanh chóng chỉ vài phút, không cần ra ngân hàng. Gói vay đa dạng.",
+				"offer": ["Hạn mức dự phòng.", "Chỉ tính lãi khi khách hàng giải ngân"]
+			}
+		],
+		"customerRequirement": "Từ đủ 22 tuổi đến không quá 55 tuổi tại thời điểm đăng ký",
+		"supportArea": "Toàn quốc",
+		"loanLimit": "Từ 3,000,000 đến 40,000,000 VNĐ",
+		"creditBackground": "Không có nợ xấu, nợ chú ý trong vòng 12 tháng gần nhất",
+		"workBackground": "Tối thiểu 3 tháng tại đơn vị hiện tại",
+		"income": "Từ 5,000,000 VNĐ trở lên",
+		"interest": "35% - 60% / năm",
+		"loanDuration": "06 - 36 tháng",
+		"loanPaymentTerm": {
+			"summary": "Thanh toán qua tài khoản ngân hàng hoặc ví điện tử Momo. Phí tất toán trước hạn: ",
+			"term": [
+				"Không được tất toán khoản vay trong 3 tháng đầu",
+				"Thanh toán 3% trên dư nợ gốc tại thời điểm"
+			]
+		},
+		"requiredDocuments": "Căn cước công dân",
+		"approvalTime": "2-3 ngày kể từ khi tiếp nhận hồ sơ",
+		"finalResultTime": "Trong vòng 5 phút nhận ngay kết quả phê duyệt.",
+		"commisionPolicy": {
+			"status": "Tạm duyệt",
+			"description": "Ghi nhận hoa hồng",
+			"commision": ["300,000 VND"],
+			"note": "Chưa trừ 10% thuế TNCN."
+		},
+		"recognitionRules": {
+			"summary": "Chỉ áp dụng với khách hàng có hợp đồng vay lần đầu tiên tại Cathay United Bank và thỏa mãn điều kiện sau:",
+			"rules": [
+				"Khoản vay được giải ngân thành công trong vòng 30 ngày kể từ ngày khách hàng điền thông tin hồ sơ vay."
+			]
+		},
+		"registrationProcess": [
+			"B1: Khách hàng click vào link hoặc quét mã QR, tải ứng dụng CUB.",
+			"B2: Khách hàng đăng ký hồ sơ vay trên ứng dụng CUB.",
+			"B3: Đợi kết quả phê duyệt.",
+			"B4: Khách hàng được phê duyệt và giải ngân thành công -> Ghi nhận hoa hồng"
+		],
+		"rejectReason": [
+			"Khách hàng hủy khoản vay trước kỳ đối soát.",
+			"Khách hàng nhập sai thông tin, giả mạo hồ sơ của người khác.",
+			"Khách hàng nợ xấu.",
+			"Khách hàng đang vay nóng tại các app, website online…",
+			"Khách hàng chưa thỏa mãn các điều kiện theo chính sách phê duyệt tín dụng của ngân hàng Cathay United Bank tại từng thời kỳ."
+		],
+		"unqualifiedRecords": []
 	}
 ]
