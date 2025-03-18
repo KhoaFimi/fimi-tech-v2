@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 	description: 'Công Ty TNHH Công Nghệ FIMI - Giải Pháp Bán Hàng Đa Kênh',
 	metadataBase: new URL('https://aff.fimi.tech'),
 	openGraph: {
-		title: 'Đăng ký mã giới thiệu',
+		title: 'Công Ty TNHH Công Nghệ FIMI - Giải Pháp Bán Hàng Đa Kênh',
 		description: 'FIMI - Giải pháp bán hàng đa kênh',
-		url: 'https://fimi-register.vercel.app',
+		url: 'https://aff.fimi.tech',
 		siteName: 'FIMI',
 		images: [
 			{
