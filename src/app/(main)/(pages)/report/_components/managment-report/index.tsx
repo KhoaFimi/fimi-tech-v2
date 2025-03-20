@@ -10,7 +10,7 @@ import {
 	useReactTable,
 	VisibilityState
 } from '@tanstack/react-table'
-import { Columns3, Filter, FilterX, RefreshCcw, Search } from 'lucide-react'
+import { Columns3, Filter, RefreshCcw, Search } from 'lucide-react'
 import { FC, useEffect, useState } from 'react'
 
 import { managmentReportColumns } from '@/app/(main)/(pages)/report/_components/managment-report/colunms'
@@ -57,7 +57,6 @@ interface ManagmentReportProps {
 
 const ManagmentReport: FC<ManagmentReportProps> = ({
 	data,
-	campaignData,
 	publisherCode,
 	isPending,
 	refetch
@@ -81,10 +80,6 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 	])
 
 	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
-
-	const [campaignFilterValue, setCampaignFilterValue] = useState<string[]>(
-		campaignData.map(data => data.value)
-	)
 
 	const table = useReactTable<Report>({
 		data: data,
@@ -114,10 +109,6 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 	useEffect(() => {
 		table.getColumn('status')?.setFilterValue(statusFilterValue)
 	}, [statusFilterValue, table])
-
-	useEffect(() => {
-		table.getColumn('campaignCode')?.setFilterValue(campaignFilterValue)
-	}, [campaignFilterValue, table])
 	// #endregion
 
 	return (
@@ -227,72 +218,6 @@ const ManagmentReport: FC<ManagmentReportProps> = ({
 									}}
 								/>
 								<Label>Từ chối</Label>
-							</div>
-						</div>
-					</DropdownMenuContent>
-				</DropdownMenu>
-
-				{/* Filter by campaign and order type */}
-				<DropdownMenu>
-					<DropdownMenuTrigger asChild>
-						<Button
-							size='sm'
-							className='justify-start border-primary font-semibold text-foreground/70'
-							variant='outline'
-						>
-							<Filter strokeWidth={3} /> Chiến dịch
-						</Button>
-					</DropdownMenuTrigger>
-					<DropdownMenuContent className='w-80'>
-						<DropdownMenuLabel>Chiến dịch</DropdownMenuLabel>
-						<div className='flex flex-col gap-2'>
-							<div className='flex items-center gap-2'>
-								<Button
-									size='sm'
-									onClick={() =>
-										setCampaignFilterValue(campaignData.map(data => data.value))
-									}
-								>
-									<Filter /> Chọn tất cả
-								</Button>
-								<Button
-									size='sm'
-									onClick={() => setCampaignFilterValue([])}
-								>
-									<FilterX /> Xoá tất cả
-								</Button>
-							</div>
-							<div className='grid max-h-80 grid-cols-3 gap-2 overflow-y-auto px-2 pt-2'>
-								{campaignData.map(campaign => (
-									<div
-										key={campaign.id}
-										className='flex h-fit items-center gap-1 p-1.5 tracking-tight'
-									>
-										<Checkbox
-											id={campaign.value}
-											checked={campaignFilterValue.includes(campaign.value)}
-											onCheckedChange={checked => {
-												if (checked) {
-													setCampaignFilterValue(state => [
-														...state,
-														campaign.value
-													])
-													return
-												}
-
-												setStatusFilterValue(state =>
-													state.filter(status => status !== campaign.value)
-												)
-											}}
-										/>
-										<Label
-											htmlFor={campaign.value}
-											className='cursor-pointer'
-										>
-											{campaign.label}
-										</Label>
-									</div>
-								))}
 							</div>
 						</div>
 					</DropdownMenuContent>
