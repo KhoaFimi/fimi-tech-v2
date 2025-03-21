@@ -70,6 +70,23 @@ export const addLead = async ({
 		validatedLeadData.data
 	)
 
+	const res = await fetch(
+		`${process.env.SUNLIFE_BASE_URL ? `${process.env.SUNLIFE_BASE_URL}/api` : 'http://localhost:3000/api'}/add-lead`,
+		{
+			method: 'POST',
+			body: JSON.stringify({
+				name: leadData.fullname,
+				email: leadData.email,
+				phone: leadData.phone,
+				province: leadData.city
+			})
+		}
+	)
+
+	const data = await res.json()
+
+	console.log(data)
+
 	if (productLink.error) {
 		return {
 			error: productLink.error
