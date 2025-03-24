@@ -54,6 +54,8 @@ const CampaignDetailScreen: FC<CampaignDetailScreenProps> = ({
 		if (product === 'slv_leads')
 			return `${domain}/insurance/sunlife/${uniqueToken}`
 
+		if (product === 'cub_cash') return `${domain}/credit/${uniqueToken}`
+
 		return `${domain}/${category === 'paymentAccount' ? 'credit' : category}/${uniqueToken}`
 	}
 
