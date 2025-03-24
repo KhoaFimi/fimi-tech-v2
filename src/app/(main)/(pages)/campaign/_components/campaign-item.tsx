@@ -109,8 +109,8 @@ const CampaignItem: FC<{ product: ProductSchema }> = ({ product }) => {
 			/>
 			<div className='absolute inset-0 bottom-0 h-full w-full bg-black/10 transition-all' />
 
-			<div className='z-30 mt-auto flex h-1/4 w-full select-none flex-col gap-y-1 bg-white p-1 pt-2'>
-				<p className='truncate text-[12px] font-semibold leading-none tracking-tight text-primary'>
+			<div className='z-30 mt-auto flex h-1/3 w-full select-none flex-col gap-y-1 bg-white p-1 pt-2'>
+				<p className='overflow-hidden text-[11px] font-semibold leading-none tracking-tight text-primary'>
 					{product.name}
 				</p>
 				<div className='flex items-center gap-x-0.5'>

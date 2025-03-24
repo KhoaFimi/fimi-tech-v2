@@ -83,7 +83,7 @@ const FormCombobox: FC<FormComboboxProps> = ({
 									variant='outline'
 									role='combobox'
 									className={cn(
-										`relative h-7 w-[200px] justify-between overflow-hidden border border-primary bg-background text-xs`,
+										`relative h-9 w-[200px] justify-between overflow-hidden border bg-background text-xs`,
 										!field.value && 'text-muted-foreground',
 										className
 									)}

@@ -31,7 +31,8 @@ export enum PRODUCT_CATEGORY {
 	credit = 'credit',
 	paymentAccount = 'paymentAccount',
 	recruitment = 'recruitment',
-	loan = 'loan'
+	loan = 'loan',
+	life_insurance = 'life_insurance'
 }
 
 export enum PRODUCT_CATEGORY_DESSRIPTION {
@@ -39,5 +40,6 @@ export enum PRODUCT_CATEGORY_DESSRIPTION {
 	credit = 'Thẻ tín dụng',
 	paymentAccount = 'Tài khoản thanh toán',
 	recruitment = 'Tuyển dụng',
-	loan = 'Vay tín chấp'
+	loan = 'Vay tín chấp',
+	life_insurance = 'Bảo hiểm nhân thọ'
 }

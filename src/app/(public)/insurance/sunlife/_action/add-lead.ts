@@ -2,7 +2,6 @@
 
 import { redirect } from 'next/navigation'
 
-import getProductLink from '@/app/(public)/credit/[inviteCode]/_actions/get-product-link'
 import { config } from '@/lib/config'
 import { genOid } from '@/lib/server/gen-oid'
 import { getSheets } from '@/lib/server/google-sheets'
@@ -63,13 +62,6 @@ export const addLead = async ({
 		})
 		.catch(error => console.log(error))
 
-	const productLink = await getProductLink(
-		oid,
-		validatedParamsData.data.product,
-		validatedParamsData.data,
-		validatedLeadData.data
-	)
-
 	if (leadData.sunlifeTnc) {
 		const res = await fetch(
 			`${process.env.SUNLIFE_BASE_URL ? `${process.env.SUNLIFE_BASE_URL}/api` : 'http://localhost:3000/api'}/add-lead`,
@@ -94,13 +86,5 @@ export const addLead = async ({
 		console.log(data)
 	}
 
-	if (productLink.error) {
-		return {
-			error: productLink.error
-		}
-	}
-
-	if (productLink.data) {
-		redirect(productLink.data.link)
-	}
+	redirect('/insurance/sunlife/success')
 }

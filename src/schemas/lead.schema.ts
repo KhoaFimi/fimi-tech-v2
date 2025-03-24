@@ -5,7 +5,10 @@ export const leadSchema = z.object({
 	phone: z.string({ required_error: 'Vui lòng nhập số điện thoại' }),
 	email: z.string({ required_error: 'Vui lòng nhập email' }),
 	city: z.string().min(1, { message: 'Vui lòng chọn khu vực sinh sống' }),
-	tnc: z.boolean().default(false)
+	tnc: z.boolean().default(false),
+	sunlifeTnc: z.boolean().default(false),
+	sunlifeQuestion: z.array(z.string()),
+	sunlifeApproach: z.enum(['Tham gia ngay', 'Tìm hiểu thêm'])
 })
 
 export type LeadSchema = z.infer<typeof leadSchema>

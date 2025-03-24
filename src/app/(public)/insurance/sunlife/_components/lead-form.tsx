@@ -7,7 +7,7 @@ import { FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { getCities } from '@/actions/get-citites'
-import { addLead } from '@/app/(public)/credit/[inviteCode]/_actions/add-lead'
+import { addLead } from '@/app/(public)/insurance/sunlife/_action/add-lead'
 import { FormError } from '@/components/form-response'
 import LeadFormWrapper from '@/components/lead-form-wrapper'
 import PolicyButton from '@/components/policies/policy-button'
@@ -59,8 +59,6 @@ const LeadForm: FC<ParamsSchema> = ({
 			sunlifeTnc: false
 		}
 	})
-
-	console.log(form.getValues('tnc'))
 
 	const { data: citiesData, isPending: getCitiesPending } = useQuery({
 		queryKey: ['cities'],
@@ -421,7 +419,7 @@ const LeadForm: FC<ParamsSchema> = ({
 								className='w-[15rem] items-center justify-center gap-4 rounded-md bg-gradient-to-tr from-primary from-30% to-secondary font-bold'
 							>
 								{isPending && <Loader2 className='size-5 animate-spin' />}
-								Mở thẻ ngay
+								Đăng ký tư vấn
 							</Button>
 						</div>
 					</div>
