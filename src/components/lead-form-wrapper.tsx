@@ -26,7 +26,7 @@ const LeadFormWrapper: FC<LeadFormWrapperProps> = ({ children }) => {
 			<h2
 				className={cn(
 					font.className,
-					'absolute left-10 top-12 z-50 text-[20px] leading-[100%]'
+					'absolute left-10 top-12 z-50 text-[20px] leading-[100%] text-[#003946]'
 				)}
 			>
 				Tài chính cho mình <br />
