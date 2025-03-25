@@ -45,7 +45,7 @@ export const getReportV2 = async (): Promise<ReportResponse> => {
 
 	const filterReport = reports.filter(report => {
 		const isPublisher = report[2] === publisherCode
-		const isAM = report[11] === publisherCode
+		const isAM = report[10] === publisherCode
 
 		return isPublisher || isAM
 	})
