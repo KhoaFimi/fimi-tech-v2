@@ -180,13 +180,31 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 		},
 		cell: ({ row }) => {
 			const status = row.getValue('status')
+			const managerCode = row.getValue('managerCode')
 
-			const value = parseInt(row.getValue('commision')) / 10
+			if (managerCode !== '') {
+				const value = parseInt(row.getValue('commision')) / 10
 
-			const nativeCurrency = value.toLocaleString('vi-VN', {
-				style: 'currency',
-				currency: 'VND'
-			})
+				const nativeCurrency = value.toLocaleString('vi-VN', {
+					style: 'currency',
+					currency: 'VND'
+				})
+
+				return (
+					<div
+						className={cn(
+							'w-fit truncate rounded-md p-1 text-center text-xs leading-none text-white',
+							{
+								'bg-green-500': status === 'APPROVED',
+								'bg-primary': status === 'REJECTED',
+								'bg-blue-500': status === 'PENDING'
+							}
+						)}
+					>
+						{nativeCurrency}
+					</div>
+				)
+			}
 
 			return (
 				<div
@@ -199,7 +217,7 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 						}
 					)}
 				>
-					{nativeCurrency}
+					0 đ
 				</div>
 			)
 		}
