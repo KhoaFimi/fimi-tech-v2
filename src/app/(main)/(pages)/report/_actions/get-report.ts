@@ -109,8 +109,7 @@ export const getReportV2 = async (): Promise<ReportResponse> => {
 			customerProvince: report[7],
 			status: !report[8] ? 'PENDING' : report[8],
 			commision: !report[9] ? 0 : parseInt(report[9]),
-			paymentStatus: !report[10] ? 'REMAIN' : report[10],
-			managerCode: report[11]
+			managerCode: report[10]
 		})),
 		commision: {
 			pub: commision.PUB,

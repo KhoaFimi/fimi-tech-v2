@@ -53,7 +53,6 @@ export type Report = {
 	customerProvince: string
 	status: 'APPROVED' | 'REJECTED' | 'PENDING'
 	commision: number
-	paymentStatus: 'PAID' | 'REMAIN'
 	managerCode: string
 }
 

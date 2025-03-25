@@ -245,32 +245,4 @@ export const managmentReportColumns: ColumnDef<Report>[] = [
 		}
 	}
 	// #endregion
-
-	// #region: paymentStatus field
-	// {
-	// 	accessorKey: 'paymentStatus',
-	// 	header: () => {
-	// 		return <div className='truncate text-center'>Tình trạng thanh toán</div>
-	// 	},
-	// 	filterFn: (row, columnId, filterValue: string[]) => {
-	// 		return filterValue.includes(row.getValue(columnId))
-	// 	},
-	// 	cell: ({ row }) => {
-	// 		const status = row.getValue('paymentStatus')
-
-	// 		const nativeStatus = PAYMENT_STATUS[status as keyof typeof PAYMENT_STATUS]
-
-	// 		return (
-	// 			<div
-	// 				className={cn('truncate rounded-full text-center text-white', {
-	// 					'bg-green-500': status === 'PAID',
-	// 					'bg-orange-500': status === 'REMAIN'
-	// 				})}
-	// 			>
-	// 				{nativeStatus}
-	// 			</div>
-	// 		)
-	// 	}
-	// }
-	// #endregion
 ]
