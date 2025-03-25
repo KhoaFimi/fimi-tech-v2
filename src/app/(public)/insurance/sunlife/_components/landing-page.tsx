@@ -124,7 +124,7 @@ const SunlifeLandingPage = () => {
 				/>
 			</section>
 
-			<section className='mb-16 flex w-full select-none items-start justify-between space-x-2 bg-primary px-4 py-6'>
+			<section className='flex w-full select-none items-start justify-between space-x-2 bg-primary px-4 py-6'>
 				<div className='flex w-[110px] flex-col items-center space-y-4 text-center'>
 					<Image
 						src='/icon/health.svg'
@@ -192,16 +192,18 @@ const SunlifeLandingPage = () => {
 				</div>
 			</section>
 
-			<Button
-				className='w-fit self-center'
-				asChild
-			>
-				<Link href={`/insurance/sunlife/${inviteCode}?step=2`}>
-					Đăng ký tư vấn
-				</Link>
-			</Button>
+			<div className='fixed bottom-0 w-full overflow-hidden rounded-b-lg rounded-t-lg bg-white/80 px-2 py-2 backdrop-blur-lg sm:w-[398px]'>
+				<Button
+					className='w-full self-center'
+					asChild
+				>
+					<Link href={`/insurance/sunlife/${inviteCode}?step=2`}>
+						Đăng ký tư vấn
+					</Link>
+				</Button>
+			</div>
 
-			<section className='mt-16 bg-primary py-4'>
+			<section className='bg-primary py-4'>
 				<p className='text-center text-[11px] font-medium text-white'>
 					FIMI - Bản quyền đã được bảo hộ <br />
 					Chính sách bảo mật
