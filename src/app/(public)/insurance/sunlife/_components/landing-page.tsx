@@ -28,7 +28,7 @@ const SunlifeLandingPage = () => {
 				<div>
 					<div className='flex flex-col'>
 						<h1 className='text-[24px] font-[800] uppercase text-primary'>
-							Sun sông mới
+							Sun sống mới
 						</h1>
 						<p className='text-[15px] font-bold text-primary'>
 							Bảo hiểm liên kết chung
@@ -134,7 +134,7 @@ const SunlifeLandingPage = () => {
 						className='h-[40px] w-[35px]'
 					/>
 					<div>
-						<h3 className='text-[15px] font-bold text-white'>Qũy sức khỏe</h3>
+						<h3 className='text-[15px] font-bold text-white'>Quỹ sức khỏe</h3>
 						<p className='text-[11px] text-white'>
 							10 triệu VND/năm cho mỗi thành viên để khám và điều trị.
 						</p>
