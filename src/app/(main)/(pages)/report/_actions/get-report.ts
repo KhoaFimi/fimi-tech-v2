@@ -70,7 +70,7 @@ export const getReportV2 = async (): Promise<ReportResponse> => {
 				commision[paymentStatusValue as keyof typeof commision] +=
 					currentCommisionPUB
 				order.PUB_ORDER += 1
-			} else if (report[11] === publisherCode) {
+			} else if (report[10] === publisherCode) {
 				commision.AM += currentCommisionAM
 				commision[paymentStatusValue as keyof typeof commision] +=
 					currentCommisionAM
